@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/globals.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685777117905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685777117905,
+            "name": "Commit-0",
+            "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n\n  }\n}\n\nbody {\n\n}\n"
+        }
+    ]
+}
