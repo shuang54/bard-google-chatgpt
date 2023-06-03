@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/components/Avatar.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1685779309118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685781414688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n }) => {\r\n   return (\r\n     <Image\r\n       className=\"rounded-full\"\r\n-      height=\"30\"\r\n-      width=\"30\"\r\n+      height=\"50\"\r\n+      width=\"50\"\r\n       alt=\"Avatar\"\r\n       src={src || '/images/placeholder.jpg'}\r\n     />\r\n   );\r\n"
+                },
+                {
+                    "date": 1685781425314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n }) => {\r\n   return (\r\n     <Image\r\n       className=\"rounded-full\"\r\n-      height=\"50\"\r\n-      width=\"50\"\r\n+      height=\"35\"\r\n+      width=\"35\"\r\n       alt=\"Avatar\"\r\n       src={src || '/images/placeholder.jpg'}\r\n     />\r\n   );\r\n"
+                }
+            ],
+            "date": 1685779309118,
+            "name": "Commit-0",
+            "content": "'use client';\r\n\r\nimport Image from \"next/image\";\r\n\r\ninterface AvatarProps {\r\n  src: string | null | undefined\r\n}\r\n\r\nconst Avatar: React.FC<AvatarProps> = ({\r\n  src\r\n}) => {\r\n  return (\r\n    <Image\r\n      className=\"rounded-full\"\r\n      height=\"30\"\r\n      width=\"30\"\r\n      alt=\"Avatar\"\r\n      src={src || '/images/placeholder.jpg'}\r\n    />\r\n  );\r\n}\r\n\r\nexport default Avatar;"
+        }
+    ]
+}

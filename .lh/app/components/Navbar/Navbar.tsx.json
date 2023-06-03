@@ -1,0 +1,174 @@
+{
+    "sourceFile": "app/components/Navbar/Navbar.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1685777510011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685777534732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n import UserMenu from \"./UserMenu\";\r\n-import { SafeUser } from \"../../types\";\r\n import Categories from \"./Categories\";\r\n \r\n interface NavbarProps {\r\n   currentUser?: SafeUser | null;\r\n"
+                },
+                {
+                    "date": 1685777573182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,8 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <Logo />\r\n-            <Search />\r\n             <UserMenu currentUser={currentUser} />\r\n           </div>\r\n         </Container>\r\n         <Categories />\r\n"
+                },
+                {
+                    "date": 1685777636071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,10 @@\n import Logo from \"./Logo\";\r\n import UserMenu from \"./UserMenu\";\r\n import Categories from \"./Categories\";\r\n \r\n-interface NavbarProps {\r\n-  currentUser?: SafeUser | null;\r\n-}\r\n+const Navbar = () => {\r\n \r\n-const Navbar: React.FC<NavbarProps> = ({\r\n-  currentUser\r\n-}) => {\r\n-  console.log(currentUser);\r\n-\r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n       <div className=\"py-4 border-b-[1px]\">\r\n         <Container>\r\n@@ -27,9 +20,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <Logo />\r\n-            <UserMenu currentUser={currentUser} />\r\n+            <UserMenu/>\r\n           </div>\r\n         </Container>\r\n         <Categories />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685777661659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n import UserMenu from \"./UserMenu\";\r\n-import Categories from \"./Categories\";\r\n \r\n const Navbar = () => {\r\n \r\n   return (\r\n@@ -23,9 +22,8 @@\n             <Logo />\r\n             <UserMenu/>\r\n           </div>\r\n         </Container>\r\n-        <Categories />\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685778015221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n-import UserMenu from \"./UserMenu\";\r\n \r\n const Navbar = () => {\r\n \r\n   return (\r\n@@ -19,9 +18,8 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <Logo />\r\n-            <UserMenu/>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685778456942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n-\r\n+import HiBars3 from \"react-icons/\"\r\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n"
+                },
+                {
+                    "date": 1685778468245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n-import HiBars3 from \"react-icons/\"\r\n+import HiBars3 from \"react-icons/hi2\"\r\n+\r\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n@@ -17,8 +18,9 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n+            <div></div>\r\n             <Logo />\r\n           </div>\r\n         </Container>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685778483891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <div></div>\r\n+            <div>\r\n+              <HiBars3/>\r\n+            </div>\r\n             <Logo />\r\n           </div>\r\n         </Container>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685778524945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div>\r\n-              <HiBars3/>\r\n+              <HiBars3 />\r\n             </div>\r\n             <Logo />\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685778533658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n-import HiBars3 from \"react-icons/hi2\"\r\n+import {HiBars3} from \"react-icons/hi2\"\r\n \r\n const Navbar = () => {\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1685778575013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <div>\r\n+            <Container>\r\n               <HiBars3 />\r\n-            </div>\r\n-            <Logo />\r\n+              <Logo />\r\n+            </Container>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685778600979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <Container>\r\n+            <div>\r\n               <HiBars3 />\r\n               <Logo />\r\n-            </Container>\r\n+            </div>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685778635043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <div>\r\n+            <div className=\" flex flex-row justify-center items-center\">\r\n               <HiBars3 />\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685778643620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <div className=\" flex flex-row justify-center items-center\">\r\n+            <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3 />\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685778654191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3 />\r\n+              <HiBars3  size={24}/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685778699733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n-      <div className=\"py-4 border-b-[1px]\">\r\n+      <div className=\"py-1 border-b-[1px]\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                },
+                {
+                    "date": 1685778708393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n-      <div className=\"py-1 border-b-[1px]\">\r\n+      <div className=\"py-4 border-b-[1px]\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                },
+                {
+                    "date": 1685778850627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={24}/>\r\n+              <HiBars3  size={32}/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685778883297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={32}/>\r\n+              <HiBars3  size={28}/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685778947522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={28}/>\r\n+              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685778976496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:\"/>\r\n+              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779014680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full\"/>\r\n+              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-1\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779024196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={28} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-1\"/>\r\n+              <HiBars3  size={32} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-2\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779032389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={32} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-2\"/>\r\n+              <HiBars3  size={32} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-1\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779049902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={32} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-1\"/>\r\n+              <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779086525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-400 hover:rounded-full p-3\"/>\r\n+              <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n           </div>\r\n         </Container>\r\n"
+                },
+                {
+                    "date": 1685779514181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n+            <Navbar/>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685779550873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n 'use client';\r\n import Container from \"../Container\";\r\n import Logo from \"./Logo\";\r\n import {HiBars3} from \"react-icons/hi2\"\r\n+import UserMenu from \"./UserMenu\";\r\n \r\n const Navbar = () => {\r\n \r\n   return (\r\n@@ -22,9 +23,9 @@\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n-            <Navbar/>\r\n+            <UserMenu/>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685779608405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n-            <UserMenu/>\r\n+            {/* <UserMenu/> */}\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685779615948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n+          </div>\r\n             {/* <UserMenu/> */}\r\n-          </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685779643853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n             <div className=\" flex flex-row justify-center items-center gap-3\">\r\n               <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n               <Logo />\r\n             </div>\r\n+            {/* <UserMenu/> */}\r\n           </div>\r\n-            {/* <UserMenu/> */}\r\n         </Container>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685780140515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,13 @@\n             gap-3\r\n             md:gap-0\r\n           \"\r\n           >\r\n-            <div className=\" flex flex-row justify-center items-center gap-3\">\r\n-              <HiBars3  size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3\"/>\r\n+            <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n+              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3 transition\"/>\r\n               <Logo />\r\n             </div>\r\n-            {/* <UserMenu/> */}\r\n+            <UserMenu/>\r\n           </div>\r\n         </Container>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685780153382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3 transition\"/>\r\n+              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3 \"/>\r\n               <Logo />\r\n             </div>\r\n             <UserMenu/>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685780174034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-300 hover:rounded-full p-3 \"/>\r\n+              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-200 hover:rounded-full p-3 \"/>\r\n               <Logo />\r\n             </div>\r\n             <UserMenu/>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685780184237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             md:gap-0\r\n           \"\r\n           >\r\n             <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-200 hover:rounded-full p-3 \"/>\r\n+              <HiBars3 size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \"/>\r\n               <Logo />\r\n             </div>\r\n             <UserMenu/>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685781366415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n-      <div className=\"py-4 border-b-[1px]\">\r\n+      <div className=\"py-2 border-b-[1px]\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                },
+                {
+                    "date": 1685781374299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n-      <div className=\"py-2 border-b-[1px]\">\r\n+      <div className=\"py- border-b-[1px]\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                },
+                {
+                    "date": 1685781458071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n \r\n const Navbar = () => {\r\n \r\n   return (\r\n-    <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n-      <div className=\"py- border-b-[1px]\">\r\n+    <div className=\"fixed w-full bg-white z-10 \">\r\n+      <div className=\"py-1 border-b-[1px]\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                },
+                {
+                    "date": 1685781484462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const Navbar = () => {\r\n \r\n   return (\r\n     <div className=\"fixed w-full bg-white z-10 \">\r\n-      <div className=\"py-1 border-b-[1px]\">\r\n+      <div className=\"py-1\">\r\n         <Container>\r\n           <div\r\n             className=\"\r\n             flex\r\n"
+                }
+            ],
+            "date": 1685777510011,
+            "name": "Commit-0",
+            "content": "'use client';\r\nimport Container from \"../Container\";\r\nimport Logo from \"./Logo\";\r\nimport UserMenu from \"./UserMenu\";\r\nimport { SafeUser } from \"../../types\";\r\nimport Categories from \"./Categories\";\r\n\r\ninterface NavbarProps {\r\n  currentUser?: SafeUser | null;\r\n}\r\n\r\nconst Navbar: React.FC<NavbarProps> = ({\r\n  currentUser\r\n}) => {\r\n  console.log(currentUser);\r\n\r\n  return (\r\n    <div className=\"fixed w-full bg-white z-10 shadow-sm\">\r\n      <div className=\"py-4 border-b-[1px]\">\r\n        <Container>\r\n          <div\r\n            className=\"\r\n            flex\r\n            flex-row\r\n            items-center\r\n            justify-between\r\n            gap-3\r\n            md:gap-0\r\n          \"\r\n          >\r\n            <Logo />\r\n            <Search />\r\n            <UserMenu currentUser={currentUser} />\r\n          </div>\r\n        </Container>\r\n        <Categories />\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Navbar;"
+        }
+    ]
+}

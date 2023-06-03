@@ -1,0 +1,34 @@
+{
+    "sourceFile": "app/components/Navbar/Logo.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1685777713841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685778197272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n   return (\r\n     <Image\r\n       onClick={() => router.push('/')}\r\n       alt=\"Logo\"\r\n-      className=\"hidden md:block cursor-pointer\"\r\n+      className=\"hidden md:block cursor-pointer text-black\"\r\n       height=\"100\"\r\n       width=\"100\"\r\n-      src=\"/images/logo.png\"\r\n+      src=\"/images/logo.svg\"\r\n     />\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685778211492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   return (\r\n     <Image\r\n       onClick={() => router.push('/')}\r\n       alt=\"Logo\"\r\n-      className=\"hidden md:block cursor-pointer text-black\"\r\n+      className=\"hidden md:block cursor-pointer\"\r\n       height=\"100\"\r\n       width=\"100\"\r\n       src=\"/images/logo.svg\"\r\n     />\r\n"
+                },
+                {
+                    "date": 1685778270942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       alt=\"Logo\"\r\n       className=\"hidden md:block cursor-pointer\"\r\n       height=\"100\"\r\n       width=\"100\"\r\n-      src=\"/images/logo.svg\"\r\n+      src=\"/images/logo_black.svg\"\r\n     />\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685778839712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     <Image\r\n       onClick={() => router.push('/')}\r\n       alt=\"Logo\"\r\n       className=\"hidden md:block cursor-pointer\"\r\n-      height=\"100\"\r\n-      width=\"100\"\r\n+      height=\"150\"\r\n+      width=\"150\"\r\n       src=\"/images/logo_black.svg\"\r\n     />\r\n   )\r\n }\r\n"
+                }
+            ],
+            "date": 1685777713841,
+            "name": "Commit-0",
+            "content": "'use client';\r\n\r\nimport Image from \"next/image\";\r\nimport { useRouter } from \"next/navigation\";\r\n\r\nconst Logo = () => {\r\n  const router = useRouter();\r\n\r\n  return (\r\n    <Image\r\n      onClick={() => router.push('/')}\r\n      alt=\"Logo\"\r\n      className=\"hidden md:block cursor-pointer\"\r\n      height=\"100\"\r\n      width=\"100\"\r\n      src=\"/images/logo.png\"\r\n    />\r\n  )\r\n}\r\n\r\nexport default Logo;"
+        }
+    ]
+}

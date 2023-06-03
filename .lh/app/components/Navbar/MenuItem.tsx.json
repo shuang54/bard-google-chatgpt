@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/components/Navbar/MenuItem.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685779266953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685779266953,
+            "name": "Commit-0",
+            "content": "'use client';\r\n\r\ninterface MenuItemProps {\r\n  onClick: () => void;\r\n  label: string\r\n}\r\n\r\nconst MenuItem: React.FC<MenuItemProps> = ({\r\n  onClick,\r\n  label\r\n}) => {\r\n  return (\r\n    <div\r\n      onClick={onClick}\r\n      className=\"\r\n      px-4\r\n      py-3\r\n      hover:bg-neutral-100\r\n      font-semibold\r\n    \"\r\n    >\r\n      {label}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default MenuItem;"
+        }
+    ]
+}
