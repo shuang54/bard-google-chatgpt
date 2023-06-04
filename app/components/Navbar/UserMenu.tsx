@@ -20,7 +20,6 @@ const UserMenu = () => {
           className="
           p-1
           md:py-1
-          md:px-2
           flex
           flex-row
           items-center
@@ -31,8 +30,7 @@ const UserMenu = () => {
           <div 
             onClick={toggleOpen}
           className='
-           hidden
-           md:block
+           block
            cursor-pointer
            hover:rounded-full
           border border-transparent 

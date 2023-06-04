@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1685777096212,
@@ -16,6 +16,50 @@
                 {
                     "date": 1685781848113,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n+import ClientOnly from \"./components/ClientOnly\";\n \n export default function Home() {\n   return (\n-    <main>hello</main>\n+    <ClientOnly>\n+      \n+    </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782151628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,11 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      \n+      <div className=\"flex flex-wrap\">\n+        <div className=\"w-full md:w-1/3 md:block hidden\">左边</div>\n+        <div className=\"w-full md:w-2/3\">右边</div>\n+      </div>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782167388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <div className=\"flex flex-wrap\">\n-        <div className=\"w-full md:w-1/3 md:block hidden\">左边</div>\n-        <div className=\"w-full md:w-2/3\">右边</div>\n+      <div className=\"bg-red-300 flex flex-wrap\">\n+        <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n+        <div className=\"bg-red-300 w-full md:w-2/3\">右边</div>\n       </div>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782183560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <div className=\"bg-red-300 flex flex-wrap\">\n+      <div className=\"flex flex-wrap\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n-        <div className=\"bg-red-300 w-full md:w-2/3\">右边</div>\n+        <div className=\"bg-bule-300 w-full md:w-2/3\">右边</div>\n       </div>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782214288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <div className=\"flex flex-wrap\">\n+      <main className=\"flex flex-wrap h-full w-screen\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n-        <div className=\"bg-bule-300 w-full md:w-2/3\">右边</div>\n-      </div>\n+        <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n+      </main>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782249919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-full w-screen\">\n+      <main className=\"flex flex-wrap h-100vh w-screen\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n         <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1685782280039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-100vh w-screen\">\n+      <main className=\"flex flex-wrap h-screen w-screen\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n         <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1685782299985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-20\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n         <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1685782326325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-20\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-18\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n         <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1685782337372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-18\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n         <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n         <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1685782391256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n export default function Home() {\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n-        <div className=\"bg-red-300 w-full md:w-1/3 md:block hidden\">左边</div>\n-        <div className=\"bg-blue-300 w-full md:w-2/3\">右边</div>\n+        <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">左边</div>\n+        <div className=\"bg-blue-300 w-full md:w-3/4\">右边</div>\n       </main>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1685782781293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import ClientOnly from \"./components/ClientOnly\";\n+import NavMenu from \"./components/NavMenu/NavMenu\";\n \n export default function Home() {\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n-        <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">左边</div>\n+          <NavMenu/>\n         <div className=\"bg-blue-300 w-full md:w-3/4\">右边</div>\n       </main>\n     </ClientOnly>\n   )\n"
                 }
             ],
             "date": 1685777096212,

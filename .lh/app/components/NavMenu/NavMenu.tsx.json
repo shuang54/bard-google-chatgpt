@@ -1,0 +1,254 @@
+{
+    "sourceFile": "app/components/NavMenu/NavMenu.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 59,
+            "patches": [
+                {
+                    "date": 1685782728359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685782780506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const NavMenu = () => {\r\n   return (\r\n-    <div>NavMenu</div>\r\n+    <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">NavMenu</div>\r\n   )\r\n }\r\n \r\n export default NavMenu\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685782878452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import React from 'react'\r\n+import MenuItem from './MenuItem'\r\n \r\n const NavMenu = () => {\r\n   return (\r\n-    <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">NavMenu</div>\r\n+    <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n+      <MenuItem />\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default NavMenu\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685783142499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem />\r\n+      <MenuItem label='' />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783147794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='' />\r\n+      <MenuItem label='Reset ' />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783186275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset ' />\r\n+      <MenuItem label='Reset chat' onClick={()=>{}} icon=''  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783226014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n-\r\n+import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n       <MenuItem label='Reset chat' onClick={()=>{}} icon=''  />\r\n"
+                },
+                {
+                    "date": 1685783236862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset chat' onClick={()=>{}} icon=''  />\r\n+      <MenuItem label='Reset chat' onClick={() => { }} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783387019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset chat' onClick={() => { }} icon={GrPowerReset}  />\r\n+      <MenuItem label='Reset chat' onClick={() => ()=>{}} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783431911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n+  const resetChat = ()=>{\r\n+\r\n+  }\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset chat' onClick={() => ()=>{}} icon={GrPowerReset}  />\r\n+      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783469026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'client'\r\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n"
+                },
+                {
+                    "date": 1685783490204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-'client'\r\n+'use client';\r\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n-\r\n+    console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n"
+                },
+                {
+                    "date": 1685783501851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n+      <MenuItem label='Reset chat' onClick={() => resetChat} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783507411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n-      <MenuItem label='Reset chat' onClick={() => resetChat} icon={GrPowerReset}  />\r\n+      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685783526908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"bg-red-300 w-full md:w-1/4 md:block hidden\">\r\n+    <div className=\"md:w-1/4 md:block hidden\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784106056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden\">\r\n+    <div className=\"md:w-1/4 md:block hidden pb-4\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784131009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden pb-4\">\r\n+    <div className=\"md:w-1/4 md:block hidden pt-4\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784159016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden pt-4\">\r\n+    <div className=\"md:w-1/4 md:block hidden pt-3\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784334997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden pt-3\">\r\n+    <div className=\"md:w-1/4 md:block hidden\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784519304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n 'use client';\r\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n+import { GrPowerReset } from\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden\">\r\n+    <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685784533184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n 'use client';\r\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n-import { GrPowerReset } from\r\n+import { LuTimerReset } from 'react-icons/lu'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n"
+                },
+                {
+                    "date": 1685784543329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   }\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n+      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685784588325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,12 @@\n   }\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n-      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='FAQ' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='Updates' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='Help' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685784872640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,18 @@\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { LuTimerReset } from 'react-icons/lu'\r\n+import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n       <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n-      <MenuItem label='FAQ' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n       <MenuItem label='Updates' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n       <MenuItem label='Help' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685784927714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,18 @@\n 'use client';\r\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n-import { LuTimerReset } from 'react-icons/lu'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n+import { MdUpdate } from 'react-icons/md'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n-      <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate}  />\r\n       <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n       <MenuItem label='Updates' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n       <MenuItem label='Help' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685784933090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n       <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate}  />\r\n       <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n-      <MenuItem label='Updates' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n-      <MenuItem label='Help' onClick={() => resetChat()} icon={LuTimerReset}  />\r\n+      <MenuItem label='Updates' onClick={() => resetChat()} icon={MdUpdate}  />\r\n+      <MenuItem label='Help' onClick={() => resetChat()} icon={MdUpdate}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685785074196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate } from 'react-icons/md'\r\n+import { LuCalendarRange } from 'lu'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n@@ -12,9 +13,9 @@\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n       <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate}  />\r\n       <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n-      <MenuItem label='Updates' onClick={() => resetChat()} icon={MdUpdate}  />\r\n+      <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange}  />\r\n       <MenuItem label='Help' onClick={() => resetChat()} icon={MdUpdate}  />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685785083230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate } from 'react-icons/md'\r\n-import { LuCalendarRange } from 'lu'\r\n+import { LuCalendarRange } from 'react-icons/lu'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n"
+                },
+                {
+                    "date": 1685785231391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import React from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n-import { MdUpdate } from 'react-icons/md'\r\n+import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange } from 'react-icons/lu'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n@@ -14,9 +14,9 @@\n       <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n       <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate}  />\r\n       <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n       <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange}  />\r\n-      <MenuItem label='Help' onClick={() => resetChat()} icon={MdUpdate}  />\r\n+      <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback}  />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685845609268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange } from 'react-icons/lu'\r\n+import { BsMoonStars } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n"
+                },
+                {
+                    "date": 1685845626587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange } from 'react-icons/lu'\r\n-import { BsMoonStars } from 'react-icons/bs'\r\n+import { BsMoonStars, BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n"
+                },
+                {
+                    "date": 1685845693290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,15 @@\n     console.log('resetChat')\r\n   }\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n-      <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset}  />\r\n-      <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate}  />\r\n-      <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle}  />\r\n-      <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange}  />\r\n-      <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback}  />\r\n+      <div>\r\n+        <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n+        <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate} />\r\n+        <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n+        <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n+        <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685845767603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,11 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n+      <div>\r\n+        <BsMoonStars/>\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685845805899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars/>\r\n+        <BsMoonStars className='border rounded-full hover:bg-zinc-300'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845832273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars className='border rounded-full hover:bg-zinc-300'/>\r\n+        <BsMoonStars className='border rounded-full hover:bg-black p-4'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845852314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars className='border rounded-full hover:bg-black p-4'/>\r\n+        <BsMoonStars className='border rounded-full hover:bg-zinc-300 p-4'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845859647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars className='border rounded-full hover:bg-zinc-300 p-4'/>\r\n+        <BsMoonStars size={48} className='border rounded-full hover:bg-zinc-300 p-4'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845868368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars size={48} className='border rounded-full hover:bg-zinc-300 p-4'/>\r\n+        <BsMoonStars size={48} className='border rounded-full hover:bg-zinc-300 p-1'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845896334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange } from 'react-icons/lu'\r\n-import { BsMoonStars, BsSun } from 'react-icons/bs'\r\n+import { BsMoon, BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoonStars size={48} className='border rounded-full hover:bg-zinc-300 p-1'/>\r\n+        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-1'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845908931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-1'/>\r\n+        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-1 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845917919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-1 cursor-pointer'/>\r\n+        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-2 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845975460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border rounded-full hover:bg-zinc-300 p-2 cursor-pointer'/>\r\n+        <BsMoon size={48} className='border rounded-full hover:bg-zinc-700 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685845999213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border rounded-full hover:bg-zinc-700 p-3 cursor-pointer'/>\r\n+        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-700 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685846009176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-700 p-3 cursor-pointer'/>\r\n+        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-100 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685846015005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-100 p-3 cursor-pointer'/>\r\n+        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685846029747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={48} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+        <BsMoon size={32} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685846063372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div>\r\n-        <BsMoon size={32} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+        <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685846106240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,17 +10,17 @@\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/4 md:block hidden pt-2\">\r\n+    <div className=\"md:w-1/4 md:block hidden pt-2 relative\" >\r\n       <div>\r\n         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n         <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate} />\r\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div>\r\n+      <div className=' absolute bottom-0 left-0'>\r\n         <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685846165430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div className=' absolute bottom-0 left-0'>\r\n+      <div className=' absolute bottom-10 left-16'>\r\n         <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685846176875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div className=' absolute bottom-10 left-16'>\r\n+      <div className=' absolute bottom-10 left-10'>\r\n         <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685846185266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div className=' absolute bottom-10 left-10'>\r\n+      <div className=' absolute bottom-10 left-5'>\r\n         <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685846194311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div className=' absolute bottom-10 left-5'>\r\n+      <div className=' absolute bottom-5 left-5'>\r\n         <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685847970824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n-import { LuCalendarRange } from 'react-icons/lu'\r\n+import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsMoon, BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n@@ -19,9 +19,9 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div className=' absolute bottom-5 left-5'>\r\n-        <BsMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+        <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685847980199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n-import { BsMoon, BsSun } from 'react-icons/bs'\r\n+import { BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n"
+                },
+                {
+                    "date": 1685848014724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n+  const []\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685848065554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n 'use client';\r\n-import React from 'react'\r\n+import React, { useState } from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n-  const []\r\n+  const [colorTheme,setColorTheme] = useState();\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685848125415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsSun } from 'react-icons/bs'\r\n const NavMenu = () => {\r\n-  const [colorTheme,setColorTheme] = useState();\r\n+  const [colorTheme,setColorTheme] = useState(true);\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n   return (\r\n@@ -20,9 +20,13 @@\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div className=' absolute bottom-5 left-5'>\r\n-        <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+        {colorTheme ? (\r\n+          <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+          ) : (\r\n+          <BsSun size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+        )}\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685848176510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,11 @@\n   const [colorTheme,setColorTheme] = useState(true);\r\n   const resetChat = ()=>{\r\n     console.log('resetChat')\r\n   }\r\n+\r\n+  // 切换颜色主题\r\n+  const \r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2 relative\" >\r\n       <div>\r\n         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n"
+                },
+                {
+                    "date": 1685848232775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n 'use client';\r\n-import React, { useState } from 'react'\r\n+import React, { useCallback, useState } from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n@@ -12,9 +12,12 @@\n     console.log('resetChat')\r\n   }\r\n \r\n   // 切换颜色主题\r\n-  const \r\n+  const changeColorTheme = ()=>{\r\n+\r\n+  }\r\n+  const aa = useCallback(()=>{},[])\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2 relative\" >\r\n       <div>\r\n         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n"
+                },
+                {
+                    "date": 1685848332392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n 'use client';\r\n-import React, { useCallback, useState } from 'react'\r\n+import React, { useState } from 'react'\r\n import MenuItem from './MenuItem'\r\n import { GrPowerReset } from 'react-icons/gr'\r\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n@@ -13,11 +13,10 @@\n   }\r\n \r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n-\r\n+    setColorTheme(!colorTheme)\r\n   }\r\n-  const aa = useCallback(()=>{},[])\r\n   return (\r\n     <div className=\"md:w-1/4 md:block hidden pt-2 relative\" >\r\n       <div>\r\n         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n@@ -25,9 +24,9 @@\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n-      <div className=' absolute bottom-5 left-5'>\r\n+      <div onClick={changeColorTheme} className=' absolute bottom-5 left-5'>\r\n         {colorTheme ? (\r\n           <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n           ) : (\r\n           <BsSun size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n"
+                }
+            ],
+            "date": 1685782728359,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst NavMenu = () => {\r\n  return (\r\n    <div>NavMenu</div>\r\n  )\r\n}\r\n\r\nexport default NavMenu"
+        }
+    ]
+}
