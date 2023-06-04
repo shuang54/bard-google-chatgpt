@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/lib/CookieService.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685865549633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685865549633,
+            "name": "Commit-0",
+            "content": "import Cookies from 'js-cookie'\r\nexport class CookieService {\r\n  public static setItem(key: string, value: any): void {\r\n    Cookies.set(key, JSON.stringify(value));\r\n  }\r\n\r\n  public static getItem(key: string): any {\r\n    const value = Cookies.get(key);\r\n    return value ? JSON.parse(value) : null;\r\n  }\r\n\r\n  public static removeItem(key: string): void {\r\n    Cookies.remove(key);\r\n  }\r\n}\r\n"
+        }
+    ]
+}

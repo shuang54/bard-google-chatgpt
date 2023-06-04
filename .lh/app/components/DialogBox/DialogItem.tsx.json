@@ -1,0 +1,182 @@
+{
+    "sourceFile": "app/components/DialogBox/DialogItem.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1685852722180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685852728676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import React from 'react'\r\n \r\n const DialogItem = () => {\r\n   return (\r\n-    <div>DialogItem</div>\r\n+    <div>\r\n+      I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+      Not sure where to start? You can try:\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default DialogItem\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685852878218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogItem = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='bg-white'>\r\n       I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n       Not sure where to start? You can try:\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685852891356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogItem = () => {\r\n   return (\r\n-    <div className='bg-white'>\r\n+    <div className='bg-white p-4 rounded-2xl'>\r\n       I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n       Not sure where to start? You can try:\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685852969754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,13 @@\n \r\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl'>\r\n-      I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-      Not sure where to start? You can try:\r\n+      <div ></div>\r\n+      <div>\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+        Not sure where to start? You can try:\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685852987535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogItem = () => {\r\n   return (\r\n-    <div className='bg-white p-4 rounded-2xl'>\r\n+    <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div ></div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853092868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n import React from 'react'\r\n+import Image from 'next/image'\r\n \r\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n-      <div ></div>\r\n+      <div >\r\n+        <Image src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+      </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685853106191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image sizes='10' src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853123989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image sizes='10' src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image width={50} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853132468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={50} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image width={50} height={50} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853154611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={50} height={50} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853164431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853191441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\"/>\r\n+        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className='mr-2'/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853209665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className='mr-2'/>\r\n+        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-3'/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853227702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={42} height={42} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-3'/>\r\n+        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-3'/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853235969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-3'/>\r\n+        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-8'/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685853278653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,14 @@\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+        Not sure where to start? You can try:\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+        Not sure where to start? You can try:\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+        Not sure where to start? You can try:\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685853299373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n-        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-8'/>\r\n+        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n       <div>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n         Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685864259644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,9 @@\n       <div >\r\n         <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n       <div>\r\n-        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-        Not sure where to start? You can try:\r\n-        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-        Not sure where to start? You can try:\r\n-        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-        Not sure where to start? You can try:\r\n-        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-        Not sure where to start? You can try:\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864275558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,12 @@\n       <div >\r\n         <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n       <div>\r\n+        <p>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n+        </p>\r\n+        <p> Not sure where to start? You can try: </p>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864295533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,11 @@\n         <p>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n+        <p>\r\n+          Draft a design brief for my community bookstore’s new logo \r\n+        </p>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864311507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,11 @@\n         <p> Not sure where to start? You can try: </p>\r\n         <p>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </p>\r\n+        <p>\r\n+          Give me landscaping inspiration for my small city backyard \r\n+        </p>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864320411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,11 @@\n         </p>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n         </p>\r\n+        <p>\r\n+          Create a vegetarian meal with the following: cauliflower, cucumber, and yogurt \r\n+        </p>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864391854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n         <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n-      <div>\r\n+      <div className=' leading-4'>\r\n         <p>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n"
+                },
+                {
+                    "date": 1685864406831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n         <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n-      <div className=' leading-4'>\r\n-        <p>\r\n+      <div className=' leading-10'>\r\n+        <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n         <p>\r\n"
+                },
+                {
+                    "date": 1685864514024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <p>\r\n+        <p className=' text-blue-500 cursor-pointer hover:bg-blue-200'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </p>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n"
+                },
+                {
+                    "date": 1685864527288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <p className=' text-blue-500 cursor-pointer hover:bg-blue-200'>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-blue-200'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n-        </p>\r\n+        </span>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n         </p>\r\n         <p>\r\n"
+                },
+                {
+                    "date": 1685864534323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <span className=' text-blue-500 cursor-pointer hover:bg-blue-200'>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </span>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n"
+                },
+                {
+                    "date": 1685864549287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100'>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100/5'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </span>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n"
+                },
+                {
+                    "date": 1685864555901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100/5'>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100/2'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </span>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n"
+                },
+                {
+                    "date": 1685864571377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n-        <span className=' text-blue-500 cursor-pointer hover:bg-blue-100/2'>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </span>\r\n         <p>\r\n           Give me landscaping inspiration for my small city backyard \r\n"
+                },
+                {
+                    "date": 1685864609710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,14 @@\n         <p> Not sure where to start? You can try: </p>\r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Draft a design brief for my community bookstore’s new logo \r\n         </span>\r\n-        <p>\r\n-          Give me landscaping inspiration for my small city backyard \r\n-        </p>\r\n-        <p>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n+          Give me landscaping inspiration for my small city backyard\r\n+        </span>\r\n+        <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Create a vegetarian meal with the following: cauliflower, cucumber, and yogurt \r\n-        </p>\r\n+        </span>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685864618898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,14 @@\n         <p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n+        <p>\r\n+          <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n+            Draft a design brief for my community bookstore’s new logo\r\n+          </span>\r\n+        </p>\r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n-          Draft a design brief for my community bookstore’s new logo \r\n-        </span>\r\n-        <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Give me landscaping inspiration for my small city backyard\r\n         </span>\r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Create a vegetarian meal with the following: cauliflower, cucumber, and yogurt \r\n"
+                },
+                {
+                    "date": 1685864629809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,14 +16,20 @@\n           <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n             Draft a design brief for my community bookstore’s new logo\r\n           </span>\r\n         </p>\r\n+        <p>\r\n+\r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Give me landscaping inspiration for my small city backyard\r\n         </span>\r\n+        </p>\r\n+        <p>\r\n+\r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Create a vegetarian meal with the following: cauliflower, cucumber, and yogurt \r\n         </span>\r\n+        </p>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685865359328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\r\n import React from 'react'\r\n import Image from 'next/image'\r\n \r\n const DialogItem = () => {\r\n"
+                },
+                {
+                    "date": 1685872302747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n 'use client';\r\n import React from 'react'\r\n import Image from 'next/image'\r\n \r\n+interface DialogBoxProps \r\n+\r\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n"
+                },
+                {
+                    "date": 1685872309907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n 'use client';\r\n import React from 'react'\r\n import Image from 'next/image'\r\n \r\n-interface DialogBoxProps \r\n+interface DialogBoxProps {\r\n+  \r\n+}\r\n \r\n const DialogItem = () => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n"
+                },
+                {
+                    "date": 1685872362038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import React from 'react'\r\n import Image from 'next/image'\r\n \r\n interface DialogBoxProps {\r\n+  isHeader?:true;\r\n+  isFooter?:false;\r\n   \r\n }\r\n \r\n const DialogItem = () => {\r\n"
+                },
+                {
+                    "date": 1685872398330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \r\n interface DialogBoxProps {\r\n   isHeader?:true;\r\n   isFooter?:false;\r\n+  boxAvatar:string;\r\n   \r\n }\r\n \r\n const DialogItem = () => {\r\n"
+                },
+                {
+                    "date": 1685872461732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,15 @@\n interface DialogBoxProps {\r\n   isHeader?:true;\r\n   isFooter?:false;\r\n   boxAvatar:string;\r\n-  \r\n+  content:string;\r\n }\r\n \r\n-const DialogItem = () => {\r\n+const DialogItem:React.FC<DialogBoxProps> = ({\r\n+  isHeader:true,\r\n+  \r\n+}) => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n       <div >\r\n         <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n"
+                },
+                {
+                    "date": 1685872559943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,24 +3,18 @@\n import Image from 'next/image'\r\n \r\n interface DialogBoxProps {\r\n   isHeader?:true;\r\n-  isFooter?:false;\r\n-  boxAvatar:string;\r\n+  isFooter?: true;\r\n+  botAvatar:string;\r\n   content:string;\r\n }\r\n \r\n const DialogItem:React.FC<DialogBoxProps> = ({\r\n-  isHeader:true,\r\n-  \r\n-}) => {\r\n-  return (\r\n-    <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n-      <div >\r\n-        <Image width={32} height={32} src=\"/images/sparkle_resting.gif\" alt=\"sparkle_resting\" className=' mr-12'/>\r\n-      </div>\r\n-      <div className=' leading-10'>\r\n-        <p className='leading-5'>\r\n+  isHeader=true,\r\n+  isFooter=true,\r\n+  botAvatar =\"/images/sparkle_resting.gif\",\r\n+  content =`<p className='leading-5'>\r\n         I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve. \r\n         </p>\r\n         <p> Not sure where to start? You can try: </p>\r\n         <p>\r\n@@ -38,10 +32,18 @@\n \r\n         <span className=' text-blue-500 cursor-pointer hover:bg-[#f6fafe]'>\r\n           Create a vegetarian meal with the following: cauliflower, cucumber, and yogurt \r\n         </span>\r\n-        </p>\r\n+        </p>`\r\n+}) => {\r\n+  return (\r\n+    <div className='bg-white p-4 rounded-2xl flex justify-start items-start'>\r\n+      <div >\r\n+        <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n+      <div className=' leading-10'>\r\n+        \r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685872568759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       <div >\r\n         <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-12'/>\r\n       </div>\r\n       <div className=' leading-10'>\r\n-        \r\n+        {content}\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                }
+            ],
+            "date": 1685852722180,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst DialogItem = () => {\r\n  return (\r\n    <div>DialogItem</div>\r\n  )\r\n}\r\n\r\nexport default DialogItem"
+        }
+    ]
+}

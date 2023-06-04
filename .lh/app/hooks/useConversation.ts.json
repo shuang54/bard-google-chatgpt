@@ -1,0 +1,98 @@
+{
+    "sourceFile": "app/hooks/useConversation.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1685870156553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685870183453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,16 @@\n-import { useConversation } from './useConversation'\r\n+import create from 'zustand'\r\n+import { CookieService } from '../lib/CookieService'\r\n \r\n-function MyComponent() {\r\n-  const { conversation, addMessage, deleteMessage } = useConversation()\r\n+const useConversation = create((set) => ({\r\n+  conversation: CookieService.getItem('conversation') || [],\r\n+  addMessage: (message) =>\r\n+    set((state) => ({\r\n+      conversation: [...state.conversation, message]\r\n+    })),\r\n+  deleteMessage: (index) =>\r\n+    set((state) => ({\r\n+      conversation: state.conversation.filter((_, i) => i !== index)\r\n+    }))\r\n+}))\r\n \r\n-  function handleAddMessage() {\r\n-    const newMessage = { text: 'Hello, world!', timestamp: Date.now() }\r\n-    addMessage(newMessage)\r\n-  }\r\n-\r\n-  function handleDeleteMessage(index) {\r\n-    deleteMessage(index)\r\n-  }\r\n-\r\n-  return (\r\n-    <div>\r\n-      <ul>\r\n-        {conversation.map((message, index) => (\r\n-          <li key={index}>\r\n-            {message.text} ({message.timestamp})\r\n-            <button onClick={() => handleDeleteMessage(index)}>Delete</button>\r\n-          </li>\r\n-        ))}\r\n-      </ul>\r\n-      <button onClick={handleAddMessage}>Add Message</button>\r\n-    </div>\r\n-  )\r\n-}\r\n+export { useConversation }\r\n"
+                },
+                {
+                    "date": 1685870201400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import create from 'zustand'\r\n+import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n \r\n const useConversation = create((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n"
+                },
+                {
+                    "date": 1685870216438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n \r\n+\r\n+\r\n const useConversation = create((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (message) =>\r\n     set((state) => ({\r\n"
+                },
+                {
+                    "date": 1685870233639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,15 @@\n import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n \r\n+interface conversationStore {\r\n+  isOpen: boolean\r\n+  onOpen: () => void\r\n+  onClose: () => void\r\n+}\r\n \r\n \r\n+\r\n const useConversation = create((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (message) =>\r\n     set((state) => ({\r\n"
+                },
+                {
+                    "date": 1685870337609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,25 @@\n import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n+import { ConversationItem } from '../types'\r\n \r\n interface conversationStore {\r\n-  isOpen: boolean\r\n-  onOpen: () => void\r\n-  onClose: () => void\r\n+  conversation: ConversationItem[]\r\n+  addMessage: (message:string) => void\r\n+  deleteMessage: (id:number) => void\r\n }\r\n \r\n \r\n \r\n-const useConversation = create((set) => ({\r\n+const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (message) =>\r\n     set((state) => ({\r\n       conversation: [...state.conversation, message]\r\n     })),\r\n-  deleteMessage: (index) =>\r\n+  deleteMessage: (id) =>\r\n     set((state) => ({\r\n-      conversation: state.conversation.filter((_, i) => i !== index)\r\n+      conversation: state.conversation.filter((_, i) => i !== id)\r\n     }))\r\n }))\r\n \r\n export { useConversation }\r\n"
+                },
+                {
+                    "date": 1685870485113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,23 +3,28 @@\n import { ConversationItem } from '../types'\r\n \r\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n-  addMessage: (message:string) => void\r\n-  deleteMessage: (id:number) => void\r\n+  addMessage: (data: ConversationItem) => void\r\n+  deleteMessage: (id: number) => void\r\n+  removeAll:()=>void\r\n }\r\n \r\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (message) =>\r\n+  addMessage: (data) =>\r\n     set((state) => ({\r\n-      conversation: [...state.conversation, message]\r\n+      conversation: [...state.conversation, data]\r\n     })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n+    })),\r\n+  removeAll: () =>\r\n+    set((state) => ({\r\n+      conversation: []\r\n     }))\r\n }))\r\n \r\n export { useConversation }\r\n"
+                },
+                {
+                    "date": 1685870810561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) =>\r\n-    set((state) => ({\r\n-      conversation: [...state.conversation, data]\r\n-    })),\r\n+    // set((state) => ({\r\n+    //   conversation: [...state.conversation, data]\r\n+    // })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n     })),\r\n"
+                },
+                {
+                    "date": 1685870821067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) =>\r\n+  addMessage: (data) => set()\r\n     // set((state) => ({\r\n     //   conversation: [...state.conversation, data]\r\n     // })),\r\n   deleteMessage: (id) =>\r\n"
+                },
+                {
+                    "date": 1685870828427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => set()\r\n+  addMessage: (data) => set({}),\r\n     // set((state) => ({\r\n     //   conversation: [...state.conversation, data]\r\n     // })),\r\n   deleteMessage: (id) =>\r\n"
+                },
+                {
+                    "date": 1685870836301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => set({}),\r\n+  addMessage: (data) => set({conversation}),\r\n     // set((state) => ({\r\n     //   conversation: [...state.conversation, data]\r\n     // })),\r\n   deleteMessage: (id) =>\r\n"
+                },
+                {
+                    "date": 1685870858095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => set({conversation}),\r\n-    // set((state) => ({\r\n-    //   conversation: [...state.conversation, data]\r\n-    // })),\r\n+  addMessage: (data) => set({ conversation: [...conversation,] }),\r\n+  // set((state) => ({\r\n+  //   conversation: [...state.conversation, data]\r\n+  // })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n     })),\r\n"
+                },
+                {
+                    "date": 1685870880729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => set({ conversation: [...conversation,] }),\r\n+  addMessage: (data) => set({ conversation: [...conversation,data] }),\r\n   // set((state) => ({\r\n   //   conversation: [...state.conversation, data]\r\n   // })),\r\n   deleteMessage: (id) =>\r\n"
+                },
+                {
+                    "date": 1685870921861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => set({ conversation: [...conversation,data] }),\r\n-  // set((state) => ({\r\n-  //   conversation: [...state.conversation, data]\r\n-  // })),\r\n+  addMessage: (data) => \r\n+  set((state) => ({\r\n+    conversation: [...state.conversation, data]\r\n+  })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n     })),\r\n"
+                },
+                {
+                    "date": 1685871279568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => ({\r\n     conversation: [...state.conversation, data]\r\n+    CookieService.setItem('conversation',[])\r\n   })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n"
+                },
+                {
+                    "date": 1685871354410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,12 @@\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => ({\r\n-    conversation: [...state.conversation, data]\r\n-    CookieService.setItem('conversation',[])\r\n+    CookieService.setItem('conversation', state.conversation.concat(data));\r\n+      return {\r\n+        conversation: [...state.conversation, data],\r\n+      };\r\n   })),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n"
+                },
+                {
+                    "date": 1685871377838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,14 @@\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n-  set((state) => ({\r\n+  set((state) => {\r\n     CookieService.setItem('conversation', state.conversation.concat(data));\r\n       return {\r\n         conversation: [...state.conversation, data],\r\n       };\r\n-  })),\r\n+  }),\r\n   deleteMessage: (id) =>\r\n     set((state) => ({\r\n       conversation: state.conversation.filter((_, i) => i !== id)\r\n     })),\r\n"
+                },
+                {
+                    "date": 1685871397881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n import { ConversationItem } from '../types'\r\n+import { log } from 'console'\r\n \r\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n   addMessage: (data: ConversationItem) => void\r\n@@ -15,8 +16,9 @@\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => {\r\n     CookieService.setItem('conversation', state.conversation.concat(data));\r\n+    log(state.conversation.concat(data))\r\n       return {\r\n         conversation: [...state.conversation, data],\r\n       };\r\n   }),\r\n"
+                },
+                {
+                    "date": 1685871413331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import {create} from 'zustand'\r\n import { CookieService } from '../lib/CookieService'\r\n import { ConversationItem } from '../types'\r\n-import { log } from 'console'\r\n \r\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n   addMessage: (data: ConversationItem) => void\r\n@@ -16,9 +15,9 @@\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => {\r\n     CookieService.setItem('conversation', state.conversation.concat(data));\r\n-    log(state.conversation.concat(data))\r\n+    console.log(state.conversation.concat(data))\r\n       return {\r\n         conversation: [...state.conversation, data],\r\n       };\r\n   }),\r\n"
+                },
+                {
+                    "date": 1685871577599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,19 @@\n         conversation: [...state.conversation, data],\r\n       };\r\n   }),\r\n   deleteMessage: (id) =>\r\n-    set((state) => ({\r\n-      conversation: state.conversation.filter((_, i) => i !== id)\r\n-    })),\r\n+    set((state) => {\r\n+      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id)\r\n+      return {\r\n+        conversation: state.conversation.filter((_, i) => i !== id)\r\n+      }\r\n+    }),\r\n   removeAll: () =>\r\n-    set((state) => ({\r\n+    set((state) => {\r\n+      CookieService.removeItem('conversation')\r\n+      return {\r\n       conversation: []\r\n-    }))\r\n+    }})\r\n }))\r\n \r\n export { useConversation }\r\n"
+                },
+                {
+                    "date": 1685871707711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,16 @@\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => {\r\n     CookieService.setItem('conversation', state.conversation.concat(data));\r\n-    console.log(state.conversation.concat(data))\r\n+    // console.log(state.conversation.concat(data))\r\n       return {\r\n         conversation: [...state.conversation, data],\r\n       };\r\n   }),\r\n   deleteMessage: (id) =>\r\n     set((state) => {\r\n-      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id)\r\n+      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id))\r\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n"
+                }
+            ],
+            "date": 1685870156553,
+            "name": "Commit-0",
+            "content": "import { useConversation } from './useConversation'\r\n\r\nfunction MyComponent() {\r\n  const { conversation, addMessage, deleteMessage } = useConversation()\r\n\r\n  function handleAddMessage() {\r\n    const newMessage = { text: 'Hello, world!', timestamp: Date.now() }\r\n    addMessage(newMessage)\r\n  }\r\n\r\n  function handleDeleteMessage(index) {\r\n    deleteMessage(index)\r\n  }\r\n\r\n  return (\r\n    <div>\r\n      <ul>\r\n        {conversation.map((message, index) => (\r\n          <li key={index}>\r\n            {message.text} ({message.timestamp})\r\n            <button onClick={() => handleDeleteMessage(index)}>Delete</button>\r\n          </li>\r\n        ))}\r\n      </ul>\r\n      <button onClick={handleAddMessage}>Add Message</button>\r\n    </div>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

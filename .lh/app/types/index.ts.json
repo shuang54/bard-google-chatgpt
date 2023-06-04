@@ -1,0 +1,50 @@
+{
+    "sourceFile": "app/types/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1685865948822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685865989349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-export type SafeReservation = \n\\ No newline at end of file\n+export type ConversationItem = {\r\n+  text: string\r\n+  user: 'user' | 'bot'\r\n+}\r\n"
+                },
+                {
+                    "date": 1685867028546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n export type ConversationItem = {\r\n   text: string\r\n-  user: 'user' | 'bot'\r\n+  user: 'user' | 'bot' | 'system'\r\n }\r\n"
+                },
+                {
+                    "date": 1685867155830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n export type ConversationItem = {\r\n-  text: string\r\n+  context: string\r\n   user: 'user' | 'bot' | 'system'\r\n }\r\n"
+                },
+                {
+                    "date": 1685867161127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n export type ConversationItem = {\r\n-  context: string\r\n+  content: string\r\n   user: 'user' | 'bot' | 'system'\r\n }\r\n"
+                },
+                {
+                    "date": 1685867303464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n export type ConversationItem = {\r\n   content: string\r\n-  user: 'user' | 'bot' | 'system'\r\n+  role: 'user' | 'bot' | 'system'\r\n }\r\n"
+                },
+                {
+                    "date": 1685867320784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n export type ConversationItem = {\r\n   content: string\r\n   role: 'user' | 'bot' | 'system'\r\n+  date?:string\r\n+  id?:\r\n }\r\n"
+                },
+                {
+                    "date": 1685867328138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n export type ConversationItem = {\r\n   content: string\r\n   role: 'user' | 'bot' | 'system'\r\n   date?:string\r\n-  id?:\r\n+  id?:number\r\n }\r\n"
+                },
+                {
+                    "date": 1685867349805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n export type ConversationItem = {\r\n   content: string\r\n-  role: 'user' | 'bot' | 'system'\r\n-  date?:string\r\n-  id?:number\r\n+  role: 'user' | 'assistant' | 'system'\r\n+  date?: string\r\n+  id?: number\r\n }\r\n"
+                }
+            ],
+            "date": 1685865948822,
+            "name": "Commit-0",
+            "content": "export type SafeReservation = "
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "sourceFile": "app/components/DialogBox/DialogBox.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1685851782928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685851796229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div>DialogBox</div>\r\n+    <div bg-blue-300 w-full md:w-3 /4 >DialogBox</div>\r\n   )\r\n }\r\n \r\n export default DialogBox\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685851804050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div bg-blue-300 w-full md:w-3 /4 >DialogBox</div>\r\n+    <div className='bg-blue-300 w-full md:w-3/4'>DialogBox</div>\r\n   )\r\n }\r\n \r\n export default DialogBox\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685851872892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,15 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4'>DialogBox</div>\r\n+    <div className='bg-blue-300 w-full md:w-3/4'>\r\n+      <div>\r\n+        <div>\r\n+          d\r\n+        </div>\r\n+      </div>\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default DialogBox\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685851886115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n       <div>\r\n         <div>\r\n-          d\r\n+          I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+          Not sure where to start? You can try:\r\n+\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685851900104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,12 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div>\r\n+      <div className=''>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n-\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685851917361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div className=''>\r\n+      <div className=' m-2'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685851970240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div className=' m-2'>\r\n+      <div className=' mx-4 mb-4'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685851996920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div className=' mx-4 mb-4'>\r\n+      <div className=' mx-4 mb-4 bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852018590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div className=' mx-4 mb-4 bg-rose-500'>\r\n+      <div className='  mx-4 mb-4 bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852046886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4'>\r\n-      <div className='  mx-4 mb-4 bg-rose-500'>\r\n+      <div className=' h-full w-full mx-4 mb-4 bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852088770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden'>\r\n       <div className=' h-full w-full mx-4 mb-4 bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852128886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden'>\r\n-      <div className=' h-full w-full mx-4 mb-4 bg-rose-500'>\r\n+      <div className=' h-full w-full mx-10 mb-10 bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852164641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden'>\r\n-      <div className=' h-full w-full mx-10 mb-10 bg-rose-500'>\r\n+      <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852170377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852178989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852200930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-sm'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852214585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-sm'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-lg'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852229724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-lg'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-3xl'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852236635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-3xl'>\r\n+    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-2xl'>\r\n       <div className=' h-full w-full  bg-rose-500'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852311482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className='bg-blue-300 w-full md:w-3/4 overflow-hidden p-10 pt-0 rounded-2xl'>\r\n-      <div className=' h-full w-full  bg-rose-500'>\r\n+    <div className= w-full md:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+      <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852334415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className= w-full md:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-3/4 overflow-hidden p-4 pt-0 '>\r\n       <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852422342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-3/4 overflow-hidden p-4 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 overflow-hidden p-4 pt-0 '>\r\n       <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852449619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 overflow-hidden p-4 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 overflow-hidden p-6 pt-0 '>\r\n       <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852462332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 overflow-hidden p-6 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 overflow-hidden p-8 pt-0 '>\r\n       <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852511402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-8 pt-0 '>\r\n-      <div className=' h-full w-full  bg-rose-500 rounded-2xl'>\r\n+      <div className=' h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685852530392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 overflow-hidden p-8 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n       <div className=' h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n         <div>\r\n           I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n           Not sure where to start? You can try:\r\n"
+                },
+                {
+                    "date": 1685852699386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,11 @@\n import React from 'react'\r\n+import DialogList from './DialogList'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n-      <div className=' h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n-        <div>\r\n-          I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-          Not sure where to start? You can try:\r\n-        </div>\r\n-      </div>\r\n+      <DialogList/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685852817813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,12 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n+      <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n       <DialogList/>\r\n+\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685852834235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n-      <DialogList/>\r\n-\r\n+        <DialogList/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855740106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n         <DialogList/>\r\n+          \r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855793275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import React from 'react'\r\n import DialogList from './DialogList'\r\n+import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n         <DialogList/>\r\n-          \r\n+        <MessageBox/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855825804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const DialogBox = () => {\r\n   return (\r\n     <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n-      <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n+      <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685865376571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\r\n import React from 'react'\r\n import DialogList from './DialogList'\r\n import MessageBox from './MessageBox'\r\n \r\n"
+                }
+            ],
+            "date": 1685851782927,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst DialogBox = () => {\r\n  return (\r\n    <div>DialogBox</div>\r\n  )\r\n}\r\n\r\nexport default DialogBox"
+        }
+    ]
+}

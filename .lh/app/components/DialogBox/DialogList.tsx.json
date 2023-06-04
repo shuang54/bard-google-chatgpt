@@ -1,0 +1,74 @@
+{
+    "sourceFile": "app/components/DialogBox/DialogList.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1685852651513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685852700765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,14 @@\n import React from 'react'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div>DialogList</div>\r\n+    <div className=' h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n+      <div>\r\n+        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n+        Not sure where to start? You can try:\r\n+      </div>\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default DialogList\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685852736918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n import React from 'react'\r\n+import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className=' h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n-      <div>\r\n-        I’m Bard, your creative and helpful collaborator. I have limitations and won’t always get it right, but your feedback will help me improve.\r\n-        Not sure where to start? You can try:\r\n-      </div>\r\n+    <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n+      <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685852834702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl'>\r\n+    <div>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685852849090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='p-10'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685852858177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-10'>\r\n+    <div className='p-4'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855886610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4'>\r\n+    <div className='p-4 '>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855903441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 '>\r\n+    <div className='p-4 basis-3/4'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855916806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-3/4'>\r\n+    <div className='p-4 basis-4/5'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855927807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-4/5'>\r\n+    <div className='p-4 basis-9/10'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855953112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-9/10'>\r\n+    <div className='p-4 basis-10/12'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855965295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12'>\r\n+    <div className='p-4 basis-11/12'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685855974500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-11/12'>\r\n+    <div className='p-4 basis-10/12'>\r\n       <DialogItem/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685865378491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\r\n import React from 'react'\r\n import DialogItem from './DialogItem'\r\n \r\n const DialogList = () => {\r\n"
+                },
+                {
+                    "date": 1685872254964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n 'use client';\r\n import React from 'react'\r\n import DialogItem from './DialogItem'\r\n-\r\n+import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItem/>\r\n+      <DialogItemBot />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1685852651513,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst DialogList = () => {\r\n  return (\r\n    <div>DialogList</div>\r\n  )\r\n}\r\n\r\nexport default DialogList"
+        }
+    ]
+}

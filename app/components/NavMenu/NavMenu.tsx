@@ -6,10 +6,13 @@ import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'
 import { LuCalendarRange, LuMoon } from 'react-icons/lu'
 import { BsSun } from 'react-icons/bs'
+import { CookieService } from '@/app/lib/CookieService';
+import { useConversation } from '@/app/hooks/useConversation';
 const NavMenu = () => {
   const [colorTheme,setColorTheme] = useState(true);
+  const {removeAll} = useConversation();
   const resetChat = ()=>{
-    console.log('resetChat')
+    removeAll()
   }
 
   // 切换颜色主题
@@ -17,7 +20,7 @@ const NavMenu = () => {
     setColorTheme(!colorTheme)
   }
   return (
-    <div className="md:w-1/4 md:block hidden pt-2 relative" >
+    <div className="md:w-1/5 md:block hidden pt-2 relative" >
       <div>
         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />
         <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate} />
