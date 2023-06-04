@@ -1,0 +1,178 @@
+{
+    "sourceFile": "app/components/DialogBox/DialogItemHeader.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 40,
+            "patches": [
+                {
+                    "date": 1685878098386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685878650293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React from 'react'\r\n \r\n+\r\n const DialogItemHeader = () => {\r\n   return (\r\n-    <div>DialogItemHeader</div>\r\n+    <div className=\"\">DialogItemHeader</div>\r\n   )\r\n }\r\n \r\n export default DialogItemHeader\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685878732936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n-    <div className=\"\">DialogItemHeader</div>\r\n+    <div className=\"\">\r\n+      \r\n+    </div>\r\n   )\r\n }\r\n \r\n export default DialogItemHeader\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685878748760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"\">\r\n-      \r\n+      <div className=''></div>\r\n+      <div></div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685878775556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,12 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"\">\r\n-      <div className=''></div>\r\n+      <div className=''>\r\n+        <div></div>\r\n+        \r\n+      </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685878798462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"\">\r\n       <div className=''>\r\n-        <div></div>\r\n-        \r\n+        <span> View other drafts </span>\r\n+\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685878810390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n-    <div className=\"\">\r\n+    <div className=\"w-full\">\r\n       <div className=''>\r\n         <span> View other drafts </span>\r\n \r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685878821731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n-    <div className=\"w-full\">\r\n+    <div className=\"w-full h-auto\">\r\n       <div className=''>\r\n         <span> View other drafts </span>\r\n \r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685878843337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className=''>\r\n+      <div className='flex justify-end'>\r\n         <span> View other drafts </span>\r\n \r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685878869097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className='flex justify-end'>\r\n+      <div className='flex justify-end pr-4'>\r\n         <span> View other drafts </span>\r\n \r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685878944244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n import React from 'react'\r\n+import {\r\n+  IoIosArrowDown\r\n+} from 'react-icons/io'\r\n \r\n-\r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n         <span> View other drafts </span>\r\n-\r\n+        <IoIosArrowDown/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685878956431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n         <span> View other drafts </span>\r\n-        <IoIosArrowDown/>\r\n+        <IoIosArrowDown size={24}/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685878977577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n         <span> View other drafts </span>\r\n-        <IoIosArrowDown size={24}/>\r\n+        <IoIosArrowDown size={24} color='#0b57d0'/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685878997557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n         <span> View other drafts </span>\r\n-        <IoIosArrowDown size={24} color='#0b57d0'/>\r\n+        <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685879025041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n-        <span> View other drafts </span>\r\n+        <span className='text-4'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685879036040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n-        <span className='text-4'> View other drafts </span>\r\n+        <span className=' text-xs'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685879042406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className='flex justify-end pr-4'>\r\n-        <span className=' text-xs'> View other drafts </span>\r\n+        <span className=' text-sm'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685879054746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className='flex justify-end pr-4'>\r\n+      <div className='flex justify-end p-2 pr-4'>\r\n         <span className=' text-sm'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685879066258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className='flex justify-end p-2 pr-4'>\r\n+      <div className='flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n         <span className=' text-sm'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685879109033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className='flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n+      <div className='w-[160px] flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n         <span className=' text-sm'> View other drafts </span>\r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685879141938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className='w-[160px] flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n-        <span className=' text-sm'> View other drafts </span>\r\n+      <div className=' flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n+        <span className='w-[160px] text-sm'> View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n+        </span>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685879152871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className=' flex justify-end p-2 pr-4 hover:bg-zinc-200'>\r\n-        <span className='w-[160px] text-sm'> View other drafts \r\n+      <div className=' flex justify-end p-2 pr-4 '>\r\n+        <span className='w-[160px] text-sm hover:bg-zinc-200'> View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </span>\r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685879171087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <span className='w-[160px] text-sm hover:bg-zinc-200'> View other drafts \r\n+        <span className='w-[160px] text-sm hover:bg-zinc-200'> \r\n+        View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </span>\r\n       </div>\r\n       <div></div>\r\n"
+                },
+                {
+                    "date": 1685879177855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <span className='w-[160px] text-sm hover:bg-zinc-200'> \r\n+        <div className='w-[160px] text-sm hover:bg-zinc-200'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n-        </span>\r\n+        </div>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685879189519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] text-sm hover:bg-zinc-200'> \r\n+        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-start items-start'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879196604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-start items-start'> \r\n+        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-center items-center'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879206855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-center items-center'> \r\n+        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879235050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer'> \r\n+        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879352423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer'> \r\n+        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879357789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n+        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-sm'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879366261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DialogItemHeader = () => {\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n-        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-sm'> \r\n+        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685879408101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react'\r\n import {\r\n-  IoIosArrowDown\r\n+  IoIosArrowDown,\r\n+  IoIosArrowUp\r\n } from 'react-icons/io'\r\n \r\n const DialogItemHeader = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685879445324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   IoIosArrowUp\r\n } from 'react-icons/io'\r\n \r\n const DialogItemHeader = () => {\r\n+  const []\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n"
+                },
+                {
+                    "date": 1685879457769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   IoIosArrowUp\r\n } from 'react-icons/io'\r\n \r\n const DialogItemHeader = () => {\r\n-  const []\r\n+  const [isViewShow]\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n"
+                },
+                {
+                    "date": 1685879555203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,15 @@\n-import React from 'react'\r\n+import React, { useCallback, useState } from 'react'\r\n import {\r\n   IoIosArrowDown,\r\n   IoIosArrowUp\r\n } from 'react-icons/io'\r\n \r\n const DialogItemHeader = () => {\r\n-  const [isViewShow]\r\n+  const [isViewShow,setIsViewShow] = useState();\r\n+  const handleChangeViewShow = useCallback(()=>{\r\n+    setIsViewShow(!isViewShow)\r\n+  }, [isViewShow])\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 '>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n"
+                },
+                {
+                    "date": 1685879563615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   IoIosArrowUp\r\n } from 'react-icons/io'\r\n \r\n const DialogItemHeader = () => {\r\n-  const [isViewShow,setIsViewShow] = useState();\r\n+  const [isViewShow,setIsViewShow] = useState(false);\r\n   const handleChangeViewShow = useCallback(()=>{\r\n     setIsViewShow(!isViewShow)\r\n   }, [isViewShow])\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685879578291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     setIsViewShow(!isViewShow)\r\n   }, [isViewShow])\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n-      <div className=' flex justify-end p-2 pr-4 '>\r\n+      <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1685879588813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n       <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n         View other drafts \r\n         <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n+        <IoIosArrowUp size={24} color='#0b57d0' className='pl-1'/>\r\n         </div>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685879620406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,13 @@\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>\r\n         <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n         View other drafts \r\n-        <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n-        <IoIosArrowUp size={24} color='#0b57d0' className='pl-1'/>\r\n+          {isViewShow ? (\r\n+            <IoIosArrowUp size={24} color='#0b57d0' className='pl-1'/>\r\n+            ):(\r\n+            <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n+          )}\r\n         </div>\r\n       </div>\r\n       <div></div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685879725222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   }, [isViewShow])\r\n   return (\r\n     <div className=\"w-full h-auto\">\r\n       <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>\r\n-        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl'> \r\n+        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl select-none'> \r\n         View other drafts \r\n           {isViewShow ? (\r\n             <IoIosArrowUp size={24} color='#0b57d0' className='pl-1'/>\r\n             ):(\r\n"
+                },
+                {
+                    "date": 1685879760774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,13 @@\n             <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n           )}\r\n         </div>\r\n       </div>\r\n-      <div></div>\r\n+      {\r\n+        isViewShow &&(\r\n+          <div>is</div>\r\n+        )\r\n+      }\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1685878098386,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst DialogItemHeader = () => {\r\n  return (\r\n    <div>DialogItemHeader</div>\r\n  )\r\n}\r\n\r\nexport default DialogItemHeader"
+        }
+    ]
+}

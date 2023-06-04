@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -64,6 +64,34 @@
                 {
                     "date": 1685872254964,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n 'use client';\r\n import React from 'react'\r\n import DialogItem from './DialogItem'\r\n-\r\n+import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItem/>\r\n+      <DialogItemBot />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685877737477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItemBot />\r\n+      <DialogItemBot isHeader isFooter />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685877909388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItemBot isHeader isFooter />\r\n+      <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685878717697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItemBot isHeader isFooter content='default'/>\r\n+      <DialogItemBot isHeader isFooter={false} content='default'/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685878723841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      <DialogItemBot isHeader isFooter={false} content='default'/>\r\n+      <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685879282802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12'>\r\n+    <div className='p-4 basis-10/12 p4-0'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685879311169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12 p4-0'>\r\n+    <div className='p-4 basis-10/12 pt-0'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685879318106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12 pt-0'>\r\n+    <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n"
                 }
             ],
             "date": 1685852651513,

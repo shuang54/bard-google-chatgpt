@@ -5,7 +5,7 @@ import DialogItemBot from './DialogItemBot';
 const DialogList = () => {
   return (
     <div className='p-4 basis-10/12'>
-      <DialogItemBot />
+      <DialogItemBot isHeader isFooter content='default'/>
     </div>
   )
 }

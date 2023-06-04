@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/components/DialogBox/DialogItemFooter.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685878113809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685878113809,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst DialogItemFooter = () => {\r\n  return (\r\n    <div>DialogItemFooter</div>\r\n  )\r\n}\r\n\r\nexport default DialogItemFooter"
+        }
+    ]
+}
