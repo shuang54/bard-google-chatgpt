@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 40,
+            "activePatchIndex": 102,
             "patches": [
                 {
                     "date": 1685878098386,
@@ -168,6 +168,254 @@
                 {
                     "date": 1685879760774,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,13 @@\n             <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>\r\n           )}\r\n         </div>\r\n       </div>\r\n-      <div></div>\r\n+      {\r\n+        isViewShow &&(\r\n+          <div>is</div>\r\n+        )\r\n+      }\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685880144080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         </div>\r\n       </div>\r\n       {\r\n         isViewShow &&(\r\n-          <div>is</div>\r\n+          <div></div>\r\n         )\r\n       }\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685880180567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,12 @@\n         </div>\r\n       </div>\r\n       {\r\n         isViewShow &&(\r\n-          <div></div>\r\n+          <div className='flex justify-center items-center'>\r\n+            <div></div>\r\n+            <div></div>\r\n+          </div>\r\n         )\r\n       }\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685880194473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n       </div>\r\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n+            <div className='flex justify-center items-center gap-4'></div>\r\n             <div></div>\r\n-            <div></div>\r\n           </div>\r\n         )\r\n       }\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685880210020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,13 @@\n       </div>\r\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n-            <div className='flex justify-center items-center gap-4'></div>\r\n+            <div className='flex justify-center items-center gap-4'>\r\n+              <div>\r\n+                \r\n+              </div>\r\n+            </div>\r\n             <div></div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685880231322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div>\r\n-                \r\n+                <span></span>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685880237408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div>\r\n-                <span></span>\r\n+                <span>Draft 1</span>\r\n+                <p></p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685880250879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div>\r\n                 <span>Draft 1</span>\r\n-                <p></p>\r\n+                <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685880263616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div>\r\n+              <div className=''>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880268996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className=''>\r\n+              <div className='flex flex-col\r\n+              '>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880277135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col\r\n-              '>\r\n+              <div className='flex flex-col p-3'>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880288986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3'>\r\n+              <div className='flex flex-col p-3 border '>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880298195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border '>\r\n+              <div className='flex flex-col p-3 border rounded-sm'>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880307645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-sm'>\r\n+              <div className='flex flex-col p-3 border rounded-xl'>\r\n                 <span>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880334473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl'>\r\n-                <span>Draft 1</span>\r\n+                <span className='text-[12px]'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880347118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl'>\r\n-                <span className='text-[12px]'>Draft 1</span>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n+                <span className=''>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880364763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className=''>Draft 1</span>\r\n+                <span className=' bg-zinc-200 rounded-md'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880397667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className=' bg-zinc-200 rounded-md'>Draft 1</span>\r\n+                <span className=' p-1 bg-zinc-200 rounded-md'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880410066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className=' p-1 bg-zinc-200 rounded-md'>Draft 1</span>\r\n+                <span className=' bg-zinc-200 rounded-md'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880429694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className=' bg-zinc-200 rounded-md'>Draft 1</span>\r\n+                <span className='w-[56px] bg-zinc-200 rounded-md'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880440779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px] bg-zinc-200 rounded-md'>Draft 1</span>\r\n+                <span className='w-[56px] pl-1 bg-zinc-200 rounded-md'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880450947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px] pl-1 bg-zinc-200 rounded-md'>Draft 1</span>\r\n+                <span className='w-[56px] pl-1 bg-zinc-200 rounded-xl'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880465581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px] pl-1 bg-zinc-200 rounded-xl'>Draft 1</span>\r\n+                <span className='w-[56px] pl-1 bg-zinc-200 rounded-xl text-center'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880472658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px] pl-1 bg-zinc-200 rounded-xl text-center'>Draft 1</span>\r\n+                <span className='w-[56px]  bg-zinc-200 rounded-xl text-center'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880503569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px]  bg-zinc-200 rounded-xl text-center'>Draft 1</span>\r\n+                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880516877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center'>Draft 1</span>\r\n+                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center hover:bg-[#e5e6e7]'>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880528689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px]'>\r\n-                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center hover:bg-[#e5e6e7]'>Draft 1</span>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7]'>\r\n+                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685880536427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7]'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880550785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer shadow-orange-50'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880600122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer shadow-orange-50'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer shadow-orange-50 transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880633121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer shadow-orange-50 transition-all'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-2xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880687309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-2xl transition-all'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880704140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 transition-all'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 border-black transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880713215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 border-black transition-all'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880759541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer drop-shadow-lg hover:border-b-2 transition-all'>\r\n+              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880794648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n+              <div className='flex flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880807319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-                <p>Hi there! How can I help you today?</p>\r\n+                <p className='pt-4'>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685880814097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n               <div className='flex flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-                <p className='pt-4'>Hi there! How can I help you today?</p>\r\n+                <p className='pt-2'>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1685880870278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex justify-center items-center gap-4'>\r\n-              <div className='flex flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n+              <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p className='pt-2'>Hi there! How can I help you today?</p>\r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685880887050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       </div>\r\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n-            <div className='flex justify-center items-center gap-4'>\r\n+            <div className='flex w-full justify-center items-center gap-4'>\r\n               <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n                 <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n                 <p className='pt-2'>Hi there! How can I help you today?</p>\r\n               </div>\r\n"
+                },
+                {
+                    "date": 1685880971505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import {\r\n   IoIosArrowDown,\r\n   IoIosArrowUp\r\n } from 'react-icons/io'\r\n+import OtherDraftItem from './OtherDraftItem';\r\n \r\n const DialogItemHeader = () => {\r\n   const [isViewShow,setIsViewShow] = useState(false);\r\n   const handleChangeViewShow = useCallback(()=>{\r\n@@ -24,12 +25,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n-              <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n-                <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-                <p className='pt-2'>Hi there! How can I help you today?</p>\r\n-              </div>\r\n+              <OtherDraftItem/>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685880991015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         </div>\r\n       </div>\r\n       {\r\n         isViewShow &&(\r\n-          <div className='flex justify-center items-center'>\r\n+          <div className='flex justify-center items-center pm-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685881000409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         </div>\r\n       </div>\r\n       {\r\n         isViewShow &&(\r\n-          <div className='flex justify-center items-center pm-4'>\r\n+          <div className='flex justify-center items-center pb-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div></div>\r\n"
+                },
+                {
+                    "date": 1685881008167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n         isViewShow &&(\r\n           <div className='flex justify-center items-center pb-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n+              <OtherDraftItem/>\r\n             </div>\r\n             <div></div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881066780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React, { useCallback, useState } from 'react'\r\n import {\r\n   IoIosArrowDown,\r\n-  IoIosArrowUp\r\n+  IoIosArrowUp,\r\n+  IoMdRefresh\r\n } from 'react-icons/io'\r\n import OtherDraftItem from './OtherDraftItem';\r\n-\r\n const DialogItemHeader = () => {\r\n   const [isViewShow,setIsViewShow] = useState(false);\r\n   const handleChangeViewShow = useCallback(()=>{\r\n     setIsViewShow(!isViewShow)\r\n"
+                },
+                {
+                    "date": 1685881075514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,11 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div></div>\r\n+            <div>\r\n+              <IoMdRefresh/>\r\n+            </div>\r\n           </div>\r\n         )\r\n       }\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685881097592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div>\r\n+            <div className='border rounded-xl'>\r\n               <IoMdRefresh/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881104410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-xl'>\r\n+            <div className='border rounded-xl '>\r\n               <IoMdRefresh/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881122003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div className='border rounded-xl '>\r\n-              <IoMdRefresh/>\r\n+              <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685881127731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-xl '>\r\n+            <div className='border rounded-xl h-[104px] '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881140112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-xl h-[104px] '>\r\n+            <div className='border rounded-xl h-[104px] flex justify-center items-center '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881151611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-xl h-[104px] flex justify-center items-center '>\r\n+            <div className='border rounded-xl h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881160146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-xl h-[104px] w-[40px] flex justify-center items-center '>\r\n+            <div className='border rounded-3xl h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881168776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-3xl h-[104px] w-[40px] flex justify-center items-center '>\r\n+            <div className='border rounded-3xl ml-4 h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881179821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-3xl ml-4 h-[104px] w-[40px] flex justify-center items-center '>\r\n+            <div className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={24}/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881188607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n-              <IoMdRefresh size={24}/>\r\n+              <IoMdRefresh size={28}/>\r\n             </div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685881204778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n-              <IoMdRefresh size={28}/>\r\n+              <IoMdRefresh size={28} color='#3a57d0'/>\r\n             </div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685881212579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n             <div className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n-              <IoMdRefresh size={28} color='#3a57d0'/>\r\n+              <IoMdRefresh size={24} color='#3a57d0'/>\r\n             </div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685881232923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n-              <IoMdRefresh size={24} color='#3a57d0'/>\r\n+            <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n+              <IoMdRefresh size={18} color='#3a57d0'/>\r\n             </div>\r\n           </div>\r\n         )\r\n       }\r\n"
+                },
+                {
+                    "date": 1685881333000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div className='flex w-full justify-center items-center gap-4'>\r\n               <OtherDraftItem/>\r\n               <OtherDraftItem/>\r\n             </div>\r\n-            <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer h-[104px] w-[40px] flex justify-center items-center '>\r\n+            <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={18} color='#3a57d0'/>\r\n             </div>\r\n           </div>\r\n         )\r\n"
+                },
+                {
+                    "date": 1685881512815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center pb-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n+              <OtherDraftItem step={}/>\r\n               <OtherDraftItem/>\r\n-              <OtherDraftItem/>\r\n             </div>\r\n             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={18} color='#3a57d0'/>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685881545931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center pb-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n-              <OtherDraftItem step={}/>\r\n-              <OtherDraftItem/>\r\n+              <OtherDraftItem step=\"Draft 1\" content='Draft 1'/>\r\n+              <OtherDraftItem step=\"Draft 2\" content='Draft 1'/>\r\n             </div>\r\n             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={18} color='#3a57d0'/>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1685881559769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       {\r\n         isViewShow &&(\r\n           <div className='flex justify-center items-center pb-4'>\r\n             <div className='flex w-full justify-center items-center gap-4'>\r\n-              <OtherDraftItem step=\"Draft 1\" content='Draft 1'/>\r\n+              <OtherDraftItem step=\"Draft 1\" content='Hi there! How can I help you today?'/>\r\n               <OtherDraftItem step=\"Draft 2\" content='Draft 1'/>\r\n             </div>\r\n             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>\r\n               <IoMdRefresh size={18} color='#3a57d0'/>\r\n"
                 }
             ],
             "date": 1685878098386,

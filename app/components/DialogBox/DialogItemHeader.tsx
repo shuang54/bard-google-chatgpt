@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react'
 import {
   IoIosArrowDown,
-  IoIosArrowUp
+  IoIosArrowUp,
+  IoMdRefresh
 } from 'react-icons/io'
-
+import OtherDraftItem from './OtherDraftItem';
 const DialogItemHeader = () => {
   const [isViewShow,setIsViewShow] = useState(false);
   const handleChangeViewShow = useCallback(()=>{
@@ -23,7 +24,15 @@ const DialogItemHeader = () => {
       </div>
       {
         isViewShow &&(
-          <div>is</div>
+          <div className='flex justify-center items-center pb-4'>
+            <div className='flex w-full justify-center items-center gap-4'>
+              <OtherDraftItem step="Draft 1" content='Hi there! How can I help you today?'/>
+              <OtherDraftItem step="Draft 2" content='Hi there! How can I help you today?'/>
+            </div>
+            <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>
+              <IoMdRefresh size={18} color='#3a57d0'/>
+            </div>
+          </div>
         )
       }
     </div>

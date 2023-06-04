@@ -1,0 +1,50 @@
+{
+    "sourceFile": "app/components/DialogBox/OtherDraftItem.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1685880966130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685881282302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const OtherDraftItem = () => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n+      <p className='pt-2'>Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685881296586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const OtherDraftItem = () => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-      <p className='pt-2'>Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?</p>\r\n+      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685881323173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const OtherDraftItem = () => {\r\n   return (\r\n-    <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n+    <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n       <p className='pt-2'>Hi there! How can I help you today?</p>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685881345361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const OtherDraftItem = () => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n+      <p className='pt-2'>Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685881351778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const OtherDraftItem = () => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-      <p className='pt-2'>Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?Hi there! How can I help you today?</p>\r\n+      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685881451462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n import React from 'react'\r\n \r\n+interface otherDraftItemProps {\r\n+  step:number;\r\n+  content:string;\r\n+}\r\n+\r\n const OtherDraftItem = () => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n"
+                },
+                {
+                    "date": 1685881505518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,16 @@\n   step:number;\r\n   content:string;\r\n }\r\n \r\n-const OtherDraftItem = () => {\r\n+const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n+  step,\r\n+  content\r\n+}) => {\r\n   return (\r\n     <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n-      <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n-      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n+      <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>{step}</span>\r\n+      <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685881535436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n \r\n interface otherDraftItemProps {\r\n-  step:number;\r\n+  step:string;\r\n   content:string;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n"
+                }
+            ],
+            "date": 1685880966130,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst OtherDraftItem = () => {\r\n  return (\r\n    <div className='flex basis-1/2 flex-col h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n      <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>Draft 1</span>\r\n      <p className='pt-2'>Hi there! How can I help you today?</p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default OtherDraftItem"
+        }
+    ]
+}
