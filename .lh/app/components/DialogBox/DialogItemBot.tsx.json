@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -60,6 +60,10 @@
                 {
                     "date": 1685879339404,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n   return (\r\n-    <div className='bg-white p-4 rounded-2xl'>\r\n+    <div className='bg-white p-4 rounded-2xl pt-0'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
+                },
+                {
+                    "date": 1685967007040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n   return (\r\n-    <div className='bg-white p-4 rounded-2xl pt-0'>\r\n+    <div className='bg-white p-4 rounded-2xl pt-0 mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
                 }
             ],
             "date": 1685872231142,

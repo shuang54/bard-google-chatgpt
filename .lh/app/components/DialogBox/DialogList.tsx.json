@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -92,6 +92,54 @@
                 {
                     "date": 1685879318106,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12 pt-0'>\r\n+    <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685966911071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n+      <DialogItem />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685966925841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12'>\r\n+    <div className='p-4 basis-10/12 gap-4'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685966933320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12 gap-4'>\r\n+    <div className='p-4 basis-10/12 gap-6'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685966940163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n const DialogList = () => {\r\n   return (\r\n-    <div className='p-4 basis-10/12 gap-6'>\r\n+    <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685968258927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogList = () => {\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n-      <DialogItem />\r\n+      <DialogItem content='hello' />\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685968354642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n 'use client';\r\n import React from 'react'\r\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n+import { useConversation } from '@/app/hooks/useConversation';\r\n const DialogList = () => {\r\n+  // 对话记录\r\n+  const { conversation, addMessage, deleteMessage } = useConversation();\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem content='hello' />\r\n"
+                },
+                {
+                    "date": 1685968426012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { useConversation } from '@/app/hooks/useConversation';\r\n const DialogList = () => {\r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n+  console.log(conversation)\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem content='hello' />\r\n"
+                },
+                {
+                    "date": 1685968499302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,11 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n+      {conversation.map((item)=>{\r\n+\r\n+      })}\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem content='hello' />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685968512824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      {conversation.map((item)=>{\r\n-\r\n-      })}\r\n+      \r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem content='hello' />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685968579139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,13 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      \r\n+      {\r\n+        conversation.map((item)=>(\r\n+          if(item.role)\r\n+        ))\r\n+      }\r\n       <DialogItemBot isHeader isFooter content='default'/>\r\n       <DialogItem content='hello' />\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685968744777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,17 +6,22 @@\n const DialogList = () => {\r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n+  const lists = conversation.map((item)=>{\r\n+    if(item.role == 'user'){\r\n+      return (\r\n+        <DialogItem key={item.id} content='hello' />\r\n+      )\r\n+    }else{\r\n+      return (\r\n+        <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n+      )\r\n+    }\r\n+  })\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      {\r\n-        conversation.map((item)=>(\r\n-          if(item.role)\r\n-        ))\r\n-      }\r\n-      <DialogItemBot isHeader isFooter content='default'/>\r\n-      <DialogItem content='hello' />\r\n+      \r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685968777168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }\r\n   })\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n-      \r\n+      {lists}\r\n     </div>\r\n   )\r\n }\r\n \r\n"
                 }
             ],
             "date": 1685852651513,
