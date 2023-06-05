@@ -3,11 +3,59 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1685779266953,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685965061126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n       px-4\r\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n+       cursor-pointer\r\n     \"\r\n     >\r\n       {label}\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685965126801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,18 @@\n 'use client';\r\n \r\n+import { IconType } from \"react-icons/lib\";\r\n+\r\n interface MenuItemProps {\r\n   onClick: () => void;\r\n-  label: string\r\n+  label: string;\r\n+  icon?:IconType\r\n }\r\n \r\n const MenuItem: React.FC<MenuItemProps> = ({\r\n   onClick,\r\n-  label\r\n+  label,\r\n+  icon\r\n }) => {\r\n   return (\r\n     <div\r\n       onClick={onClick}\r\n"
+                },
+                {
+                    "date": 1685965183664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n const MenuItem: React.FC<MenuItemProps> = ({\r\n   onClick,\r\n   label,\r\n-  icon\r\n+  icon:Icon\r\n }) => {\r\n   return (\r\n     <div\r\n       onClick={onClick}\r\n@@ -23,8 +23,9 @@\n       font-semibold\r\n        cursor-pointer\r\n     \"\r\n     >\r\n+      <Icon />\r\n       {label}\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1685965204211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,11 @@\n       font-semibold\r\n        cursor-pointer\r\n     \"\r\n     >\r\n-      <Icon />\r\n+      {Icon && (\r\n+        <Icon />\r\n+      )}\r\n       {label}\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1685965358630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,15 +15,16 @@\n }) => {\r\n   return (\r\n     <div\r\n       onClick={onClick}\r\n-      className=\"\r\n+      className={`\r\n       px-4\r\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n        cursor-pointer\r\n-    \"\r\n+      ${Icon ? 'flex justify-center items-center' : ''}\r\n+    `}\r\n     >\r\n       {Icon && (\r\n         <Icon />\r\n       )}\r\n"
+                },
+                {
+                    "date": 1685965363866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n        cursor-pointer\r\n-      ${Icon ? 'flex justify-center items-center' : ''}\r\n+      ${Icon ? 'flex justify-start items-center' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n         <Icon />\r\n"
+                },
+                {
+                    "date": 1685965373370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       ${Icon ? 'flex justify-start items-center' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon />\r\n+        <Icon size={48} />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1685965380252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       ${Icon ? 'flex justify-start items-center' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon size={48} />\r\n+        <Icon size={24} />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1685965389719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       ${Icon ? 'flex justify-start items-center' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon size={24} />\r\n+        <Icon size={24} pr-2 />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1685965396821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       ${Icon ? 'flex justify-start items-center' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon size={24} pr-2 />\r\n+        <Icon size={24} className=\"pr-2\" />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1685965406514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n        cursor-pointer\r\n-      ${Icon ? 'flex justify-start items-center' : ''}\r\n+      ${Icon ? 'flex justify-start items-center gap-2' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n         <Icon size={24} className=\"pr-2\" />\r\n"
+                },
+                {
+                    "date": 1685965418379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n        cursor-pointer\r\n-      ${Icon ? 'flex justify-start items-center gap-2' : ''}\r\n+      ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon size={24} className=\"pr-2\" />\r\n+        <Icon size={24} className=\"\" />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
                 }
             ],
             "date": 1685779266953,
