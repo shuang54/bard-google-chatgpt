@@ -4,6 +4,7 @@ import { CookieService } from '@/app/lib/CookieService';
 import React, { useEffect, useRef, useState } from 'react'
 import { AiFillAudio } from 'react-icons/ai'
 import { RiSendPlane2Line } from 'react-icons/ri'
+import { getCurrentTime } from '@/app/lib/tools'
 const MessageBox = () => {
   // 创建一个 state 来保存 textarea 的值和高度
   const [value, setValue] = useState('');
@@ -31,7 +32,7 @@ const MessageBox = () => {
   // console.log(conversation)
   const handleSendMessage = ()=>{
     if(value==="") return;
-    addMessage({ content: value, role:'user'})
+    addMessage({ content: value, role:'user',date:getCurrentTime(),id:})
     setValue("")
     // console.log(conversation)
     // console.log(CookieService.getItem('conversation'));

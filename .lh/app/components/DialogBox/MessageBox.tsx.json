@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 219,
+            "activePatchIndex": 224,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -884,6 +884,26 @@
                 {
                     "date": 1685871732747,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,10 @@\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n     addMessage({ content: value, role:'user'})\r\n     setValue(\"\")\r\n-    console.log(conversation)\r\n-    console.log(CookieService.getItem('conversation'));\r\n+    // console.log(conversation)\r\n+    // console.log(CookieService.getItem('conversation'));\r\n   }\r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n"
+                },
+                {
+                    "date": 1685968894388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role:'user'})\r\n+    addMessage({ content: value, role:'user',})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
+                },
+                {
+                    "date": 1685969085418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { CookieService } from '@/app/lib/CookieService';\r\n import React, { useEffect, useRef, useState } from 'react'\r\n import { AiFillAudio } from 'react-icons/ai'\r\n import { RiSendPlane2Line } from 'react-icons/ri'\r\n+import { getCurrentTime } from '@/app/lib/tools'\r\n const MessageBox = () => {\r\n   // 创建一个 state 来保存 textarea 的值和高度\r\n   const [value, setValue] = useState('');\r\n   const [height, setHeight] = useState('24');\r\n"
+                },
+                {
+                    "date": 1685969106158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n+  console.log(getCurrentTime())\r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n"
+                },
+                {
+                    "date": 1685969138911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n-  console.log(getCurrentTime())\r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n"
+                },
+                {
+                    "date": 1685969152053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role:'user',})\r\n+    addMessage({ content: value, role:'user',date:getCurrentTime(),id:})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
                 }
             ],
             "date": 1685855786092,
