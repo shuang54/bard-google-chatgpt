@@ -5,7 +5,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { AiFillAudio } from 'react-icons/ai'
 import { RiSendPlane2Line } from 'react-icons/ri'
 import { getCurrentTime } from '@/app/lib/tools'
+import { v4 as uuidv4 } from 'uuid';
 const MessageBox = () => {
+  // uuid获取随机id
+  const randomId = uuidv4();
+
   // 创建一个 state 来保存 textarea 的值和高度
   const [value, setValue] = useState('');
   const [height, setHeight] = useState('24');
@@ -32,10 +36,8 @@ const MessageBox = () => {
   // console.log(conversation)
   const handleSendMessage = ()=>{
     if(value==="") return;
-    addMessage({ content: value, role:'user',date:getCurrentTime(),id:})
+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})
     setValue("")
-    // console.log(conversation)
-    // console.log(CookieService.getItem('conversation'));
   }
   return (
     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>

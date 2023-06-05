@@ -18,7 +18,7 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
   content
 }) => {
   return (
-    <div className='bg-white p-4 rounded-2xl pt-0 mb-2'>
+    <div className='bg-white p-4 rounded-2xl  mb-2'>
       {isHeader && 
       <DialogItemHeader  />
       }

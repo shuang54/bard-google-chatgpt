@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1685865948822,
@@ -40,6 +40,10 @@
                 {
                     "date": 1685867349805,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n export type ConversationItem = {\r\n   content: string\r\n-  role: 'user' | 'bot' | 'system'\r\n-  date?:string\r\n-  id?:number\r\n+  role: 'user' | 'assistant' | 'system'\r\n+  date?: string\r\n+  id?: number\r\n }\r\n"
+                },
+                {
+                    "date": 1685970269576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n export type ConversationItem = {\r\n   content: string\r\n   role: 'user' | 'assistant' | 'system'\r\n   date?: string\r\n-  id?: number\r\n+  id?: number | string\r\n }\r\n"
                 }
             ],
             "date": 1685865948822,

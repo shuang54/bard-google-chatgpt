@@ -7,7 +7,8 @@ const DialogList = () => {
   // 对话记录
   const { conversation, addMessage, deleteMessage } = useConversation();
   console.log(conversation)
-  const lists = conversation.map((item)=>{
+  const lists = conversation.length > 0 ? (
+  conversation.map((item)=>{
     if(item.role == 'user'){
       return (
         <DialogItem key={item.id} content='hello' />
@@ -17,7 +18,7 @@ const DialogList = () => {
         <DialogItemBot key={item.id} isHeader isFooter content='default' />
       )
     }
-  })
+  })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)
   return (
     <div className='p-4 basis-10/12'>
       {lists}

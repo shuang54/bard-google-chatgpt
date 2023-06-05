@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 224,
+            "activePatchIndex": 227,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -904,6 +904,18 @@
                 {
                     "date": 1685969152053,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role:'user',})\r\n+    addMessage({ content: value, role:'user',date:getCurrentTime(),id:})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
+                },
+                {
+                    "date": 1685969231197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import React, { useEffect, useRef, useState } from 'react'\r\n import { AiFillAudio } from 'react-icons/ai'\r\n import { RiSendPlane2Line } from 'react-icons/ri'\r\n import { getCurrentTime } from '@/app/lib/tools'\r\n+import { v4 as uuidv4 } from 'uuid';\r\n const MessageBox = () => {\r\n   // 创建一个 state 来保存 textarea 的值和高度\r\n   const [value, setValue] = useState('');\r\n   const [height, setHeight] = useState('24');\r\n"
+                },
+                {
+                    "date": 1685969272360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,11 @@\n import { RiSendPlane2Line } from 'react-icons/ri'\r\n import { getCurrentTime } from '@/app/lib/tools'\r\n import { v4 as uuidv4 } from 'uuid';\r\n const MessageBox = () => {\r\n+  // uuid获取随机id\r\n+  const randomId = uuidv4();\r\n+\r\n   // 创建一个 state 来保存 textarea 的值和高度\r\n   const [value, setValue] = useState('');\r\n   const [height, setHeight] = useState('24');\r\n   // 创建一个 ref 来引用 textarea 元素\r\n@@ -32,9 +35,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role:'user',date:getCurrentTime(),id:})\r\n+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId()})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
+                },
+                {
+                    "date": 1685970221723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId()})\r\n+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
                 }
             ],
             "date": 1685855786092,
