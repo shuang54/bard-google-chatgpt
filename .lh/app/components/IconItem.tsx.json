@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/components/IconItem.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1685940438530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685941663911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   title,\r\n   icon:Icon\r\n }) => {\r\n   return (\r\n-    <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n+    <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] active:bg-zinc-300 transition-all'>\r\n       <Icon size={18} color='#0b57d0' />\r\n     </div>\r\n   )\r\n }\r\n"
+                }
+            ],
+            "date": 1685940438530,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport { IconType } from 'react-icons/lib';\r\ninterface iconItemProps {\r\n  title?:string;\r\n  icon:IconType\r\n}\r\n\r\nconst IconItem: React.FC<iconItemProps> = ({\r\n  title,\r\n  icon:Icon\r\n}) => {\r\n  return (\r\n    <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n      <Icon size={18} color='#0b57d0' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default IconItem"
+        }
+    ]
+}

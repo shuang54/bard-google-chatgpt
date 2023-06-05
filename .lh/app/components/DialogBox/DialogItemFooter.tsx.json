@@ -3,11 +3,267 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 64,
             "patches": [
                 {
                     "date": 1685878113809,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685939572212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import React from 'react'\r\n \r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div>DialogItemFooter</div>\r\n+    <div>\r\n+      <div></div>\r\n+      <div></div>\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default DialogItemFooter\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685939630752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react'\r\n+import { FaEllipsisVertical } from 'react-icons/fa'\r\n \r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1685939654415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import { FaEllipsisVertical } from 'react-icons/fa'\r\n+import { FaEllipsisV } from 'react-icons/fa'\r\n \r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1685939666509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n       <div></div>\r\n-      <div></div>\r\n+      <div>\r\n+        <FaEllipsisV />\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685939721143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,12 @@\n \r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n-      <div></div>\r\n       <div>\r\n+        \r\n+      </div>\r\n+      <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685939829079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react'\r\n import { FaEllipsisV } from 'react-icons/fa'\r\n-\r\n+import { LuThumbsUp } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        \r\n+        <div></div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685939836378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <div></div>\r\n+        <div><LuThumbsUp/></div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685939856239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import { FaEllipsisV } from 'react-icons/fa'\r\n-import { LuThumbsUp } from 'react-icons/lu'\r\n+import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685939945162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,15 @@\n import React from 'react'\r\n import { FaEllipsisV } from 'react-icons/fa'\r\n+import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n         <div><LuThumbsUp/></div>\r\n+        <div><LuThumbsDown /></div>\r\n+        <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685939974049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='flex justify-between items-center'>\r\n       <div>\r\n         <div><LuThumbsUp/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n"
+                },
+                {
+                    "date": 1685939992980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div className='flex justify-between items-center'>\r\n+    <div className='flex justify-between items-center pl-10'>\r\n       <div>\r\n         <div><LuThumbsUp/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n"
+                },
+                {
+                    "date": 1685940000829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div className='flex justify-between items-center pl-10'>\r\n+    <div className='flex justify-between items-center pl-18'>\r\n       <div>\r\n         <div><LuThumbsUp/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n"
+                },
+                {
+                    "date": 1685940020502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div className='flex justify-between items-center pl-18'>\r\n+    <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div>\r\n         <div><LuThumbsUp/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n"
+                },
+                {
+                    "date": 1685940037986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n-      <div>\r\n+      <div className='flex justify-center items-center'>\r\n         <div><LuThumbsUp/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685940054741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div><LuThumbsUp/></div>\r\n+        <div ><LuThumbsUp size={50}/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940061423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div ><LuThumbsUp size={50}/></div>\r\n+        <div ><LuThumbsUp size={50} className='p-4'/></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940087881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div ><LuThumbsUp size={50} className='p-4'/></div>\r\n+        <div className='p-4'><LuThumbsUp size={50} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940101945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-4'><LuThumbsUp size={50} /></div>\r\n+        <div className='p-4'><LuThumbsUp size={32} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940107091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-4'><LuThumbsUp size={32} /></div>\r\n+        <div className='p-4'><LuThumbsUp size={24} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940112290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-4'><LuThumbsUp size={24} /></div>\r\n+        <div className='p-4'><LuThumbsUp size={28} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940124722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-4'><LuThumbsUp size={28} /></div>\r\n+        <div className='p-2'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940130779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-3'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940144934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-3'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-3 border rounded-sm'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940150789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-3 border rounded-sm'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-3 border rounded-xk'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940158197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-3 border rounded-xk'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-3 border rounded-md'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940167599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-3 border rounded-md'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-2 border rounded-md'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940180196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border rounded-md'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-3 border rounded-md'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940187902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-3 border rounded-md'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-2 border rounded-md'><LuThumbsUp size={18} /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940203737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border rounded-md'><LuThumbsUp size={18} /></div>\r\n+        <div className='p-2 border rounded-md'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940220387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border rounded-md'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940238665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md hover:bg-'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940243841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md hover:bg-'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940255970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940478035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n import React from 'react'\r\n import { FaEllipsisV } from 'react-icons/fa'\r\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n+import IconItem from '../IconItem'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div>\r\n+        {/* <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div> */}\r\n+        <IconItem icon={LuThumbsUp} />\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685940485211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n-        {/* <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'><LuThumbsUp size={18} color='#0b57d0' /></div> */}\r\n         <IconItem icon={LuThumbsUp} />\r\n         <div><LuThumbsDown /></div>\r\n         <div><MdOutlineFileUpload /></div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685940493111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n       <div className='flex justify-center items-center'>\r\n         <IconItem icon={LuThumbsUp} />\r\n-        <div><LuThumbsDown /></div>\r\n-        <div><MdOutlineFileUpload /></div>\r\n+        <IconItem icon={LuThumbsDown} />\r\n+        <IconItem icon={MdOutlineFileUpload} />\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685940514613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import IconItem from '../IconItem'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n-      <div className='flex justify-center items-center'>\r\n+      <div className='flex justify-center items-center gap-4'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685941111466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,20 @@\n import { FaEllipsisV } from 'react-icons/fa'\r\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n import IconItem from '../IconItem'\r\n+import GoogleImg from '@/public/images/Google.svg.png'\r\n+import Image from 'next/image'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n-      <div className='flex justify-center items-center gap-4'>\r\n+      <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n+          <Image src=\"@/public/images/Google.svg.png\" alt=\"Google\" />\r\n+        </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685941127266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n-          <Image src=\"@/public/images/Google.svg.png\" alt=\"Google\" />\r\n+          <Image width={32} height={32} src=\"@/public/images/Google.svg.png\" alt=\"Google\" />\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941136269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n import { FaEllipsisV } from 'react-icons/fa'\r\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n import IconItem from '../IconItem'\r\n-import GoogleImg from '@/public/images/Google.svg.png'\r\n import Image from 'next/image'\r\n const DialogItemFooter = () => {\r\n   return (\r\n     <div className='flex justify-between items-center pl-16 pr-2'>\r\n"
+                },
+                {
+                    "date": 1685941147083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n-          <Image width={32} height={32} src=\"@/public/images/Google.svg.png\" alt=\"Google\" />\r\n+          <Image width={32} height={32} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941166904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n           <Image width={32} height={32} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n+          <span>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941181658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n+        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n           <Image width={32} height={32} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span>Google it</span>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685941191465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n-          <Image width={32} height={32} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n+          <Image width={12} height={12} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685941197867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n-          <Image width={12} height={12} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n+          <Image width={14} height={14} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685941210603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n-          <Image width={14} height={14} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n+          <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1685941231793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n           <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n-          <span>Google it</span>\r\n+          <span className='text-'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941242306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n           <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n-          <span className='text-'>Google it</span>\r\n+          <span className='text-[14px]'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941254008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n         <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n           <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n-          <span className='text-[14px]'>Google it</span>\r\n+          <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n         <FaEllipsisV />\r\n"
+                },
+                {
+                    "date": 1685941281038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n-        <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n+        <div className='p-2 border h-[36px] border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n           <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685941305287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import IconItem from '../IconItem'\r\n import Image from 'next/image'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div className='flex justify-between items-center pl-16 pr-2'>\r\n+    <div className='flex justify-between items-center p-2 pl-16 '>\r\n       <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n"
+                },
+                {
+                    "date": 1685941319939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import IconItem from '../IconItem'\r\n import Image from 'next/image'\r\n const DialogItemFooter = () => {\r\n   return (\r\n-    <div className='flex justify-between items-center p-2 pl-16 '>\r\n+    <div className='flex justify-between items-center p-2 pt-6 pl-16 '>\r\n       <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n"
+                },
+                {
+                    "date": 1685941408506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n           <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n-        <FaEllipsisV />\r\n+        <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n+          <FaEllipsisV size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+        </div>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685941421148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-          <FaEllipsisV size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+          <FaEllipsisV size={32} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941427754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-          <FaEllipsisV size={32} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+          <FaEllipsisV size={36} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941438044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-          <FaEllipsisV size={36} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+          <FaEllipsisV size={42} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941477448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import { FaEllipsisV } from 'react-icons/fa'\r\n+import { HiEllipsisVertical } from 'react-icons/hi2'\r\n import { MdOutlineFileUpload } from 'react-icons/md'\r\n import { LuThumbsUp, LuThumbsDown } from 'react-icons/lu'\r\n import IconItem from '../IconItem'\r\n import Image from 'next/image'\r\n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-          <FaEllipsisV size={42} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+          <HiEllipsisVertical size={42} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941485653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n-          <HiEllipsisVertical size={42} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941580052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n           <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n-        <div className=\" flex flex-row justify-center items-center gap-3 \">\r\n+        <div className=\" flex flex-row justify-center items-center gap-3 active:bg-zinc-700 \">\r\n           <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1685941596785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n           <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n       <div>\r\n-        <div className=\" flex flex-row justify-center items-center gap-3 active:bg-zinc-700 \">\r\n-          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 \" />\r\n+        <div className=\" flex flex-row justify-center items-center gap-3  \">\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-700\" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941604247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3  \">\r\n-          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-700\" />\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-400\" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941620570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3  \">\r\n-          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-400\" />\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300\" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941635131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         </div>\r\n       </div>\r\n       <div>\r\n         <div className=\" flex flex-row justify-center items-center gap-3  \">\r\n-          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300\" />\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685941664304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       <div className='flex justify-center items-center gap-3'>\r\n         <IconItem icon={LuThumbsUp} />\r\n         <IconItem icon={LuThumbsDown} />\r\n         <IconItem icon={MdOutlineFileUpload} />\r\n-        <div className='p-2 border h-[36px] border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center'>\r\n+        <div className='p-2 border h-[36px] border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] flex justify-center items-center active:bg-zinc-300 transition-all'>\r\n           <Image width={16} height={16} src=\"/images/Google.svg.png\" alt=\"Google\" />\r\n           <span className='text-[14px] ml-2'>Google it</span>\r\n         </div>\r\n       </div>\r\n"
                 }
             ],
             "date": 1685878113809,
