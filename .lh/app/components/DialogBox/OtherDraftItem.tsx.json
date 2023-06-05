@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1685880966130,
@@ -40,6 +40,58 @@
                 {
                     "date": 1685881535436,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n \r\n interface otherDraftItemProps {\r\n-  step:number;\r\n+  step:string;\r\n   content:string;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n"
+                },
+                {
+                    "date": 1685926068498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,18 @@\n \r\n interface otherDraftItemProps {\r\n   step:string;\r\n   content:string;\r\n+  handleAnswerId:(id:string)=>void;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n   step,\r\n-  content\r\n+  content,\r\n+  handleAnswerId\r\n }) => {\r\n   return (\r\n-    <div className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n+    <div onClick={handleAnswerId(step)} className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685926173414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n-import React from 'react'\r\n+import React, { MouseEventHandler } from 'react'\r\n \r\n interface otherDraftItemProps {\r\n   step:string;\r\n   content:string;\r\n-  handleAnswerId:(id:string)=>void;\r\n+  handleAnswerId: (id: string) => MouseEventHandler<HTMLDivElement>;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n   step,\r\n"
+                },
+                {
+                    "date": 1685926250494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n interface otherDraftItemProps {\r\n   step:string;\r\n   content:string;\r\n-  handleAnswerId: (id: string) => MouseEventHandler<HTMLDivElement>;\r\n+  handleAnswerId: (id: string) => void;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n   step,\r\n"
+                },
+                {
+                    "date": 1685926418635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n interface otherDraftItemProps {\r\n   step:string;\r\n   content:string;\r\n-  handleAnswerId: (id: string) => void;\r\n+  handleAnswerId: (id: string) => any;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n   step,\r\n"
+                },
+                {
+                    "date": 1685926638536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   content,\r\n   handleAnswerId\r\n }) => {\r\n   return (\r\n-    <div onClick={handleAnswerId(step)} className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n+    <div onClick={() => handleAnswerId(step)} className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n       <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685926748172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,18 +3,20 @@\n interface otherDraftItemProps {\r\n   step:string;\r\n   content:string;\r\n   handleAnswerId: (id: string) => any;\r\n+  active:boolean;\r\n }\r\n \r\n const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n   step,\r\n   content,\r\n-  handleAnswerId\r\n+  handleAnswerId,\r\n+  active\r\n }) => {\r\n   return (\r\n     <div onClick={() => handleAnswerId(step)} className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n-      <span className='w-[56px]  bg-[#e8eaed] rounded-xl text-center '>{step}</span>\r\n+      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? '' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685926779870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n   handleAnswerId,\r\n   active\r\n }) => {\r\n   return (\r\n-    <div onClick={() => handleAnswerId(step)} className='flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all'>\r\n-      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? '' : ''}`}>{step}</span>\r\n+    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#0b57d0] ' : ''}`}>\r\n+      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] ' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685926803857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n   handleAnswerId,\r\n   active\r\n }) => {\r\n   return (\r\n-    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#0b57d0] ' : ''}`}>\r\n-      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] ' : ''}`}>{step}</span>\r\n+    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] ' : ''}`}>\r\n+      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685926824862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   handleAnswerId,\r\n   active\r\n }) => {\r\n   return (\r\n-    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] ' : ''}`}>\r\n+    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] hover:bg-[#c0cfe5]' : ''}`}>\r\n       <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685939252272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import React, { MouseEventHandler } from 'react'\r\n+\r\n+interface otherDraftItemProps {\r\n+  step:string;\r\n+  content:string;\r\n+  handleAnswerId: (id: string) => any;\r\n+  active:boolean;\r\n+}\r\n+\r\n+const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n+  step,\r\n+  content,\r\n+  handleAnswerId,\r\n+  active\r\n+}) => {\r\n+  return (\r\n+    <div onClick={() => handleAnswerId(step)} \r\n+        className={`flex basis-1/2 flex-col min-h-[104px] p-3 border \r\n+        rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  \r\n+        hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] hover:bg-[#c0cfe5] border-[]' : ''}`}>\r\n+      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n+      <p className='pt-2'>{content}</p>\r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n+export default OtherDraftItem\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685939276004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,36 +16,12 @@\n   return (\r\n     <div onClick={() => handleAnswerId(step)} \r\n         className={`flex basis-1/2 flex-col min-h-[104px] p-3 border \r\n         rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  \r\n-        hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] hover:bg-[#c0cfe5] border-[]' : ''}`}>\r\n+        hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5]  hover:bg-[#c0cfe5] border-[#0b57d0]' : ''}`}>\r\n       <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n-export default OtherDraftItem\n-import React, { MouseEventHandler } from 'react'\r\n-\r\n-interface otherDraftItemProps {\r\n-  step:string;\r\n-  content:string;\r\n-  handleAnswerId: (id: string) => any;\r\n-  active:boolean;\r\n-}\r\n-\r\n-const OtherDraftItem: React.FC<otherDraftItemProps> = ({\r\n-  step,\r\n-  content,\r\n-  handleAnswerId,\r\n-  active\r\n-}) => {\r\n-  return (\r\n-    <div onClick={() => handleAnswerId(step)} className={`flex basis-1/2 flex-col min-h-[104px] p-3 border rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5] hover:bg-[#c0cfe5]' : ''}`}>\r\n-      <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n-      <p className='pt-2'>{content}</p>\r\n-    </div>\r\n-  )\r\n-}\r\n-\r\n export default OtherDraftItem\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685939291279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   return (\r\n     <div onClick={() => handleAnswerId(step)} \r\n         className={`flex basis-1/2 flex-col min-h-[104px] p-3 border \r\n         rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  \r\n-        hover:drop-shadow-xl transition-all ${active ? 'bg-[#c0cfe5]  hover:bg-[#c0cfe5] border-[#0b57d0]' : ''}`}>\r\n+        hover:drop-shadow-xl transition-all ${active ? 'bg-[#d3e3fd]  hover:bg-[#c0cfe5] border-[#0b57d0]' : ''}`}>\r\n       <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685939313897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n }) => {\r\n   return (\r\n     <div onClick={() => handleAnswerId(step)} \r\n         className={`flex basis-1/2 flex-col min-h-[104px] p-3 border \r\n-        rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer  \r\n+        rounded-xl text-[12px] hover:bg-[#e5e6e7] cursor-pointer transition-all\r\n         hover:drop-shadow-xl transition-all ${active ? 'bg-[#d3e3fd]  hover:bg-[#c0cfe5] border-[#0b57d0]' : ''}`}>\r\n       <span className={`w-[56px]  bg-[#e8eaed] rounded-xl text-center ${active ? 'bg-[#0b57d0] text-[white]' : ''}`}>{step}</span>\r\n       <p className='pt-2'>{content}</p>\r\n     </div>\r\n"
                 }
             ],
             "date": 1685880966130,

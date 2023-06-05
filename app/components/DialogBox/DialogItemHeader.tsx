@@ -10,6 +10,13 @@ const DialogItemHeader = () => {
   const handleChangeViewShow = useCallback(()=>{
     setIsViewShow(!isViewShow)
   }, [isViewShow])
+
+  // 判断选中哪一个回答
+  const [answerId,setAnswerId] = useState('1');
+  const handleAnswerId = (id:string)=>{
+    setAnswerId(id)
+    console.log(id)
+  }
   return (
     <div className="w-full h-auto">
       <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>
@@ -24,13 +31,13 @@ const DialogItemHeader = () => {
       </div>
       {
         isViewShow &&(
-          <div className='flex justify-center items-center pb-4'>
+          <div className='flex justify-center items-center pb-4 transition-all'>
             <div className='flex w-full justify-center items-center gap-4'>
-              <OtherDraftItem step="Draft 1" content='Hi there! How can I help you today?'/>
-              <OtherDraftItem step="Draft 2" content='Hi there! How can I help you today?'/>
+              <OtherDraftItem active={answerId == "Draft 1"} handleAnswerId={handleAnswerId} step="Draft 1" content='Hi there! How can I help you today?'/>
+              <OtherDraftItem active={answerId == "Draft 2"} handleAnswerId={handleAnswerId} step="Draft 2" content='Hi there! How can I help you today?'/>
             </div>
             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>
-              <IoMdRefresh size={18} color='#3a57d0'/>
+              <IoMdRefresh size={18} onClick={()=>{}} color='#3a57d0'/>
             </div>
           </div>
         )
