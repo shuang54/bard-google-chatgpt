@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 230,
+            "activePatchIndex": 239,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -928,6 +928,42 @@
                 {
                     "date": 1686027753527,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     if(value===\"\") return;\r\n     // 发送请求获取数据\r\n     const answer = getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n-      messages: [{ role: 'user', content: 'Hello!' }]\r\n+      messages: [{ role: 'user', content: value }]\r\n     });\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n   }\r\n"
+                },
+                {
+                    "date": 1686029004135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,16 +35,16 @@\n \r\n \r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n-  // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n     // 发送请求获取数据\r\n     const answer = getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n+    console.log(answer)\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029105545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,12 +35,12 @@\n \r\n \r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n-  const handleSendMessage = ()=>{\r\n+  const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n     // 发送请求获取数据\r\n-    const answer = getAnswer({\r\n+    const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n     console.log(answer)\r\n"
+                },
+                {
+                    "date": 1686029174041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,16 +37,17 @@\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId })\r\n+    setValue(\"\")\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n     console.log(answer)\r\n-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n-    setValue(\"\")\r\n+\r\n   }\r\n \r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1686029283354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n+    addMessage({ content: answer.answer, role: 'user', date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029291234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.answer, role: 'user', date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices.message, role: 'user', date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029300933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices.message, role: 'user', date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices.message.content, role: 'user', date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029311741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices.message.content, role: 'user', date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices.message.content, role: answer.choices.message.content, date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029318521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices.message.content, role: answer.choices.message.content, date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices.message.content, role: answer.choices.message.role, date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029393474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices.message.content, role: answer.choices.message.role, date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
                 }
             ],
             "date": 1685855786092,

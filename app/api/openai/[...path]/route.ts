@@ -2,7 +2,6 @@ import { prettyObject } from '@/app/lib/tools'
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '../../auth'
 import { requestOpenai } from '../../common'
-
 async function handle(
   req: NextRequest,
   { params }: { params: { path: string[] } }
@@ -23,7 +22,6 @@ async function handle(
     return NextResponse.json(prettyObject(e))
   }
 }
-
 export const GET = handle
 export const POST = handle
 

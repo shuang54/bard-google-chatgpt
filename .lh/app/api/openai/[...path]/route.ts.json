@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1686011315098,
@@ -20,6 +20,34 @@
                 {
                     "date": 1686011882722,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n-// import { auth } from '../../auth'\r\n+import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n \r\n async function handle(\r\n   req: NextRequest,\r\n"
+                },
+                {
+                    "date": 1686028701664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,12 @@\n     console.error('[OpenAI] ', e)\r\n     return NextResponse.json(prettyObject(e))\r\n   }\r\n }\r\n-\r\n+async function handle2(chatData: any) {\r\n+  const completion = await openai.createChatCompletion(chatData)\r\n+  console.log(completion.data.choices[0].message)\r\n+}\r\n export const GET = handle\r\n-export const POST = handle\r\n+export const POST = handle2\r\n \r\n export const runtime = 'edge'\r\n"
+                },
+                {
+                    "date": 1686028711802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n-\r\n+import { Configuration, OpenAIApi } from 'openai'\r\n async function handle(\r\n   req: NextRequest,\r\n   { params }: { params: { path: string[] } }\r\n ) {\r\n"
+                },
+                {
+                    "date": 1686028724521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,13 @@\n import { NextRequest, NextResponse } from 'next/server'\r\n import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n import { Configuration, OpenAIApi } from 'openai'\r\n+const configuration = new Configuration({\r\n+  apiKey: process.env.OPENAI_API_KEY\r\n+})\r\n+const openai = new OpenAIApi(configuration)\r\n+\r\n async function handle(\r\n   req: NextRequest,\r\n   { params }: { params: { path: string[] } }\r\n ) {\r\n"
+                },
+                {
+                    "date": 1686028760978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,11 @@\n     return NextResponse.json(prettyObject(e))\r\n   }\r\n }\r\n async function handle2(chatData: any) {\r\n-  const completion = await openai.createChatCompletion(chatData)\r\n-  console.log(completion.data.choices[0].message)\r\n+  // const completion = await openai.createChatCompletion(chatData)\r\n+  return chatData\r\n+  // console.log(completion.data.choices[0].message)\r\n }\r\n export const GET = handle\r\n export const POST = handle2\r\n \r\n"
+                },
+                {
+                    "date": 1686028804250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,14 @@\n     console.error('[OpenAI] ', e)\r\n     return NextResponse.json(prettyObject(e))\r\n   }\r\n }\r\n-async function handle2(chatData: any) {\r\n+async function handle2(\r\n+  req: NextRequest,\r\n+  { params }: { params: { path: string[] } }\r\n+) {\r\n   // const completion = await openai.createChatCompletion(chatData)\r\n-  return chatData\r\n+  return {a:1}\r\n   // console.log(completion.data.choices[0].message)\r\n }\r\n export const GET = handle\r\n export const POST = handle2\r\n"
+                },
+                {
+                    "date": 1686028829966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n-import { Configuration, OpenAIApi } from 'openai'\r\n-const configuration = new Configuration({\r\n-  apiKey: process.env.OPENAI_API_KEY\r\n-})\r\n const openai = new OpenAIApi(configuration)\r\n \r\n async function handle(\r\n   req: NextRequest,\r\n@@ -27,16 +23,8 @@\n     console.error('[OpenAI] ', e)\r\n     return NextResponse.json(prettyObject(e))\r\n   }\r\n }\r\n-async function handle2(\r\n-  req: NextRequest,\r\n-  { params }: { params: { path: string[] } }\r\n-) {\r\n-  // const completion = await openai.createChatCompletion(chatData)\r\n-  return {a:1}\r\n-  // console.log(completion.data.choices[0].message)\r\n-}\r\n export const GET = handle\r\n-export const POST = handle2\r\n+export const POST = handle\r\n \r\n export const runtime = 'edge'\r\n"
+                },
+                {
+                    "date": 1686028835499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n-const openai = new OpenAIApi(configuration)\r\n-\r\n async function handle(\r\n   req: NextRequest,\r\n   { params }: { params: { path: string[] } }\r\n ) {\r\n"
                 }
             ],
             "date": 1686011315098,

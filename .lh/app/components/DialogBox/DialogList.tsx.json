@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 37,
+            "activePatchIndex": 40,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -156,6 +156,18 @@
                 {
                     "date": 1685970056759,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       return (\r\n         <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n       )\r\n     }\r\n-  })) : (<DialogItemBot content='default' />)\r\n+  })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n     <div className='p-4 basis-10/12'>\r\n       {lists}\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1686028027058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   const lists = conversation.length > 0 ? (\r\n   conversation.map((item)=>{\r\n     if(item.role == 'user'){\r\n       return (\r\n-        <DialogItem key={item.id} content='hello' />\r\n+        <DialogItem key={item.id} content={item.} />\r\n       )\r\n     }else{\r\n       return (\r\n         <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n"
+                },
+                {
+                    "date": 1686028036988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   const lists = conversation.length > 0 ? (\r\n   conversation.map((item)=>{\r\n     if(item.role == 'user'){\r\n       return (\r\n-        <DialogItem key={item.id} content={item.} />\r\n+        <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n       return (\r\n         <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n"
+                },
+                {
+                    "date": 1686028058853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n       return (\r\n-        <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n+        <DialogItemBot key={item.id} isHeader isFooter content={item.content} />\r\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n"
                 }
             ],
             "date": 1685852651513,

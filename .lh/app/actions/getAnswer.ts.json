@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1686027037676,
@@ -32,6 +32,34 @@
                 {
                     "date": 1686027741080,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n import axios from \"axios\";\r\n \r\n-export default async function getAnswer(){\r\n-  const answer = await axios.post('/api/openai/v1/chat/completions', {\r\n-    model: 'gpt-3.5-turbo',\r\n-    messages: [{ role: 'user', content: 'Hello!' }]\r\n-  })\r\n-  console.log(answer)\r\n+export default async function getAnswer(chatData:Object){\r\n+  const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n+  return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028381341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import axios from \"axios\";\r\n \r\n export default async function getAnswer(chatData:Object){\r\n-  const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n+  // const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n+  const answer = await axios.post('/api/openai',chatData)\r\n   return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028731093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from \"axios\";\r\n \r\n export default async function getAnswer(chatData:Object){\r\n-  // const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n-  const answer = await axios.post('/api/openai',chatData)\r\n+  const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n+  // const answer = await axios.post('/api/openai',chatData)\r\n   return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028895834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from \"axios\";\r\n-\r\n-export default async function getAnswer(chatData:Object){\r\n+import { CreateChatCompletionRequest } from \"openai/dist/api\";\r\n+export default async function getAnswer(chatData:CreateChatCompletionRequest){\r\n   const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n   // const answer = await axios.post('/api/openai',chatData)\r\n   return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028928278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import axios from \"axios\";\r\n import { CreateChatCompletionRequest } from \"openai/dist/api\";\r\n export default async function getAnswer(chatData:CreateChatCompletionRequest){\r\n   const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n-  // const answer = await axios.post('/api/openai',chatData)\r\n   return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028980356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from \"axios\";\r\n import { CreateChatCompletionRequest } from \"openai/dist/api\";\r\n export default async function getAnswer(chatData:CreateChatCompletionRequest){\r\n   const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n-  return answer\r\n+  return answer.data\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686029064450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from \"axios\";\r\n import { CreateChatCompletionRequest } from \"openai/dist/api\";\r\n export default async function getAnswer(chatData:CreateChatCompletionRequest){\r\n   const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n-  return answer.data\r\n+  return answer\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686029143714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from \"axios\";\r\n import { CreateChatCompletionRequest } from \"openai/dist/api\";\r\n export default async function getAnswer(chatData:CreateChatCompletionRequest){\r\n   const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n-  return answer\r\n+  return answer.data\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1686027037676,

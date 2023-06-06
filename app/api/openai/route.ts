@@ -1,37 +1,12 @@
-import axios from 'axios'
+import { Configuration, OpenAIApi } from 'openai'
 
-const openaiAxios = axios.create({
-  baseURL: 'https://api.openai.com/v1',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-  },
-  timeout: 10000 // 设置请求超时时间为 5 秒钟
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY
 })
+const openai = new OpenAIApi(configuration)
 
-const openaiRequest = async (text:string, model:string) => {
-  try {
-    const response = await openaiAxios.post('/chat/completions', {
-      prompt: text,
-      max_tokens: 60,
-      n: 1,
-      stop: '\n',
-      model: model
-    })
-    console.log(response.data.choices[0].text)
-  } catch (error) {
-    console.error(error)
-  }
+async function handle(chatData:any) {
+  const completion = await openai.createChatCompletion(chatData)
+  console.log(completion.data.choices[0].message)
 }
-
-
-
-export async function POST() {
-  const text = await openaiRequest('hello', 'gpt-3.5-turbo')
-  return {
-    props: { text }
-  }
-}
-export default function handler(req:any, res:any) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export const POST = handle

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 61,
             "patches": [
                 {
                     "date": 1685973275166,
@@ -236,6 +236,22 @@
                 {
                     "date": 1686011044398,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,7 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export function getHandler(req:any, res:any) {\r\n-  res.status(200).json({ a: 1 })\r\n-}\r\n-export const GET = getHandler\n\\ No newline at end of file\n+export default function handler(req:any, res:any) {\r\n+  res.status(200).json({ name: 'John Doe' })\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686028354865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,37 +1,14 @@\n-import axios from 'axios'\r\n+const { Configuration, OpenAIApi } = require('openai')\r\n \r\n-const openaiAxios = axios.create({\r\n-  baseURL: 'https://api.openai.com/v1',\r\n-  headers: {\r\n-    'Content-Type': 'application/json',\r\n-    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n-  },\r\n-  timeout: 10000 // 设置请求超时时间为 5 秒钟\r\n+const configuration = new Configuration({\r\n+  apiKey: process.env.OPENAI_API_KEY\r\n })\r\n+const openai = new OpenAIApi(configuration)\r\n \r\n-const openaiRequest = async (text:string, model:string) => {\r\n-  try {\r\n-    const response = await openaiAxios.post('/chat/completions', {\r\n-      prompt: text,\r\n-      max_tokens: 60,\r\n-      n: 1,\r\n-      stop: '\\n',\r\n-      model: model\r\n-    })\r\n-    console.log(response.data.choices[0].text)\r\n-  } catch (error) {\r\n-    console.error(error)\r\n-  }\r\n+export  async function POST(){\r\n+  const completion = await openai.createChatCompletion({\r\n+    model: 'gpt-3.5-turbo',\r\n+    messages: [{ role: 'user', content: 'Hello world' }]\r\n+  })\r\n+  console.log(completion.data.choices[0].message)\r\n }\r\n-\r\n-\r\n\\ No newline at end of file\n-\r\n-export async function POST() {\r\n-  const text = await openaiRequest('hello', 'gpt-3.5-turbo')\r\n-  return {\r\n-    props: { text }\r\n-  }\r\n-}\r\n-export default function handler(req:any, res:any) {\r\n-  res.status(200).json({ name: 'John Doe' })\r\n-}\n"
+                },
+                {
+                    "date": 1686028399129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,8 @@\n   apiKey: process.env.OPENAI_API_KEY\r\n })\r\n const openai = new OpenAIApi(configuration)\r\n \r\n-export  async function POST(){\r\n-  const completion = await openai.createChatCompletion({\r\n-    model: 'gpt-3.5-turbo',\r\n-    messages: [{ role: 'user', content: 'Hello world' }]\r\n-  })\r\n+export  async function POST(chatData:any) {\r\n+  const completion = await openai.createChatCompletion(chatData)\r\n   console.log(completion.data.choices[0].message)\r\n }\r\n"
+                },
+                {
+                    "date": 1686028470877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-const { Configuration, OpenAIApi } = require('openai')\r\n+import { Configuration, OpenAIApi } from 'openai'\r\n \r\n const configuration = new Configuration({\r\n   apiKey: process.env.OPENAI_API_KEY\r\n })\r\n const openai = new OpenAIApi(configuration)\r\n \r\n-export  async function POST(chatData:any) {\r\n+export async function POST(chatData: any) {\r\n   const completion = await openai.createChatCompletion(chatData)\r\n   console.log(completion.data.choices[0].message)\r\n }\r\n"
+                },
+                {
+                    "date": 1686028632035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   apiKey: process.env.OPENAI_API_KEY\r\n })\r\n const openai = new OpenAIApi(configuration)\r\n \r\n-export async function POST(chatData: any) {\r\n+async function handle(chatData:any) {\r\n   const completion = await openai.createChatCompletion(chatData)\r\n   console.log(completion.data.choices[0].message)\r\n }\r\n+export const POST = handle\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1685973275166,

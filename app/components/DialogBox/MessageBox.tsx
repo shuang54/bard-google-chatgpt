@@ -36,16 +36,18 @@ const MessageBox = () => {
 
   // 对话记录
   const { conversation, addMessage, deleteMessage } = useConversation();
-  // console.log(conversation)
-  const handleSendMessage = ()=>{
+  const handleSendMessage = async ()=>{
     if(value==="") return;
+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId })
+    setValue("")
     // 发送请求获取数据
-    const answer = getAnswer({
+    const answer = await getAnswer({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: value }]
     });
-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})
-    setValue("")
+    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: randomId })
+    console.log(answer)
+
   }
 
 

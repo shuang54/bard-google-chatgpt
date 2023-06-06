@@ -11,11 +11,11 @@ const DialogList = () => {
   conversation.map((item)=>{
     if(item.role == 'user'){
       return (
-        <DialogItem key={item.id} content='hello' />
+        <DialogItem key={item.id} content={item.content} />
       )
     }else{
       return (
-        <DialogItemBot key={item.id} isHeader isFooter content='default' />
+        <DialogItemBot key={item.id} isHeader isFooter content={item.content} />
       )
     }
   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)
