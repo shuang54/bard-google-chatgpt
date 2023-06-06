@@ -6,6 +6,7 @@ import { AiFillAudio } from 'react-icons/ai'
 import { RiSendPlane2Line } from 'react-icons/ri'
 import { getCurrentTime } from '@/app/lib/tools'
 import { v4 as uuidv4 } from 'uuid';
+import getAnswer from '@/app/actions/getAnswer';
 const MessageBox = () => {
   // uuid获取随机id
   const randomId = uuidv4();
@@ -31,14 +32,23 @@ const MessageBox = () => {
     setIsInputFilled(value !== '');
   },[value])
 
+
+
   // 对话记录
   const { conversation, addMessage, deleteMessage } = useConversation();
   // console.log(conversation)
   const handleSendMessage = ()=>{
     if(value==="") return;
+    // 发送请求获取数据
+    const answer = getAnswer({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: value }]
+    });
     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})
     setValue("")
   }
+
+
   return (
     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>
       <div className='w-full h-auto flex justify-center items-center px-24'>

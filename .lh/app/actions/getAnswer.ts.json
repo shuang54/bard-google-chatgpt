@@ -1,0 +1,42 @@
+{
+    "sourceFile": "app/actions/getAnswer.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1686027037676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686027122670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,7 @@\n+import axios from \"axios\";\r\n+\r\n export default async function getAnswer(){\r\n-\r\n+  const answer = await axios.post('/api/openai',{\r\n+    \r\n+  })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686027188900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import axios from \"axios\";\r\n \r\n export default async function getAnswer(){\r\n-  const answer = await axios.post('/api/openai',{\r\n-    \r\n+  const answer = await axios.post('/api/openai', {\r\n+    model: 'gpt-3.5-turbo',\r\n+    messages: [{ role: 'user', content: 'Hello!' }]\r\n   })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686027224409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import axios from \"axios\";\r\n+import { log } from \"console\";\r\n \r\n export default async function getAnswer(){\r\n   const answer = await axios.post('/api/openai', {\r\n     model: 'gpt-3.5-turbo',\r\n     messages: [{ role: 'user', content: 'Hello!' }]\r\n   })\r\n+  log(answer)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686027364192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import axios from \"axios\";\r\n-import { log } from \"console\";\r\n \r\n export default async function getAnswer(){\r\n   const answer = await axios.post('/api/openai', {\r\n     model: 'gpt-3.5-turbo',\r\n     messages: [{ role: 'user', content: 'Hello!' }]\r\n   })\r\n-  log(answer)\r\n+  console.log(answer)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686027417185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import axios from \"axios\";\r\n \r\n export default async function getAnswer(){\r\n-  const answer = await axios.post('/api/openai', {\r\n+  const answer = await axios.post('/api/openai/v1/chat/completions', {\r\n     model: 'gpt-3.5-turbo',\r\n     messages: [{ role: 'user', content: 'Hello!' }]\r\n   })\r\n   console.log(answer)\r\n"
+                },
+                {
+                    "date": 1686027741080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n import axios from \"axios\";\r\n \r\n-export default async function getAnswer(){\r\n-  const answer = await axios.post('/api/openai/v1/chat/completions', {\r\n-    model: 'gpt-3.5-turbo',\r\n-    messages: [{ role: 'user', content: 'Hello!' }]\r\n-  })\r\n-  console.log(answer)\r\n+export default async function getAnswer(chatData:Object){\r\n+  const answer = await axios.post('/api/openai/v1/chat/completions',chatData)\r\n+  return answer\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1686027037676,
+            "name": "Commit-0",
+            "content": "export default async function getAnswer(){\r\n\r\n}"
+        }
+    ]
+}

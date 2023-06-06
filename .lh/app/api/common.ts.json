@@ -1,0 +1,34 @@
+{
+    "sourceFile": "app/api/common.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1686011278950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686012987415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n         'OpenAI-Organization': process.env.OPENAI_ORG_ID\r\n       })\r\n     },\r\n     cache: 'no-store',\r\n+     credentials: 'include',\r\n     method: req.method,\r\n     body: req.body,\r\n     signal: controller.signal\r\n   }\r\n"
+                },
+                {
+                    "date": 1686014033899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n \r\n     if (res.status === 401) {\r\n       // to prevent browser prompt for credentials\r\n       const newHeaders = new Headers(res.headers)\r\n+      console.log(res.headers)\r\n       newHeaders.delete('www-authenticate')\r\n       return new Response(res.body, {\r\n         status: res.status,\r\n         statusText: res.statusText,\r\n"
+                },
+                {
+                    "date": 1686014056567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \r\n     if (res.status === 401) {\r\n       // to prevent browser prompt for credentials\r\n       const newHeaders = new Headers(res.headers)\r\n-      console.log(res.headers)\r\n+      console.log('header:',res.headers)\r\n       newHeaders.delete('www-authenticate')\r\n       return new Response(res.body, {\r\n         status: res.status,\r\n         statusText: res.statusText,\r\n"
+                },
+                {
+                    "date": 1686014083709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,8 @@\n \r\n     if (res.status === 401) {\r\n       // to prevent browser prompt for credentials\r\n       const newHeaders = new Headers(res.headers)\r\n-      console.log('header:',res.headers)\r\n       newHeaders.delete('www-authenticate')\r\n       return new Response(res.body, {\r\n         status: res.status,\r\n         statusText: res.statusText,\r\n"
+                }
+            ],
+            "date": 1686011278949,
+            "name": "Commit-0",
+            "content": "import { NextRequest } from 'next/server'\r\n\r\nexport const OPENAI_URL = 'api.openai.com'\r\nconst DEFAULT_PROTOCOL = 'https'\r\nconst PROTOCOL = process.env.PROTOCOL ?? DEFAULT_PROTOCOL\r\nconst BASE_URL = process.env.BASE_URL ?? OPENAI_URL\r\n\r\nexport async function requestOpenai(req: NextRequest) {\r\n  const controller = new AbortController()\r\n  const authValue = req.headers.get('Authorization') ?? ''\r\n  const openaiPath = `${req.nextUrl.pathname}${req.nextUrl.search}`.replaceAll(\r\n    '/api/openai/',\r\n    ''\r\n  )\r\n\r\n  let baseUrl = BASE_URL\r\n\r\n  if (!baseUrl.startsWith('http')) {\r\n    baseUrl = `${PROTOCOL}://${baseUrl}`\r\n  }\r\n\r\n  console.log('[Proxy] ', openaiPath)\r\n  console.log('[Base Url]', baseUrl)\r\n\r\n  if (process.env.OPENAI_ORG_ID) {\r\n    console.log('[Org ID]', process.env.OPENAI_ORG_ID)\r\n  }\r\n\r\n  const timeoutId = setTimeout(() => {\r\n    controller.abort()\r\n  }, 10 * 60 * 1000)\r\n\r\n  const fetchUrl = `${baseUrl}/${openaiPath}`\r\n  const fetchOptions: RequestInit = {\r\n    headers: {\r\n      'Content-Type': 'application/json',\r\n      Authorization: authValue,\r\n      ...(process.env.OPENAI_ORG_ID && {\r\n        'OpenAI-Organization': process.env.OPENAI_ORG_ID\r\n      })\r\n    },\r\n    cache: 'no-store',\r\n    method: req.method,\r\n    body: req.body,\r\n    signal: controller.signal\r\n  }\r\n\r\n  try {\r\n    const res = await fetch(fetchUrl, fetchOptions)\r\n\r\n    if (res.status === 401) {\r\n      // to prevent browser prompt for credentials\r\n      const newHeaders = new Headers(res.headers)\r\n      newHeaders.delete('www-authenticate')\r\n      return new Response(res.body, {\r\n        status: res.status,\r\n        statusText: res.statusText,\r\n        headers: newHeaders\r\n      })\r\n    }\r\n\r\n    return res\r\n  } finally {\r\n    clearTimeout(timeoutId)\r\n  }\r\n}\r\n"
+        }
+    ]
+}

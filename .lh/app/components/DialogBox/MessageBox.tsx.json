@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 227,
+            "activePatchIndex": 230,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -916,6 +916,18 @@
                 {
                     "date": 1685970221723,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId()})\r\n+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n     // console.log(conversation)\r\n     // console.log(CookieService.getItem('conversation'));\r\n   }\r\n"
+                },
+                {
+                    "date": 1686027342520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { AiFillAudio } from 'react-icons/ai'\r\n import { RiSendPlane2Line } from 'react-icons/ri'\r\n import { getCurrentTime } from '@/app/lib/tools'\r\n import { v4 as uuidv4 } from 'uuid';\r\n+import getAnswer from '@/app/actions/getAnswer';\r\n const MessageBox = () => {\r\n   // uuid获取随机id\r\n   const randomId = uuidv4();\r\n \r\n@@ -30,18 +31,22 @@\n   useEffect(()=>{\r\n     setIsInputFilled(value !== '');\r\n   },[value])\r\n \r\n+\r\n+\r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n+    // 发送请求获取数据\r\n+    const answer = getAnswer();\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n-    // console.log(conversation)\r\n-    // console.log(CookieService.getItem('conversation'));\r\n   }\r\n+\r\n+\r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n"
+                },
+                {
+                    "date": 1686027715262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,12 @@\n   // console.log(conversation)\r\n   const handleSendMessage = ()=>{\r\n     if(value===\"\") return;\r\n     // 发送请求获取数据\r\n-    const answer = getAnswer();\r\n+    const answer = getAnswer({\r\n+      model: 'gpt-3.5-turbo',\r\n+      messages: [{ role: 'user', content: 'Hello!' }]\r\n+    });\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686027753527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     if(value===\"\") return;\r\n     // 发送请求获取数据\r\n     const answer = getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n-      messages: [{ role: 'user', content: 'Hello!' }]\r\n+      messages: [{ role: 'user', content: value }]\r\n     });\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId})\r\n     setValue(\"\")\r\n   }\r\n"
                 }
             ],
             "date": 1685855786092,

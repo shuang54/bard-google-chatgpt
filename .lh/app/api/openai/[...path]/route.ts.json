@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/api/openai/[...path]/route.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1686011315098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686011359747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { prettyObject } from '@/app/utils/format'\r\n+import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n // import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n \r\n"
+                },
+                {
+                    "date": 1686011842039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,14 @@\n   { params }: { params: { path: string[] } }\r\n ) {\r\n   console.log('[OpenAI Route] params ', params)\r\n \r\n-  // const authResult = auth(req)\r\n-  // if (authResult.error) {\r\n-  //   return NextResponse.json(authResult, {\r\n-  //     status: 401\r\n-  //   })\r\n-  // }\r\n+  const authResult = auth(req)\r\n+  if (authResult.error) {\r\n+    return NextResponse.json(authResult, {\r\n+      status: 401\r\n+    })\r\n+  }\r\n \r\n   try {\r\n     return await requestOpenai(req)\r\n   } catch (e) {\r\n"
+                },
+                {
+                    "date": 1686011882722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { prettyObject } from '@/app/lib/tools'\r\n import { NextRequest, NextResponse } from 'next/server'\r\n-// import { auth } from '../../auth'\r\n+import { auth } from '../../auth'\r\n import { requestOpenai } from '../../common'\r\n \r\n async function handle(\r\n   req: NextRequest,\r\n"
+                }
+            ],
+            "date": 1686011315098,
+            "name": "Commit-0",
+            "content": "import { prettyObject } from '@/app/utils/format'\r\nimport { NextRequest, NextResponse } from 'next/server'\r\n// import { auth } from '../../auth'\r\nimport { requestOpenai } from '../../common'\r\n\r\nasync function handle(\r\n  req: NextRequest,\r\n  { params }: { params: { path: string[] } }\r\n) {\r\n  console.log('[OpenAI Route] params ', params)\r\n\r\n  // const authResult = auth(req)\r\n  // if (authResult.error) {\r\n  //   return NextResponse.json(authResult, {\r\n  //     status: 401\r\n  //   })\r\n  // }\r\n\r\n  try {\r\n    return await requestOpenai(req)\r\n  } catch (e) {\r\n    console.error('[OpenAI] ', e)\r\n    return NextResponse.json(prettyObject(e))\r\n  }\r\n}\r\n\r\nexport const GET = handle\r\nexport const POST = handle\r\n\r\nexport const runtime = 'edge'\r\n"
+        }
+    ]
+}

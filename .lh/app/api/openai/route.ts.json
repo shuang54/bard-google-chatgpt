@@ -1,0 +1,246 @@
+{
+    "sourceFile": "app/api/openai/route.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 57,
+            "patches": [
+                {
+                    "date": 1685973275166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685973347741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,46 +1,45 @@\n-import { Configuration, OpenAIApi } from 'openai'\r\n-import { httpsOverHttp } from 'tunnel'\r\n+import axios from 'axios'\r\n+import { NextApiRequest, NextApiResponse } from 'next'\r\n \r\n-// 调用 ChatGpt 需配置代理，请根据本地代理信息正确填写\r\n-// 代理 IP\r\n-const PROXY_HOST = ''\r\n-// 代理端口\r\n-const PROXY_PORT = ''\r\n+const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n+const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n-export async function getGptResponse(prompt: string) {\r\n-  const OPENAI_TOKEN_FILE = '.openai_token'\r\n+export default async function handler(\r\n+  req: NextApiRequest,\r\n+  res: NextApiResponse\r\n+) {\r\n+  if (req.method !== 'POST') {\r\n+    res.status(405).json({ message: 'Method Not Allowed' })\r\n+    return\r\n+  }\r\n \r\n-  const token = fs\r\n-    .readFileSync(path.join(__dirname, '../../', OPENAI_TOKEN_FILE), 'utf-8')\r\n-    .trim()\r\n+  const { prompt } = req.body\r\n \r\n-  // 设置代理服务器\r\n-  const tunnel = httpsOverHttp({\r\n-    proxy: {\r\n-      host: PROXY_HOST,\r\n-      port: Number(PROXY_PORT)\r\n-    }\r\n-  })\r\n+  if (!prompt) {\r\n+    res.status(400).json({ message: 'Missing Prompt' })\r\n+    return\r\n+  }\r\n \r\n-  // 设置 OpenAi Api key\r\n-  const configuration = new Configuration({\r\n-    apiKey: token,\r\n-    baseOptions: {\r\n-      httpsAgent: tunnel,\r\n-      proxy: false\r\n-    }\r\n-  })\r\n+  try {\r\n+    const response = await axios.post(\r\n+      API_URL,\r\n+      {\r\n+        prompt,\r\n+        max_tokens: 100,\r\n+        n: 1,\r\n+        stop: '\\n'\r\n+      },\r\n+      {\r\n+        headers: {\r\n+          'Content-Type': 'application/json',\r\n+          Authorization: `Bearer ${API_KEY}`\r\n+        }\r\n+      }\r\n+    )\r\n \r\n-  // 调用 OpenAi Api\r\n-  const openai = new OpenAIApi(configuration)\r\n-  try {\r\n-    const response = await openai.createChatCompletion({\r\n-      model: 'gpt-3.5-turbo',\r\n-      messages: [{ role: 'user', content: prompt }]\r\n-    })\r\n-    return response?.data?.choices?.[0]?.message?.content?.trim()\r\n-  } catch (e) {\r\n-    console.error('请检查代理 IP 及端口是否配置正确')\r\n-    throw e\r\n+    res.status(200).json({ message: 'success', data: response.data })\r\n+  } catch (error) {\r\n+    console.error(error)\r\n+    res.status(500).json({ message: 'Internal Server Error' })\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1685973737043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n-export default async function handler(\r\n+export  async function handler(\r\n   req: NextApiRequest,\r\n   res: NextApiResponse\r\n ) {\r\n   if (req.method !== 'POST') {\r\n"
+                },
+                {
+                    "date": 1685973808750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n \r\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n-export  async function handler(\r\n+// export  async function handler(\r\n+  export const handler = async (\r\n   req: NextApiRequest,\r\n   res: NextApiResponse\r\n ) {\r\n   if (req.method !== 'POST') {\r\n"
+                },
+                {
+                    "date": 1685973825669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n // export  async function handler(\r\n   export const handler = async (\r\n   req: NextApiRequest,\r\n   res: NextApiResponse\r\n-) {\r\n+) => {\r\n   if (req.method !== 'POST') {\r\n     res.status(405).json({ message: 'Method Not Allowed' })\r\n     return\r\n   }\r\n"
+                },
+                {
+                    "date": 1685973834136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,43 +4,40 @@\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n // export  async function handler(\r\n-  export const handler = async (\r\n-  req: NextApiRequest,\r\n-  res: NextApiResponse\r\n-) => {\r\n-  if (req.method !== 'POST') {\r\n-    res.status(405).json({ message: 'Method Not Allowed' })\r\n-    return\r\n-  }\r\n+  export const POST = async (req: NextApiRequest, res: NextApiResponse) => {\r\n+    if (req.method !== 'POST') {\r\n+      res.status(405).json({ message: 'Method Not Allowed' })\r\n+      return\r\n+    }\r\n \r\n-  const { prompt } = req.body\r\n+    const { prompt } = req.body\r\n \r\n-  if (!prompt) {\r\n-    res.status(400).json({ message: 'Missing Prompt' })\r\n-    return\r\n-  }\r\n+    if (!prompt) {\r\n+      res.status(400).json({ message: 'Missing Prompt' })\r\n+      return\r\n+    }\r\n \r\n-  try {\r\n-    const response = await axios.post(\r\n-      API_URL,\r\n-      {\r\n-        prompt,\r\n-        max_tokens: 100,\r\n-        n: 1,\r\n-        stop: '\\n'\r\n-      },\r\n-      {\r\n-        headers: {\r\n-          'Content-Type': 'application/json',\r\n-          Authorization: `Bearer ${API_KEY}`\r\n+    try {\r\n+      const response = await axios.post(\r\n+        API_URL,\r\n+        {\r\n+          prompt,\r\n+          max_tokens: 100,\r\n+          n: 1,\r\n+          stop: '\\n'\r\n+        },\r\n+        {\r\n+          headers: {\r\n+            'Content-Type': 'application/json',\r\n+            Authorization: `Bearer ${API_KEY}`\r\n+          }\r\n         }\r\n-      }\r\n-    )\r\n+      )\r\n \r\n-    res.status(200).json({ message: 'success', data: response.data })\r\n-  } catch (error) {\r\n-    console.error(error)\r\n-    res.status(500).json({ message: 'Internal Server Error' })\r\n+      res.status(200).json({ message: 'success', data: response.data })\r\n+    } catch (error) {\r\n+      console.error(error)\r\n+      res.status(500).json({ message: 'Internal Server Error' })\r\n+    }\r\n   }\r\n-}\r\n"
+                },
+                {
+                    "date": 1685973907697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,8 @@\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n // export  async function handler(\r\n   export const POST = async (req: NextApiRequest, res: NextApiResponse) => {\r\n-    if (req.method !== 'POST') {\r\n-      res.status(405).json({ message: 'Method Not Allowed' })\r\n-      return\r\n-    }\r\n-\r\n     const { prompt } = req.body\r\n \r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n"
+                },
+                {
+                    "date": 1685973932925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n // export  async function handler(\r\n-  export const POST = async (req: NextApiRequest, res: NextApiResponse) => {\r\n+  export async function POST(req: NextApiRequest, res: NextApiResponse) => {\r\n     const { prompt } = req.body\r\n \r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n"
+                },
+                {
+                    "date": 1685973940394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n // export  async function handler(\r\n-  export async function POST(req: NextApiRequest, res: NextApiResponse) => {\r\n+  export async function POST(req: NextApiRequest, res: NextApiResponse) {\r\n     const { prompt } = req.body\r\n \r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n"
+                },
+                {
+                    "date": 1685974032505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n // export  async function handler(\r\n   export async function POST(req: NextApiRequest, res: NextApiResponse) {\r\n     const { prompt } = req.body\r\n-\r\n+    console.log(prompt)\r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n       return\r\n     }\r\n"
+                },
+                {
+                    "date": 1685974054731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n \r\n // export  async function handler(\r\n   export async function POST(req: NextApiRequest, res: NextApiResponse) {\r\n     const { prompt } = req.body\r\n-    console.log(prompt)\r\n+    console.log(req)\r\n+    return\r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n       return\r\n     }\r\n"
+                },
+                {
+                    "date": 1685974118085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n \r\n // export  async function handler(\r\n-  export async function POST(req: NextApiRequest, res: NextApiResponse) {\r\n+  export async function POST(req: NextApiRequest, { params }:any) {\r\n     const { prompt } = req.body\r\n-    console.log(req)\r\n+    console.log(params)\r\n     return\r\n     if (!prompt) {\r\n       res.status(400).json({ message: 'Missing Prompt' })\r\n       return\r\n"
+                },
+                {
+                    "date": 1685974271897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,39 +1,68 @@\n-import axios from 'axios'\r\n-import { NextApiRequest, NextApiResponse } from 'next'\r\n+import { NextRequest } from 'next/server'\r\n \r\n-const API_KEY = 'YOUR_API_KEY' // 替换为你自己的 API Key\r\n-const API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'\r\n+export const OPENAI_URL = 'api.openai.com'\r\n+const DEFAULT_PROTOCOL = 'https'\r\n+const PROTOCOL = process.env.PROTOCOL ?? DEFAULT_PROTOCOL\r\n+const BASE_URL = process.env.BASE_URL ?? OPENAI_URL\r\n \r\n-// export  async function handler(\r\n-  export async function POST(req: NextApiRequest, { params }:any) {\r\n-    const { prompt } = req.body\r\n-    console.log(params)\r\n-    return\r\n-    if (!prompt) {\r\n-      res.status(400).json({ message: 'Missing Prompt' })\r\n-      return\r\n-    }\r\n+export async function requestOpenai(req: NextRequest) {\r\n+  const controller = new AbortController()\r\n+  const authValue = req.headers.get('Authorization') ?? ''\r\n+  const openaiPath = `${req.nextUrl.pathname}${req.nextUrl.search}`.replaceAll(\r\n+    '/api/openai/',\r\n+    ''\r\n+  )\r\n \r\n-    try {\r\n-      const response = await axios.post(\r\n-        API_URL,\r\n-        {\r\n-          prompt,\r\n-          max_tokens: 100,\r\n-          n: 1,\r\n-          stop: '\\n'\r\n-        },\r\n-        {\r\n-          headers: {\r\n-            'Content-Type': 'application/json',\r\n-            Authorization: `Bearer ${API_KEY}`\r\n-          }\r\n-        }\r\n-      )\r\n+  let baseUrl = BASE_URL\r\n \r\n-      res.status(200).json({ message: 'success', data: response.data })\r\n-    } catch (error) {\r\n-      console.error(error)\r\n-      res.status(500).json({ message: 'Internal Server Error' })\r\n+  if (!baseUrl.startsWith('http')) {\r\n+    baseUrl = `${PROTOCOL}://${baseUrl}`\r\n+  }\r\n+\r\n+  console.log('[Proxy] ', openaiPath)\r\n+  console.log('[Base Url]', baseUrl)\r\n+\r\n+  if (process.env.OPENAI_ORG_ID) {\r\n+    console.log('[Org ID]', process.env.OPENAI_ORG_ID)\r\n+  }\r\n+\r\n+  const timeoutId = setTimeout(() => {\r\n+    controller.abort()\r\n+  }, 10 * 60 * 1000)\r\n+\r\n+  const fetchUrl = `${baseUrl}/${openaiPath}`\r\n+  const fetchOptions: RequestInit = {\r\n+    headers: {\r\n+      'Content-Type': 'application/json',\r\n+      Authorization: authValue,\r\n+      ...(process.env.OPENAI_ORG_ID && {\r\n+        'OpenAI-Organization': process.env.OPENAI_ORG_ID\r\n+      })\r\n+    },\r\n+    cache: 'no-store',\r\n+    method: req.method,\r\n+    body: req.body,\r\n+    signal: controller.signal\r\n+  }\r\n+\r\n+  try {\r\n+    const res = await fetch(fetchUrl, fetchOptions)\r\n+\r\n+    if (res.status === 401) {\r\n+      // to prevent browser prompt for credentials\r\n+      const newHeaders = new Headers(res.headers)\r\n+      newHeaders.delete('www-authenticate')\r\n+      return new Response(res.body, {\r\n+        status: res.status,\r\n+        statusText: res.statusText,\r\n+        headers: newHeaders\r\n+      })\r\n     }\r\n+\r\n+    return res\r\n+  } finally {\r\n+    clearTimeout(timeoutId)\r\n   }\r\n+}\r\n+\r\n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685974286691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,5 +64,6 @@\n     clearTimeout(timeoutId)\r\n   }\r\n }\r\n \r\n-export \n\\ No newline at end of file\n+export const GET = requestOpenai\r\n+export const POST = requestOpenai\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685974460981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,69 +1,1 @@\n-import { NextRequest } from 'next/server'\r\n-\r\n-export const OPENAI_URL = 'api.openai.com'\r\n-const DEFAULT_PROTOCOL = 'https'\r\n-const PROTOCOL = process.env.PROTOCOL ?? DEFAULT_PROTOCOL\r\n-const BASE_URL = process.env.BASE_URL ?? OPENAI_URL\r\n-\r\n-export async function requestOpenai(req: NextRequest) {\r\n-  const controller = new AbortController()\r\n-  const authValue = req.headers.get('Authorization') ?? ''\r\n-  const openaiPath = `${req.nextUrl.pathname}${req.nextUrl.search}`.replaceAll(\r\n-    '/api/openai/',\r\n-    ''\r\n-  )\r\n-\r\n-  let baseUrl = BASE_URL\r\n-\r\n-  if (!baseUrl.startsWith('http')) {\r\n-    baseUrl = `${PROTOCOL}://${baseUrl}`\r\n-  }\r\n-\r\n-  console.log('[Proxy] ', openaiPath)\r\n-  console.log('[Base Url]', baseUrl)\r\n-\r\n-  if (process.env.OPENAI_ORG_ID) {\r\n-    console.log('[Org ID]', process.env.OPENAI_ORG_ID)\r\n-  }\r\n-\r\n-  const timeoutId = setTimeout(() => {\r\n-    controller.abort()\r\n-  }, 10 * 60 * 1000)\r\n-\r\n-  const fetchUrl = `${baseUrl}/${openaiPath}`\r\n-  const fetchOptions: RequestInit = {\r\n-    headers: {\r\n-      'Content-Type': 'application/json',\r\n-      Authorization: authValue,\r\n-      ...(process.env.OPENAI_ORG_ID && {\r\n-        'OpenAI-Organization': process.env.OPENAI_ORG_ID\r\n-      })\r\n-    },\r\n-    cache: 'no-store',\r\n-    method: req.method,\r\n-    body: req.body,\r\n-    signal: controller.signal\r\n-  }\r\n-\r\n-  try {\r\n-    const res = await fetch(fetchUrl, fetchOptions)\r\n-\r\n-    if (res.status === 401) {\r\n-      // to prevent browser prompt for credentials\r\n-      const newHeaders = new Headers(res.headers)\r\n-      newHeaders.delete('www-authenticate')\r\n-      return new Response(res.body, {\r\n-        status: res.status,\r\n-        statusText: res.statusText,\r\n-        headers: newHeaders\r\n-      })\r\n-    }\r\n-\r\n-    return res\r\n-  } finally {\r\n-    clearTimeout(timeoutId)\r\n-  }\r\n-}\r\n-\r\n-export const GET = requestOpenai\r\n-export const POST = requestOpenai\n\\ No newline at end of file\n+openai.js\r\n"
+                },
+                {
+                    "date": 1685974470981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,28 @@\n-openai.js\r\n+import axios from 'axios'\r\n+\r\n+const openai = async () => {\r\n+  try {\r\n+    const response = await axios.post(\r\n+      'https://api.openai.com/v1/engines/davinci-codex/completions',\r\n+      {\r\n+        prompt: 'How to request OpenAI API in Next.js project?',\r\n+        max_tokens: 5,\r\n+        n: 1,\r\n+        stop: ['\\n']\r\n+      },\r\n+      {\r\n+        headers: {\r\n+          'Content-Type': 'application/json',\r\n+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n+        }\r\n+      }\r\n+    )\r\n+\r\n+    return response.data.choices[0].text\r\n+  } catch (error) {\r\n+    console.error(error)\r\n+    return null\r\n+  }\r\n+}\r\n+\r\n+export default openai\r\n"
+                },
+                {
+                    "date": 1685974494190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,10 @@\n   }\r\n }\r\n \r\n export default openai\r\n+export async function POST() {\r\n+  const text = await openai()\r\n+  return {\r\n+    props: { text }\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685974581409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n-      'https://api.openai.com/v1/engines/davinci-codex/completions',\r\n+      'https://api.openai.com/v1/chat/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n         max_tokens: 5,\r\n         n: 1,\r\n"
+                },
+                {
+                    "date": 1685974732499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n     return null\r\n   }\r\n }\r\n \r\n-export default openai\r\n export async function POST() {\r\n   const text = await openai()\r\n   return {\r\n     props: { text }\r\n"
+                },
+                {
+                    "date": 1685974761766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import axios from 'axios'\r\n \r\n const openai = async () => {\r\n   try {\r\n+    console.log(process.env.OPENAI_API_KEY)\r\n     const response = await axios.post(\r\n       'https://api.openai.com/v1/chat/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n"
+                },
+                {
+                    "date": 1685974781652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import axios from 'axios'\r\n \r\n const openai = async () => {\r\n   try {\r\n-    console.log(process.env.OPENAI_API_KEY)\r\n     const response = await axios.post(\r\n       'https://api.openai.com/v1/chat/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n"
+                },
+                {
+                    "date": 1685974872994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n-      'https://api.openai.com/v1/chat/completions',\r\n+      'https://openai.1rmb.tk/v1/chat/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n         max_tokens: 5,\r\n         n: 1,\r\n"
+                },
+                {
+                    "date": 1685974935078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     const response = await axios.post(\r\n       'https://openai.1rmb.tk/v1/chat/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n-        max_tokens: 5,\r\n+        max_tokens: 1024,\r\n         n: 1,\r\n         stop: ['\\n']\r\n       },\r\n       {\r\n"
+                },
+                {
+                    "date": 1685974963944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,12 @@\n     )\r\n \r\n     return response.data.choices[0].text\r\n   } catch (error) {\r\n+    \r\n     console.error(error)\r\n-    return null\r\n+    // return null\r\n+    return error\r\n   }\r\n }\r\n \r\n export async function POST() {\r\n"
+                },
+                {
+                    "date": 1685975293312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       },\r\n       {\r\n         headers: {\r\n           'Content-Type': 'application/json',\r\n-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n+          \"Authorization\": `Bearer ${process.env.OPENAI_API_KEY}`\r\n         }\r\n       }\r\n     )\r\n \r\n"
+                },
+                {
+                    "date": 1685975328925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \r\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n-      'https://openai.1rmb.tk/v1/chat/completions',\r\n+      // 'https://openai.1rmb.tk/v1/chat/completions',\r\n+      'https://api.openai.com/v1/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n         max_tokens: 1024,\r\n         n: 1,\r\n@@ -12,9 +13,9 @@\n       },\r\n       {\r\n         headers: {\r\n           'Content-Type': 'application/json',\r\n-          \"Authorization\": `Bearer ${process.env.OPENAI_API_KEY}`\r\n+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n         }\r\n       }\r\n     )\r\n \r\n"
+                },
+                {
+                    "date": 1685975603597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n       // 'https://openai.1rmb.tk/v1/chat/completions',\r\n-      'https://api.openai.com/v1/completions',\r\n+      'http://api.openai.com/v1/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n         max_tokens: 1024,\r\n         n: 1,\r\n@@ -13,9 +13,9 @@\n       },\r\n       {\r\n         headers: {\r\n           'Content-Type': 'application/json',\r\n-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n+          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`\r\n         }\r\n       }\r\n     )\r\n \r\n"
+                },
+                {
+                    "date": 1685975618374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n       // 'https://openai.1rmb.tk/v1/chat/completions',\r\n-      'http://api.openai.com/v1/completions',\r\n+      'https://api.openai.com/v1/completions',\r\n       {\r\n         prompt: 'How to request OpenAI API in Next.js project?',\r\n         max_tokens: 1024,\r\n         n: 1,\r\n"
+                },
+                {
+                    "date": 1685975780536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,18 @@\n   }\r\n }\r\n \r\n export async function POST() {\r\n-  const text = await openai()\r\n-  return {\r\n-    props: { text }\r\n-  }\r\n+fetch('https://dummyjson.com/users/add', {\r\n+  method: 'POST',\r\n+  headers: { 'Content-Type': 'application/json' },\r\n+  body: JSON.stringify({\r\n+    firstName: 'Muhammad',\r\n+    lastName: 'Ovi',\r\n+    age: 250\r\n+    /* other user data */\r\n+  })\r\n+})\r\n+  .then((res) => res.json())\r\n+  .then(console.log)\r\n+  \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685975803516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,18 +28,9 @@\n   }\r\n }\r\n \r\n export async function POST() {\r\n-fetch('https://dummyjson.com/users/add', {\r\n-  method: 'POST',\r\n-  headers: { 'Content-Type': 'application/json' },\r\n-  body: JSON.stringify({\r\n-    firstName: 'Muhammad',\r\n-    lastName: 'Ovi',\r\n-    age: 250\r\n-    /* other user data */\r\n-  })\r\n-})\r\n-  .then((res) => res.json())\r\n-  .then(console.log)\r\n-  \r\n+  const text = await openai()\r\n+  return {\r\n+    props: { text }\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685975843315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n           'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`\r\n         }\r\n       }\r\n     )\r\n-\r\n     return response.data.choices[0].text\r\n   } catch (error) {\r\n     \r\n     console.error(error)\r\n"
+                },
+                {
+                    "date": 1685976049851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,41 @@\n     return error\r\n   }\r\n }\r\n \r\n+\r\n+const API_KEY = 'YOUR_API_KEY'\r\n+const MODEL_ID = 'YOUR_MODEL_ID'\r\n+const TEXT = 'Hello, OpenAI!'\r\n+\r\n+const headers = {\r\n\\ No newline at end of file\n+  'Content-Type': 'application/json',\r\n+  Authorization: `Bearer ${API_KEY}`\r\n+}\r\n+\r\n+const data = {\r\n+  model: MODEL_ID,\r\n+  prompt: TEXT,\r\n+  temperature: 0.5,\r\n+  max_tokens: 50,\r\n+  top_p: 1,\r\n+  frequency_penalty: 0,\r\n+  presence_penalty: 0\r\n+}\r\n+\r\n export async function POST() {\r\n-  const text = await openai()\r\n-  return {\r\n-    props: { text }\r\n-  }\r\n-}\n+  axios\r\n+  .post('https://api.openai.com/v1/completions', data, { headers })\r\n+  .then((response) => {\r\n+    console.log(response.data.choices[0].text)\r\n+  })\r\n+  .catch((error) => {\r\n+    console.log(error)\r\n+  })\r\n+} \r\n+\r\n+// export async function POST() {\r\n+//   const text = await openai()\r\n+//   return {\r\n+//     props: { text }\r\n+//   }\r\n+// }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685976066294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   }\r\n }\r\n \r\n \r\n-const API_KEY = 'YOUR_API_KEY'\r\n+const API_KEY = process.env.OPENAI_API_KEY\r\n const MODEL_ID = 'YOUR_MODEL_ID'\r\n const TEXT = 'Hello, OpenAI!'\r\n \r\n const headers = {\r\n"
+                },
+                {
+                    "date": 1685976080214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }\r\n \r\n \r\n const API_KEY = process.env.OPENAI_API_KEY\r\n-const MODEL_ID = 'YOUR_MODEL_ID'\r\n+const MODEL_ID = 'gpt-3.5-turbo'\r\n const TEXT = 'Hello, OpenAI!'\r\n \r\n const headers = {\r\n   'Content-Type': 'application/json',\r\n"
+                },
+                {
+                    "date": 1685976135056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n   }\r\n }\r\n \r\n \r\n+\r\n+export async function POST() {\r\n+  \r\n const API_KEY = process.env.OPENAI_API_KEY\r\n const MODEL_ID = 'gpt-3.5-turbo'\r\n const TEXT = 'Hello, OpenAI!'\r\n \r\n@@ -45,10 +48,8 @@\n   top_p: 1,\r\n   frequency_penalty: 0,\r\n   presence_penalty: 0\r\n }\r\n-\r\n-export async function POST() {\r\n   axios\r\n   .post('https://api.openai.com/v1/completions', data, { headers })\r\n   .then((response) => {\r\n     console.log(response.data.choices[0].text)\r\n"
+                },
+                {
+                    "date": 1685976189637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   frequency_penalty: 0,\r\n   presence_penalty: 0\r\n }\r\n   axios\r\n-  .post('https://api.openai.com/v1/completions', data, { headers })\r\n+  .post('https://api.openai.com/v1/completions', data, {headers:headers})\r\n   .then((response) => {\r\n     console.log(response.data.choices[0].text)\r\n   })\r\n   .catch((error) => {\r\n"
+                },
+                {
+                    "date": 1685976226416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,15 +49,17 @@\n   frequency_penalty: 0,\r\n   presence_penalty: 0\r\n }\r\n   axios\r\n-  .post('https://api.openai.com/v1/completions', data, {headers:headers})\r\n-  .then((response) => {\r\n-    console.log(response.data.choices[0].text)\r\n-  })\r\n-  .catch((error) => {\r\n-    console.log(error)\r\n-  })\r\n+    .post('https://openai.1rmb.tk/v1/chat/completions', data, {\r\n+      headers: headers\r\n+    })\r\n+    .then((response) => {\r\n+      console.log(response.data.choices[0].text)\r\n+    })\r\n+    .catch((error) => {\r\n+      console.log(error)\r\n+    })\r\n } \r\n \r\n // export async function POST() {\r\n //   const text = await openai()\r\n"
+                },
+                {
+                    "date": 1685976255650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   frequency_penalty: 0,\r\n   presence_penalty: 0\r\n }\r\n   axios\r\n-    .post('https://openai.1rmb.tk/v1/chat/completions', data, {\r\n+    .post('https://yangyang08.xyz/v1/chat/completions', data, {\r\n       headers: headers\r\n     })\r\n     .then((response) => {\r\n       console.log(response.data.choices[0].text)\r\n"
+                },
+                {
+                    "date": 1685976326788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,42 +28,11 @@\n }\r\n \r\n \r\n \r\n+\r\n export async function POST() {\r\n-  \r\n-const API_KEY = process.env.OPENAI_API_KEY\r\n-const MODEL_ID = 'gpt-3.5-turbo'\r\n-const TEXT = 'Hello, OpenAI!'\r\n-\r\n-const headers = {\r\n-  'Content-Type': 'application/json',\r\n-  Authorization: `Bearer ${API_KEY}`\r\n-}\r\n-\r\n-const data = {\r\n-  model: MODEL_ID,\r\n-  prompt: TEXT,\r\n-  temperature: 0.5,\r\n-  max_tokens: 50,\r\n-  top_p: 1,\r\n-  frequency_penalty: 0,\r\n-  presence_penalty: 0\r\n-}\r\n-  axios\r\n-    .post('https://yangyang08.xyz/v1/chat/completions', data, {\r\n-      headers: headers\r\n-    })\r\n-    .then((response) => {\r\n-      console.log(response.data.choices[0].text)\r\n-    })\r\n-    .catch((error) => {\r\n-      console.log(error)\r\n-    })\r\n-} \r\n-\r\n-// export async function POST() {\r\n-//   const text = await openai()\r\n-//   return {\r\n-//     props: { text }\r\n-//   }\r\n\\ No newline at end of file\n-// }\n+  const text = await openai()\r\n+  return {\r\n+    props: { text }\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010146274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,15 @@\n import axios from 'axios'\r\n \r\n+const openaiAxios = axios.create({\r\n+  baseURL: 'https://api.openai.com/v1',\r\n+  headers: {\r\n+    'Content-Type': 'application/json',\r\n+    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n+  },\r\n+  timeout: 5000 // 设置请求超时时间为 5 秒钟\r\n+})\r\n+\r\n const openai = async () => {\r\n   try {\r\n     const response = await axios.post(\r\n       // 'https://openai.1rmb.tk/v1/chat/completions',\r\n"
+                },
+                {
+                    "date": 1686010235953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,40 +8,30 @@\n   },\r\n   timeout: 5000 // 设置请求超时时间为 5 秒钟\r\n })\r\n \r\n-const openai = async () => {\r\n+const openaiRequest = async (text:string, model:string) => {\r\n   try {\r\n-    const response = await axios.post(\r\n-      // 'https://openai.1rmb.tk/v1/chat/completions',\r\n-      'https://api.openai.com/v1/completions',\r\n+    const response = await openaiAxios.post(\r\n+      '/engines/davinci-codex/completions',\r\n       {\r\n-        prompt: 'How to request OpenAI API in Next.js project?',\r\n-        max_tokens: 1024,\r\n+        prompt: text,\r\n+        max_tokens: 60,\r\n         n: 1,\r\n-        stop: ['\\n']\r\n-      },\r\n-      {\r\n-        headers: {\r\n-          'Content-Type': 'application/json',\r\n-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`\r\n-        }\r\n+        stop: '\\n',\r\n+        model: model\r\n       }\r\n     )\r\n-    return response.data.choices[0].text\r\n+    console.log(response.data.choices[0].text)\r\n   } catch (error) {\r\n-    \r\n     console.error(error)\r\n-    // return null\r\n-    return error\r\n   }\r\n }\r\n \r\n \r\n \r\n-\r\n export async function POST() {\r\n-  const text = await openai()\r\n+  const text = await openaiRequest('hello', '')\r\n   return {\r\n     props: { text }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010246124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \r\n \r\n \r\n export async function POST() {\r\n-  const text = await openaiRequest('hello', '')\r\n+  const text = await openaiRequest('hello', 'gpt-3.5-turbo')\r\n   return {\r\n     props: { text }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010289542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   headers: {\r\n     'Content-Type': 'application/json',\r\n     Authorization: `Bearer ${process.env.OPENAI_API_KEY}`\r\n   },\r\n-  timeout: 5000 // 设置请求超时时间为 5 秒钟\r\n+  timeout: 10000 // 设置请求超时时间为 5 秒钟\r\n })\r\n \r\n const openaiRequest = async (text:string, model:string) => {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1686010313241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,18 +10,15 @@\n })\r\n \r\n const openaiRequest = async (text:string, model:string) => {\r\n   try {\r\n-    const response = await openaiAxios.post(\r\n-      '/engines/davinci-codex/completions',\r\n-      {\r\n-        prompt: text,\r\n-        max_tokens: 60,\r\n-        n: 1,\r\n-        stop: '\\n',\r\n-        model: model\r\n-      }\r\n-    )\r\n+    const response = await openaiAxios.post('/chat/completions', {\r\n+      prompt: text,\r\n+      max_tokens: 60,\r\n+      n: 1,\r\n+      stop: '\\n',\r\n+      model: model\r\n+    })\r\n     console.log(response.data.choices[0].text)\r\n   } catch (error) {\r\n     console.error(error)\r\n   }\r\n"
+                },
+                {
+                    "date": 1686010406169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,11 @@\n   const text = await openaiRequest('hello', 'gpt-3.5-turbo')\r\n   return {\r\n     props: { text }\r\n   }\r\n+}\r\n+export async function GET() {\r\n+  const text = await openaiRequest('hello', 'gpt-3.5-turbo')\r\n+  return {\r\n+    props: { text }\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010427503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     props: { text }\r\n   }\r\n }\r\n export async function GET() {\r\n-  const text = await openaiRequest('hello', 'gpt-3.5-turbo')\r\n+  axios.get('')\r\n   return {\r\n     props: { text }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010432850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     props: { text }\r\n   }\r\n }\r\n export async function GET() {\r\n-  axios.get('')\r\n+  axios.get('https://dummyjson.com/products/1')\r\n   return {\r\n     props: { text }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010475064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,10 @@\n     props: { text }\r\n   }\r\n }\r\n export async function GET() {\r\n-  axios.get('https://dummyjson.com/products/1')\r\n+ const result = await  axios.get('https://dummyjson.com/products/1')\r\n+ console.log(result)\r\n   return {\r\n-    props: { text }\r\n+    props: { result }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010559834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,14 @@\n     props: { text }\r\n   }\r\n }\r\n export async function GET() {\r\n- const result = await  axios.get('https://dummyjson.com/products/1')\r\n- console.log(result)\r\n+//  const result = await  axios.get('https://dummyjson.com/products/1')\r\n+\r\n+fetch('https://dummyjson.com/products/1')\r\n+  .then((res) => res.json())\r\n+  .then(console.log)\r\n+//  console.log(result)\r\n   return {\r\n     props: { result }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010582886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,5 @@\n fetch('https://dummyjson.com/products/1')\r\n   .then((res) => res.json())\r\n   .then(console.log)\r\n //  console.log(result)\r\n-  return {\r\n-    props: { result }\r\n-  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010664377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,12 @@\n }\r\n export async function GET() {\r\n //  const result = await  axios.get('https://dummyjson.com/products/1')\r\n \r\n-fetch('https://dummyjson.com/products/1')\r\n-  .then((res) => res.json())\r\n-  .then(console.log)\r\n+// fetch('https://dummyjson.com/products/1')\r\n+//   .then((res) => res.json())\r\n+//   .then(console.log)\r\n //  console.log(result)\r\n+return {\r\n+  a:1\r\n+}\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010685408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export async function GET() {\r\n+export function GET() {\r\n //  const result = await  axios.get('https://dummyjson.com/products/1')\r\n \r\n // fetch('https://dummyjson.com/products/1')\r\n //   .then((res) => res.json())\r\n"
+                },
+                {
+                    "date": 1686010802508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,11 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export function GET() {\r\n-//  const result = await  axios.get('https://dummyjson.com/products/1')\r\n-\r\n-// fetch('https://dummyjson.com/products/1')\r\n-//   .then((res) => res.json())\r\n-//   .then(console.log)\r\n-//  console.log(result)\r\n-return {\r\n-  a:1\r\n-}\r\n+export default function handler(req, res) {\r\n+  if (req.method === 'GET') {\r\n+    res.status(200).json({ a: 1 })\r\n+  } else {\r\n+    res.status(405).json({ message: 'Method not allowed' })\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010817054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export default function handler(req, res) {\r\n+export default function handler(req:any, res:any) {\r\n   if (req.method === 'GET') {\r\n     res.status(200).json({ a: 1 })\r\n   } else {\r\n     res.status(405).json({ message: 'Method not allowed' })\r\n"
+                },
+                {
+                    "date": 1686010860486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,7 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export default function handler(req:any, res:any) {\r\n-  if (req.method === 'GET') {\r\n-    res.status(200).json({ a: 1 })\r\n-  } else {\r\n-    res.status(405).json({ message: 'Method not allowed' })\r\n-  }\r\n+export function getHandler(req, res) {\r\n+  res.status(200).json({ a: 1 })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010884901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,8 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export function getHandler(req, res) {\r\n+export function getHandler(req:any, res:any) {\r\n   res.status(200).json({ a: 1 })\r\n\\ No newline at end of file\n-}\n+}\r\n+export function GET(){}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686010918820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,5 @@\n }\r\n export function getHandler(req:any, res:any) {\r\n   res.status(200).json({ a: 1 })\r\n }\r\n-export function GET(){}\n\\ No newline at end of file\n+export const GET = getHandler\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686011044398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,7 @@\n   return {\r\n     props: { text }\r\n   }\r\n }\r\n-export function getHandler(req:any, res:any) {\r\n-  res.status(200).json({ a: 1 })\r\n-}\r\n-export const GET = getHandler\n\\ No newline at end of file\n+export default function handler(req:any, res:any) {\r\n+  res.status(200).json({ name: 'John Doe' })\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685973275166,
+            "name": "Commit-0",
+            "content": "import { Configuration, OpenAIApi } from 'openai'\r\nimport { httpsOverHttp } from 'tunnel'\r\n\r\n// 调用 ChatGpt 需配置代理，请根据本地代理信息正确填写\r\n// 代理 IP\r\nconst PROXY_HOST = ''\r\n// 代理端口\r\nconst PROXY_PORT = ''\r\n\r\nexport async function getGptResponse(prompt: string) {\r\n  const OPENAI_TOKEN_FILE = '.openai_token'\r\n\r\n  const token = fs\r\n    .readFileSync(path.join(__dirname, '../../', OPENAI_TOKEN_FILE), 'utf-8')\r\n    .trim()\r\n\r\n  // 设置代理服务器\r\n  const tunnel = httpsOverHttp({\r\n    proxy: {\r\n      host: PROXY_HOST,\r\n      port: Number(PROXY_PORT)\r\n    }\r\n  })\r\n\r\n  // 设置 OpenAi Api key\r\n  const configuration = new Configuration({\r\n    apiKey: token,\r\n    baseOptions: {\r\n      httpsAgent: tunnel,\r\n      proxy: false\r\n    }\r\n  })\r\n\r\n  // 调用 OpenAi Api\r\n  const openai = new OpenAIApi(configuration)\r\n  try {\r\n    const response = await openai.createChatCompletion({\r\n      model: 'gpt-3.5-turbo',\r\n      messages: [{ role: 'user', content: prompt }]\r\n    })\r\n    return response?.data?.choices?.[0]?.message?.content?.trim()\r\n  } catch (e) {\r\n    console.error('请检查代理 IP 及端口是否配置正确')\r\n    throw e\r\n  }\r\n}\r\n"
+        }
+    ]
+}

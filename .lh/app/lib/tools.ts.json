@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1685969079630,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686011340801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,18 @@\n     })\r\n     .replace(/\\//g, '-')\r\n   return dateString\r\n }\r\n+\r\n+export function prettyObject(msg: any) {\r\n+  const obj = msg\r\n+  if (typeof msg !== 'string') {\r\n+    msg = JSON.stringify(msg, null, '  ')\r\n+  }\r\n+  if (msg === '{}') {\r\n+    return obj.toString()\r\n+  }\r\n+  if (msg.startsWith('```json')) {\r\n+    return msg\r\n+  }\r\n+  return ['```json', msg, '```'].join('\\n')\r\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1685969079630,

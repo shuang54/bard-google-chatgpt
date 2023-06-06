@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 49,
             "patches": [
                 {
                     "date": 1685851782928,
@@ -140,6 +140,70 @@
                 {
                     "date": 1685865376571,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\r\n import React from 'react'\r\n import DialogList from './DialogList'\r\n import MessageBox from './MessageBox'\r\n \r\n"
+                },
+                {
+                    "date": 1685970479256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970490744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 lg:w-5/6 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970520406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 lg:w-5/6 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970588932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-5/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970623162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-5/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970646455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 md:p-0 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970726629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 md:p-0 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970768301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970799335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-3/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970814621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-2/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970820951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-2/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-2.5/4 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970839681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-2.5/4 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-7/12 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685970855894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-7/12 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-8/12 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685971031421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  lg:w-8/12 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  xl:w-8/12 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685971049526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0  xl:w-8/12 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1685971112828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-2 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
                 }
             ],
             "date": 1685851782927,

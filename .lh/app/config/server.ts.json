@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/config/server.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1686012110016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1686012110016,
+            "name": "Commit-0",
+            "content": "import md5 from 'spark-md5'\r\n\r\ndeclare global {\r\n  namespace NodeJS {\r\n    interface ProcessEnv {\r\n      OPENAI_API_KEY?: string\r\n      CODE?: string\r\n      BASE_URL?: string\r\n      PROXY_URL?: string\r\n      VERCEL?: string\r\n      HIDE_USER_API_KEY?: string // disable user's api key input\r\n      DISABLE_GPT4?: string // allow user to use gpt-4 or not\r\n    }\r\n  }\r\n}\r\n\r\nconst ACCESS_CODES = (function getAccessCodes(): Set<string> {\r\n  const code = process.env.CODE\r\n\r\n  try {\r\n    const codes = (code?.split(',') ?? [])\r\n      .filter((v) => !!v)\r\n      .map((v) => md5.hash(v.trim()))\r\n    return new Set(codes)\r\n  } catch (e) {\r\n    return new Set()\r\n  }\r\n})()\r\n\r\nexport const getServerSideConfig = () => {\r\n  if (typeof process === 'undefined') {\r\n    throw Error(\r\n      '[Server Config] you are importing a nodejs-only module outside of nodejs'\r\n    )\r\n  }\r\n\r\n  return {\r\n    apiKey: process.env.OPENAI_API_KEY,\r\n    code: process.env.CODE,\r\n    codes: ACCESS_CODES,\r\n    needCode: ACCESS_CODES.size > 0,\r\n    baseUrl: process.env.BASE_URL,\r\n    proxyUrl: process.env.PROXY_URL,\r\n    isVercel: !!process.env.VERCEL,\r\n    hideUserApiKey: !!process.env.HIDE_USER_API_KEY,\r\n    enableGPT4: !process.env.DISABLE_GPT4\r\n  }\r\n}\r\n"
+        }
+    ]
+}

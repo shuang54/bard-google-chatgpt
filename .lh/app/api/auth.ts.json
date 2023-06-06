@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/api/auth.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1686011878257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686012047738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import { NextRequest } from 'next/server'\r\n import { getServerSideConfig } from '../config/server'\r\n import md5 from 'spark-md5'\r\n-import { ACCESS_CODE_PREFIX } from '../constant'\r\n import { OPENAI_URL } from './common'\r\n \r\n+const ACCESS_CODE_PREFIX = 'ak-'\r\n function getIP(req: NextRequest) {\r\n   let ip = req.ip ?? req.headers.get('x-real-ip')\r\n   const forwardedFor = req.headers.get('x-forwarded-for')\r\n \r\n"
+                }
+            ],
+            "date": 1686011878257,
+            "name": "Commit-0",
+            "content": "import { NextRequest } from 'next/server'\r\nimport { getServerSideConfig } from '../config/server'\r\nimport md5 from 'spark-md5'\r\nimport { ACCESS_CODE_PREFIX } from '../constant'\r\nimport { OPENAI_URL } from './common'\r\n\r\nfunction getIP(req: NextRequest) {\r\n  let ip = req.ip ?? req.headers.get('x-real-ip')\r\n  const forwardedFor = req.headers.get('x-forwarded-for')\r\n\r\n  if (!ip && forwardedFor) {\r\n    ip = forwardedFor.split(',').at(0) ?? ''\r\n  }\r\n\r\n  return ip\r\n}\r\n\r\nfunction parseApiKey(bearToken: string) {\r\n  const token = bearToken.trim().replaceAll('Bearer ', '').trim()\r\n  const isOpenAiKey = !token.startsWith(ACCESS_CODE_PREFIX)\r\n\r\n  return {\r\n    accessCode: isOpenAiKey ? '' : token.slice(ACCESS_CODE_PREFIX.length),\r\n    apiKey: isOpenAiKey ? token : ''\r\n  }\r\n}\r\n\r\nexport function auth(req: NextRequest) {\r\n  const authToken = req.headers.get('Authorization') ?? ''\r\n\r\n  // check if it is openai api key or user token\r\n  const { accessCode, apiKey: token } = parseApiKey(authToken)\r\n\r\n  const hashedCode = md5.hash(accessCode ?? '').trim()\r\n\r\n  const serverConfig = getServerSideConfig()\r\n  console.log('[Auth] allowed hashed codes: ', [...serverConfig.codes])\r\n  console.log('[Auth] got access code:', accessCode)\r\n  console.log('[Auth] hashed access code:', hashedCode)\r\n  console.log('[User IP] ', getIP(req))\r\n  console.log('[Time] ', new Date().toLocaleString())\r\n\r\n  if (serverConfig.needCode && !serverConfig.codes.has(hashedCode) && !token) {\r\n    return {\r\n      error: true,\r\n      msg: !accessCode ? 'empty access code' : 'wrong access code'\r\n    }\r\n  }\r\n\r\n  // if user does not provide an api key, inject system api key\r\n  if (!token) {\r\n    const apiKey = serverConfig.apiKey\r\n    if (apiKey) {\r\n      console.log('[Auth] use system api key')\r\n      req.headers.set('Authorization', `Bearer ${apiKey}`)\r\n    } else {\r\n      console.log('[Auth] admin did not provide an api key')\r\n    }\r\n  } else {\r\n    console.log('[Auth] use user api key')\r\n  }\r\n\r\n  return {\r\n    error: false\r\n  }\r\n}\r\n"
+        }
+    ]
+}
