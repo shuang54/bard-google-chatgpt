@@ -4,6 +4,7 @@ import Image from 'next/image'
 import DialogItemHeader from './DialogItemHeader';
 import DialogItemFooter from './DialogItemFooter';
 import ReactMarkdown from 'react-markdown';
+import { Markdown } from '../Markdown';
 
 interface DialogItemBotProps {
   isHeader?: boolean;
@@ -24,6 +25,15 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
     isHeader = false
     isFooter = false
     } 
+
+  // 
+  const CodeBlock = ({ value }:any) => {
+  return (
+    <pre>
+      <code>{value}</code>
+    </pre>
+  );
+};
  return (
    <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>
       {isHeader && 
@@ -64,6 +74,9 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
             </div>
           ) : (
              <ReactMarkdown>{content}</ReactMarkdown>
+            //  <Markdown
+            //    content={content}
+            //  />
           )}
         </div>
       </div>

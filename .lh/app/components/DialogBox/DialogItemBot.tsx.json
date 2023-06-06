@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -120,6 +120,34 @@
                 {
                     "date": 1686060549858,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-             <ReactMarkdown children={content} />\r\n+             <ReactMarkdown>{content}</ReactMarkdown>\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686062586836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,17 @@\n     {\r\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n+\r\n+  // \r\n+  const CodeBlock = ({ value }:any) => {\r\n+  return (\r\n+    <pre>\r\n+      <code>{value}</code>\r\n+    </pre>\r\n+  );\r\n+};\r\n  return (\r\n    <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n"
+                },
+                {
+                    "date": 1686062611575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-             <ReactMarkdown>{content}</ReactMarkdown>\r\n+             <ReactMarkdown renderers={CodeBlock}>{content}</ReactMarkdown>\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686062733676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,33 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-             <ReactMarkdown renderers={CodeBlock}>{content}</ReactMarkdown>\r\n+            //  <ReactMarkdown renderers={CodeBlock}></ReactMarkdown>\r\n+                 <ReactMarkdown\r\n+      remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks]}\r\n+      rehypePlugins={[\r\n+        RehypeKatex,\r\n+        [\r\n+          RehypeHighlight,\r\n+          {\r\n+            detect: false,\r\n+            ignoreMissing: true,\r\n+          },\r\n+        ],\r\n+      ]}\r\n+      components={{\r\n+        pre: PreCode,\r\n+        a: (aProps) => {\r\n+          const href = aProps.href || \"\";\r\n+          const isInternal = /^\\/#/i.test(href);\r\n+          const target = isInternal ? \"_self\" : aProps.target ?? \"_blank\";\r\n+          return <a {...aProps} target={target} />;\r\n+        },\r\n+      }}\r\n+    >\r\n+               {content}\r\n+    </ReactMarkdown>\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686062785473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,33 +71,9 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-            //  <ReactMarkdown renderers={CodeBlock}></ReactMarkdown>\r\n-                 <ReactMarkdown\r\n-      remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks]}\r\n-      rehypePlugins={[\r\n-        RehypeKatex,\r\n-        [\r\n-          RehypeHighlight,\r\n-          {\r\n-            detect: false,\r\n-            ignoreMissing: true,\r\n-          },\r\n-        ],\r\n-      ]}\r\n-      components={{\r\n-        pre: PreCode,\r\n-        a: (aProps) => {\r\n-          const href = aProps.href || \"\";\r\n-          const isInternal = /^\\/#/i.test(href);\r\n-          const target = isInternal ? \"_self\" : aProps.target ?? \"_blank\";\r\n-          return <a {...aProps} target={target} />;\r\n-        },\r\n-      }}\r\n-    >\r\n-               {content}\r\n-    </ReactMarkdown>\r\n+             <ReactMarkdown>{content}</ReactMarkdown>\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686063583923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import Image from 'next/image'\r\n import DialogItemHeader from './DialogItemHeader';\r\n import DialogItemFooter from './DialogItemFooter';\r\n import ReactMarkdown from 'react-markdown';\r\n+import { Markdown } from '../Markdown';\r\n \r\n interface DialogItemBotProps {\r\n   isHeader?: boolean;\r\n   isFooter?: boolean;\r\n@@ -71,9 +72,10 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-             <ReactMarkdown>{content}</ReactMarkdown>\r\n+            //  <ReactMarkdown></ReactMarkdown>\r\n+             <Markdown>{content}</Markdown>\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686063639041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,11 @@\n               </p>\r\n             </div>\r\n           ) : (\r\n             //  <ReactMarkdown></ReactMarkdown>\r\n-             <Markdown>{content}</Markdown>\r\n+             <Markdown\r\n+               content={content}\r\n+             />\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686063747575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,12 +72,12 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-            //  <ReactMarkdown></ReactMarkdown>\r\n-             <Markdown\r\n-               content={content}\r\n-             />\r\n+             <ReactMarkdown>{content}</ReactMarkdown>\r\n+            //  <Markdown\r\n+            //    content={content}\r\n+            //  />\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
                 }
             ],
             "date": 1685872231142,

@@ -1,3 +1,4 @@
+import { toast} from 'react-hot-toast'
 export const getCurrentTime = ()=> {
   const date = new Date()
   const dateString = date
@@ -25,4 +26,33 @@ export function prettyObject(msg: any) {
     return msg
   }
   return ['```json', msg, '```'].join('\n')
+}
+
+export function merge(target: any, source: any) {
+  Object.keys(source).forEach(function (key) {
+    if (source[key] && typeof source[key] === 'object') {
+      merge((target[key] = target[key] || {}), source[key])
+      return
+    }
+    target[key] = source[key]
+  })
+}
+export async function copyToClipboard(text: string) {
+  try {
+    await navigator.clipboard.writeText(text)
+    toast.success('Copy Success')
+  } catch (error) {
+    const textArea = document.createElement('textarea')
+    textArea.value = text
+    document.body.appendChild(textArea)
+    textArea.focus()
+    textArea.select()
+    try {
+      document.execCommand('copy')
+      toast.success('Copy Success')
+    } catch (error) {
+      toast.error('Copy Failed')
+    }
+    document.body.removeChild(textArea)
+  }
 }

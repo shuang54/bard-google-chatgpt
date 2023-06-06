@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1685969079630,
@@ -12,6 +12,26 @@
                 {
                     "date": 1686011340801,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,18 @@\n     })\r\n     .replace(/\\//g, '-')\r\n   return dateString\r\n }\r\n+\r\n+export function prettyObject(msg: any) {\r\n+  const obj = msg\r\n+  if (typeof msg !== 'string') {\r\n+    msg = JSON.stringify(msg, null, '  ')\r\n+  }\r\n+  if (msg === '{}') {\r\n+    return obj.toString()\r\n+  }\r\n+  if (msg.startsWith('```json')) {\r\n+    return msg\r\n+  }\r\n+  return ['```json', msg, '```'].join('\\n')\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686063048569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,15 @@\n   if (msg.startsWith('```json')) {\r\n     return msg\r\n   }\r\n   return ['```json', msg, '```'].join('\\n')\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+export function merge(target: any, source: any) {\r\n+  Object.keys(source).forEach(function (key) {\r\n+    if (source[key] && typeof source[key] === 'object') {\r\n+      merge((target[key] = target[key] || {}), source[key])\r\n+      return\r\n+    }\r\n+    target[key] = source[key]\r\n+  })\r\n+}\r\n"
+                },
+                {
+                    "date": 1686063175098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,4 +35,23 @@\n     }\r\n     target[key] = source[key]\r\n   })\r\n }\r\n+export async function copyToClipboard(text: string) {\r\n+  try {\r\n+    await navigator.clipboard.writeText(text)\r\n+    showToast(Locale.Copy.Success)\r\n+  } catch (error) {\r\n+    const textArea = document.createElement('textarea')\r\n+    textArea.value = text\r\n+    document.body.appendChild(textArea)\r\n+    textArea.focus()\r\n+    textArea.select()\r\n+    try {\r\n+      document.execCommand('copy')\r\n+      showToast(Locale.Copy.Success)\r\n+    } catch (error) {\r\n+      showToast(Locale.Copy.Failed)\r\n+    }\r\n+    document.body.removeChild(textArea)\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686063388324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { Toast } from \"react-hot-toast\"\r\n export const getCurrentTime = ()=> {\r\n   const date = new Date()\r\n   const dateString = date\r\n     .toLocaleString('zh', {\r\n@@ -38,8 +39,9 @@\n }\r\n export async function copyToClipboard(text: string) {\r\n   try {\r\n     await navigator.clipboard.writeText(text)\r\n+    Toast()\r\n     showToast(Locale.Copy.Success)\r\n   } catch (error) {\r\n     const textArea = document.createElement('textarea')\r\n     textArea.value = text\r\n"
+                },
+                {
+                    "date": 1686063509115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Toast } from \"react-hot-toast\"\r\n+import { toast} from 'react-hot-toast'\r\n export const getCurrentTime = ()=> {\r\n   const date = new Date()\r\n   const dateString = date\r\n     .toLocaleString('zh', {\r\n@@ -39,9 +39,9 @@\n }\r\n export async function copyToClipboard(text: string) {\r\n   try {\r\n     await navigator.clipboard.writeText(text)\r\n-    Toast()\r\n+    toast.success()\r\n     showToast(Locale.Copy.Success)\r\n   } catch (error) {\r\n     const textArea = document.createElement('textarea')\r\n     textArea.value = text\r\n"
+                },
+                {
+                    "date": 1686063556234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,21 +39,20 @@\n }\r\n export async function copyToClipboard(text: string) {\r\n   try {\r\n     await navigator.clipboard.writeText(text)\r\n-    toast.success()\r\n-    showToast(Locale.Copy.Success)\r\n+    toast.success('Copy Success')\r\n   } catch (error) {\r\n     const textArea = document.createElement('textarea')\r\n     textArea.value = text\r\n     document.body.appendChild(textArea)\r\n     textArea.focus()\r\n     textArea.select()\r\n     try {\r\n       document.execCommand('copy')\r\n-      showToast(Locale.Copy.Success)\r\n+      toast.success('Copy Success')\r\n     } catch (error) {\r\n-      showToast(Locale.Copy.Failed)\r\n+      toast.error('Copy Failed')\r\n     }\r\n     document.body.removeChild(textArea)\r\n   }\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1685969079630,
