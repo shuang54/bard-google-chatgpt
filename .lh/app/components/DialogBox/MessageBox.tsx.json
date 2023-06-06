@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 239,
+            "activePatchIndex": 240,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -964,6 +964,10 @@
                 {
                     "date": 1686029393474,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices.message.content, role: answer.choices.message.role, date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: randomId })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1686029530439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,8 @@\n import { getCurrentTime } from '@/app/lib/tools'\r\n import { v4 as uuidv4 } from 'uuid';\r\n import getAnswer from '@/app/actions/getAnswer';\r\n const MessageBox = () => {\r\n-  // uuid获取随机id\r\n-  const randomId = uuidv4();\r\n \r\n   // 创建一个 state 来保存 textarea 的值和高度\r\n   const [value, setValue] = useState('');\r\n   const [height, setHeight] = useState('24');\r\n@@ -37,16 +35,16 @@\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: randomId })\r\n+    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n \r\n   }\r\n \r\n"
                 }
             ],
             "date": 1685855786092,

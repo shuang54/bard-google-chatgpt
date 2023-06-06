@@ -8,8 +8,6 @@ import { getCurrentTime } from '@/app/lib/tools'
 import { v4 as uuidv4 } from 'uuid';
 import getAnswer from '@/app/actions/getAnswer';
 const MessageBox = () => {
-  // uuid获取随机id
-  const randomId = uuidv4();
 
   // 创建一个 state 来保存 textarea 的值和高度
   const [value, setValue] = useState('');
@@ -38,14 +36,14 @@ const MessageBox = () => {
   const { conversation, addMessage, deleteMessage } = useConversation();
   const handleSendMessage = async ()=>{
     if(value==="") return;
-    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: randomId })
+    addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })
     setValue("")
     // 发送请求获取数据
     const answer = await getAnswer({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: value }]
     });
-    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: randomId })
+    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })
     console.log(answer)
 
   }
