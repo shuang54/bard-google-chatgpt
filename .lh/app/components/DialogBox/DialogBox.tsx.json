@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 49,
+            "activePatchIndex": 54,
             "patches": [
                 {
                     "date": 1685851782928,
@@ -204,6 +204,26 @@
                 {
                     "date": 1685971112828,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-2 '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686030299601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-2 '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686030472787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100vh-56px] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686030490631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100vh-56px] '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686030698060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686030872184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
                 }
             ],
             "date": 1685851782927,

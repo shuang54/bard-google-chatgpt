@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 40,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -168,6 +168,18 @@
                 {
                     "date": 1686028058853,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n       return (\r\n-        <DialogItemBot key={item.id} isHeader isFooter content='default' />\r\n+        <DialogItemBot key={item.id} isHeader isFooter content={item.content} />\r\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686029997516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12'>\r\n+    <div className='p-4 basis-10/12 overflow-scroll'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686030020353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-scroll'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686030144073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
                 }
             ],
             "date": 1685852651513,

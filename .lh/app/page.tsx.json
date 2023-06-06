@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1685777096212,
@@ -64,6 +64,30 @@
                 {
                     "date": 1685851802726,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import ClientOnly from \"./components/ClientOnly\";\n+import DialogBox from \"./components/DialogBox/DialogBox\";\n import NavMenu from \"./components/NavMenu/NavMenu\";\n \n export default function Home() {\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n           <NavMenu/>\n-        <div className=\"bg-blue-300 w-full md:w-3/4\">右边</div>\n+          <DialogBox/>\n       </main>\n     </ClientOnly>\n   )\n }\n"
+                },
+                {
+                    "date": 1686030369723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n+      <main className=\"flex flex-wrap h-screen w-screen mt-16\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686030375536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen mt-16\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686030792078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n+      <main className=\"flex flex-wrap h-[100%] w-screen pt-16\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686030809450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-[100%] w-screen pt-16\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686030823079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-10\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686030834639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-10\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
                 }
             ],
             "date": 1685777096212,
