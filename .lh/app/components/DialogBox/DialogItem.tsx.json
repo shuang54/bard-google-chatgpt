@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 50,
+            "activePatchIndex": 51,
             "patches": [
                 {
                     "date": 1685852722180,
@@ -208,6 +208,10 @@
                 {
                     "date": 1685968221200,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,18 +8,18 @@\n   image?:string;\r\n }\r\n \r\n const DialogItem: React.FC<dialogItemProps> = ({\r\n-  content,\r\n+  content = \"nothing\",\r\n   image\r\n }) => {\r\n   return (\r\n     <div className=' p-4 rounded-2xl flex justify-start items-center'>\r\n       <div >\r\n         <Image width={32} height={32} src={`${image ? image : '/images/placeholder.jpg'}`} alt=\"Avatar\" className=' mr-8 rounded-full' />\r\n       </div>\r\n       <div className=' leading-10'>\r\n-        hello\r\n+        {content}\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686056558390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     <div className=' p-4 rounded-2xl flex justify-start items-center'>\r\n       <div >\r\n         <Image width={32} height={32} src={`${image ? image : '/images/placeholder.jpg'}`} alt=\"Avatar\" className=' mr-8 rounded-full' />\r\n       </div>\r\n-      <div className=' leading-10'>\r\n+      <div className=' leading-10 dark:text-white'>\r\n         {content}\r\n       </div>\r\n     </div>\r\n   )\r\n"
                 }
             ],
             "date": 1685852722180,

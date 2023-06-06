@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 253,
+            "activePatchIndex": 260,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -1020,6 +1020,34 @@
                 {
                     "date": 1686052113537,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n       // stream:true,\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n     updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })\r\n-    console.log(answer)\r\n+    // console.log(answer)\r\n \r\n   }\r\n   function handleKeyDown(event:any) {\r\n     if (event.ctrlKey && event.key === 'Enter') {\r\n"
+                },
+                {
+                    "date": 1686056625958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,9 @@\n           </div>\r\n         </div>\r\n         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />\r\n       </div>\r\n-      <p className='text-xs m-3'>Bard may display inaccurate or offensive information that doesn’t represent Google’s views.</p>\r\n+      <p className='text-xs m-3 dark:text-white'>Bard may display inaccurate or offensive information that doesn’t represent Google’s views.</p>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1686056634685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n           className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n-          <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n+          <div className='p-3 dark:bg-  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />\r\n"
+                },
+                {
+                    "date": 1686056641551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n           className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n-          <div className='p-3 dark:bg-  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n+          <div className='p-3 dark:bg-[#131314]  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />\r\n"
+                },
+                {
+                    "date": 1686056654494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n \r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n-        <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n+        <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl dark:bg-[#131314]  bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n         >\r\n           <textarea\r\n             onKeyDown={handleKeyDown}\r\n             onFocus={()=>{\r\n@@ -82,9 +82,9 @@\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n           className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n-          <div className='p-3 dark:bg-[#131314]  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n+          <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />\r\n"
+                },
+                {
+                    "date": 1686056659619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n               updateHeight();\r\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n-          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n+            className='w-11/12 dark:bg-[#131314]   h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1686056673152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n               updateHeight();\r\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n-            className='w-11/12 dark:bg-[#131314]   h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n+            className='w-11/12 dark:bg-[#131314] dark:text-white  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1686056692834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n             className='w-11/12 dark:bg-[#131314] dark:text-white  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n-            <AiFillAudio size={24}/>\r\n+            <AiFillAudio className='dark:text-white' size={24}/>\r\n           </div>\r\n         </div>\r\n         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />\r\n       </div>\r\n"
                 }
             ],
             "date": 1685855786092,

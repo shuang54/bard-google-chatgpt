@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1685777117905,
@@ -40,6 +40,14 @@
                 {
                     "date": 1686033944810,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,5 @@\n }\n \n body {\n \n-}\n-/* 以 5px 的边框半径设置滚动条 */\n-.dialogList::-webkit-scrollbar-thumb {\n-    display: none;\n-    border-radius: 5px;\n-    scrollbar-width: 2px;\n-    scrollbar-track-color: #ccc;\n-    scrollbar-shadow-color: #fff;\n-  }\n\\ No newline at end of file\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686056987534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n @tailwind components;\n @tailwind utilities;\n \n :root {\n-\n+  aa:#e4e4e7\n }\n \n @media (prefers-color-scheme: dark) {\n   :root {\n"
+                },
+                {
+                    "date": 1686057015865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n @tailwind components;\n @tailwind utilities;\n \n :root {\n-  aa:#e4e4e7\n+\n }\n \n @media (prefers-color-scheme: dark) {\n   :root {\n"
                 }
             ],
             "date": 1685777117905,

@@ -19,7 +19,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
       className={`
       px-4
       py-3
-      hover:bg-neutral-100
+       hover:bg-hoverBg dark:hover:bg-darkHoverBg
+       dark:border-[#ccc]
       font-semibold
        cursor-pointer
       ${Icon ? 'flex justify-start items-center gap-3' : ''}

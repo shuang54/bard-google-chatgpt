@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1685940438530,
@@ -12,6 +12,14 @@
                 {
                     "date": 1685941663911,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   title,\r\n   icon:Icon\r\n }) => {\r\n   return (\r\n-    <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9]'>\r\n+    <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] active:bg-zinc-300 transition-all'>\r\n       <Icon size={18} color='#0b57d0' />\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686057812693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   icon:Icon\r\n }) => {\r\n   return (\r\n     <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] active:bg-zinc-300 transition-all'>\r\n-      <Icon size={18} color='#0b57d0' />\r\n+      <Icon size={18} color='#0b57d0' className='dark:text-[#90b8fa]'/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1686057846703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   icon:Icon\r\n }) => {\r\n   return (\r\n     <div className='p-2 border border-[#c4c7c5] rounded-md cursor-pointer hover:bg-[#f9f9f9] active:bg-zinc-300 transition-all'>\r\n-      <Icon size={18} color='#0b57d0' className='dark:text-[#90b8fa]'/>\r\n+      <Icon size={18} className='dark:text-[#90b8fa] text-[#0b57d0]'/>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
                 }
             ],
             "date": 1685940438530,

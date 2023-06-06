@@ -20,6 +20,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
       className="
       py-3
       hover:bg-neutral-100
+      dark:hover:bg-[#141414]
       hover:rounded-r-full
        cursor-pointer
       font-semibold
@@ -30,8 +31,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
        items-center
     "
     >
-      {Icon && (<Icon className="w-14 h-14 p-4" />)}
-      <span className=" text-zinc-700 font-normal">{label}</span>
+      {Icon && (<Icon className="w-14 h-14 p-4 dark:text-white" />)}
+      <span className="dark:text-[white] text-zinc-700 font-normal">{label}</span>
     </div>
   );
 }

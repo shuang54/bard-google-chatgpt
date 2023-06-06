@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 40,
             "patches": [
                 {
                     "date": 1685782832774,
@@ -148,6 +148,26 @@
                 {
                     "date": 1685784778679,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n        items-center\r\n     \"\r\n     >\r\n       {Icon && (<Icon className=\"w-14 h-14 p-4\" />)}\r\n-      <span className=\" text-zinc-700 font-med\">{label}</span>\r\n+      <span className=\" text-zinc-700 font-normal\">{label}</span>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1686056078340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n       onClick={onClick}\r\n       className=\"\r\n       py-3\r\n       hover:bg-neutral-100\r\n+      dark:hover:bg-[#141414]\r\n       hover:rounded-r-full\r\n        cursor-pointer\r\n       font-semibold\r\n       h-14\r\n"
+                },
+                {
+                    "date": 1686056091914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n       className=\"\r\n       py-3\r\n       hover:bg-neutral-100\r\n       dark:hover:bg-[#141414]\r\n+      dark:text-[white]\r\n       hover:rounded-r-full\r\n        cursor-pointer\r\n       font-semibold\r\n       h-14\r\n"
+                },
+                {
+                    "date": 1686056105027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       className=\"\r\n       py-3\r\n       hover:bg-neutral-100\r\n       dark:hover:bg-[#141414]\r\n-      dark:text-[white]\r\n+      \r\n       hover:rounded-r-full\r\n        cursor-pointer\r\n       font-semibold\r\n       h-14\r\n@@ -32,9 +32,9 @@\n        items-center\r\n     \"\r\n     >\r\n       {Icon && (<Icon className=\"w-14 h-14 p-4\" />)}\r\n-      <span className=\" text-zinc-700 font-normal\">{label}</span>\r\n+      <span className=\"dark:text-[white] text-zinc-700 font-normal\">{label}</span>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1686056186205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n       className=\"\r\n       py-3\r\n       hover:bg-neutral-100\r\n       dark:hover:bg-[#141414]\r\n-      \r\n       hover:rounded-r-full\r\n        cursor-pointer\r\n       font-semibold\r\n       h-14\r\n@@ -31,9 +30,9 @@\n        justify-start\r\n        items-center\r\n     \"\r\n     >\r\n-      {Icon && (<Icon className=\"w-14 h-14 p-4\" />)}\r\n+      {Icon && (<Icon className=\"w-14 h-14 p-4 dark:text-[white]\" />)}\r\n       <span className=\"dark:text-[white] text-zinc-700 font-normal\">{label}</span>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1686056324736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n        justify-start\r\n        items-center\r\n     \"\r\n     >\r\n-      {Icon && (<Icon className=\"w-14 h-14 p-4 dark:text-[white]\" />)}\r\n+      {Icon && (<Icon className=\"w-14 h-14 p-4 dark:text-white\" />)}\r\n       <span className=\"dark:text-[white] text-zinc-700 font-normal\">{label}</span>\r\n     </div>\r\n   );\r\n }\r\n"
                 }
             ],
             "date": 1685782832774,

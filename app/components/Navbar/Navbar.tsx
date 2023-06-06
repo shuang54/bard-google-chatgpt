@@ -7,7 +7,7 @@ import UserMenu from "./UserMenu";
 const Navbar = () => {
 
   return (
-    <div className="fixed w-full bg-white z-10 ">
+    <div className="fixed w-full bg-white dark:bg-black z-10 ">
       <div className="py-1">
         <Container>
           <div
@@ -21,7 +21,7 @@ const Navbar = () => {
           "
           >
             <div className=" flex flex-row justify-center items-center gap-3 ">
-              <HiBars3 size={48} className=" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 "/>
+              <HiBars3 size={48} className=" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg dark:text-white hover:rounded-full p-3 "/>
               <Logo />
             </div>
             <UserMenu/>

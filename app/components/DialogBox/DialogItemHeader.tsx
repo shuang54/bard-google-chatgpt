@@ -20,12 +20,12 @@ const DialogItemHeader = () => {
   return (
     <div className="w-full h-auto">
       <div className=' flex justify-end p-2 pr-4 ' onClick={handleChangeViewShow}>
-        <div className='w-[160px] h-[36px] text-sm hover:bg-zinc-200 flex justify-center items-center cursor-pointer rounded-xl select-none'> 
+        <div className='w-[160px] h-[36px] text-sm hover:bg-hoverBg dark:hover:bg-darkHoverBg flex justify-center items-center cursor-pointer rounded-xl select-none'> 
         View other drafts 
           {isViewShow ? (
-            <IoIosArrowUp size={24} color='#0b57d0' className='pl-1'/>
+            <IoIosArrowUp size={24} className='dark:text-[#a4c7fa] text-[#3a57d0] pl-1'  />
             ):(
-            <IoIosArrowDown size={24} color='#0b57d0' className='pl-1'/>
+              <IoIosArrowDown size={24} className='dark:text-[#a4c7fa] text-[#3a57d0] pl-1'/>
           )}
         </div>
       </div>
@@ -37,7 +37,7 @@ const DialogItemHeader = () => {
               <OtherDraftItem active={answerId == "Draft 2"} handleAnswerId={handleAnswerId} step="Draft 2" content='Hi there! How can I help you today?'/>
             </div>
             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>
-              <IoMdRefresh size={18} onClick={()=>{}} color='#3a57d0'/>
+              <IoMdRefresh size={18} onClick={() => { }}  className='dark:text-[#a4c7fa] text-[#3a57d0]'/>
             </div>
           </div>
         )

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1685777096212,
@@ -88,6 +88,14 @@
                 {
                     "date": 1686030834639,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-10\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686056729776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686056746448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black transition-all\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
                 }
             ],
             "date": 1685777096212,

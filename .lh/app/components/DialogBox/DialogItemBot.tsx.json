@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -96,6 +96,14 @@
                 {
                     "date": 1686052131971,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   isFooter = true,\r\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n-  console.log(content)\r\n+  // console.log(content)\r\n   if(content == \"\")\r\n     {\r\n     isHeader = false\r\n     isFooter = false\r\n"
+                },
+                {
+                    "date": 1686056491616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n  return (\r\n-    <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n+    <div className='bg-white dark:bg-black dark:text-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
+                },
+                {
+                    "date": 1686056509625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n  return (\r\n-    <div className='bg-white dark:bg-black dark:text-white p-4 rounded-2xl  mb-2'>\r\n+   <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
                 }
             ],
             "date": 1685872231142,

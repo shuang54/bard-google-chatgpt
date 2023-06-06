@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 80,
+            "activePatchIndex": 83,
             "patches": [
                 {
                     "date": 1685851782928,
@@ -328,6 +328,18 @@
                 {
                     "date": 1686052044150,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,11 @@\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n-      console.log(node.scrollTop, node.scrollHeight)\r\n+      // 异步更新，同步更新的话，UI还没有更新\r\n       setTimeout(()=>{\r\n-        node.scrollTop = node.scrollHeight - 200;\r\n-        console.log(node.scrollTop, node.scrollHeight)\r\n+        node.scrollTop = node.scrollHeight ;\r\n       },0)\r\n     }\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686056436603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       },0)\r\n     }\r\n   }\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] dark:bg-black'>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox handleScrollDown={handleScrollDown }/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686056445348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] dark:bg-black'>\r\n-      <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n+      <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col dark:bg-black'>\r\n         <DialogList/>\r\n         <MessageBox handleScrollDown={handleScrollDown }/>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1686056521933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] dark:bg-black'>\r\n-      <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col dark:bg-black'>\r\n+      <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col dark:bg-[#222327]'>\r\n         <DialogList/>\r\n         <MessageBox handleScrollDown={handleScrollDown }/>\r\n       </div>\r\n     </div>\r\n"
                 }
             ],
             "date": 1685851782927,

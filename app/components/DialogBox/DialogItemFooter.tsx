@@ -24,11 +24,11 @@ const DialogItemFooter = () => {
       </div>
       <div className=' relative'>
         <div onClick={() => setCopyIsShow(!copyIsShow)} className=" flex flex-row justify-center items-center gap-3  ">
-          <HiEllipsisVertical size={48} className=" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300 transition-all" />
+          <HiEllipsisVertical size={48} className=" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3 active:bg-zinc-300 transition-all" />
         </div>
         {/* copy */}
         {copyIsShow && (
-          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white select-none z-20'>
+          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:border-none dark:bg-black dark:text-white select-none z-20'>
             <MenuItem onClick={() => { }} label='Copy' icon={RiFileCopyLine} />
             <MenuItem onClick={() => { }} label='Report legal issue' icon={RiFlag2Line} />
           </div>

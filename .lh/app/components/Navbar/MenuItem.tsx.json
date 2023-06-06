@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1685779266953,
@@ -56,6 +56,26 @@
                 {
                     "date": 1685965418379,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n       py-3\r\n       hover:bg-neutral-100\r\n       font-semibold\r\n        cursor-pointer\r\n-      ${Icon ? 'flex justify-start items-center gap-2' : ''}\r\n+      ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n     >\r\n       {Icon && (\r\n-        <Icon size={24} className=\"pr-2\" />\r\n+        <Icon size={24} className=\"\" />\r\n       )}\r\n       {label}\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1686058018892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n       className={`\r\n       px-4\r\n       py-3\r\n       hover:bg-neutral-100\r\n+      \r\n       font-semibold\r\n        cursor-pointer\r\n       ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n"
+                },
+                {
+                    "date": 1686058035322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       className={`\r\n       px-4\r\n       py-3\r\n       hover:bg-neutral-100\r\n-      \r\n+       hover:bg-hoverBg dark:hover:bg-darkHoverBg\r\n       font-semibold\r\n        cursor-pointer\r\n       ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n"
+                },
+                {
+                    "date": 1686058066118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n       onClick={onClick}\r\n       className={`\r\n       px-4\r\n       py-3\r\n-      hover:bg-neutral-100\r\n        hover:bg-hoverBg dark:hover:bg-darkHoverBg\r\n+       dark:border-[white]\r\n       font-semibold\r\n        cursor-pointer\r\n       ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n"
+                },
+                {
+                    "date": 1686058085510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       className={`\r\n       px-4\r\n       py-3\r\n        hover:bg-hoverBg dark:hover:bg-darkHoverBg\r\n-       dark:border-[white]\r\n+       dark:border-[black]\r\n       font-semibold\r\n        cursor-pointer\r\n       ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n"
+                },
+                {
+                    "date": 1686058112042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       className={`\r\n       px-4\r\n       py-3\r\n        hover:bg-hoverBg dark:hover:bg-darkHoverBg\r\n-       dark:border-[black]\r\n+       dark:border-[#ccc]\r\n       font-semibold\r\n        cursor-pointer\r\n       ${Icon ? 'flex justify-start items-center gap-3' : ''}\r\n     `}\r\n"
                 }
             ],
             "date": 1685779266953,

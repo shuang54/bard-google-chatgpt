@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 63,
+            "activePatchIndex": 73,
             "patches": [
                 {
                     "date": 1685782728359,
@@ -260,6 +260,46 @@
                 {
                     "date": 1685871647678,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,14 @@\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsSun } from 'react-icons/bs'\r\n import { CookieService } from '@/app/lib/CookieService';\r\n+import { useConversation } from '@/app/hooks/useConversation';\r\n const NavMenu = () => {\r\n   const [colorTheme,setColorTheme] = useState(true);\r\n+  const {removeAll} = useConversation();\r\n   const resetChat = ()=>{\r\n-    CookieService.removeItem('conversation')\r\n+    removeAll()\r\n   }\r\n \r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n"
+                },
+                {
+                    "date": 1686055514539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n   }\r\n   return (\r\n-    <div className=\"md:w-1/5 md:block hidden pt-2 relative\" >\r\n+    <div className=\"md:w-1/5 md:block hidden pt-2 relative dark:bg-black dark:text-white\" >\r\n       <div>\r\n         <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n         <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate} />\r\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n"
+                },
+                {
+                    "date": 1686055730967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,11 @@\n \r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n+    if (document.body.classList)\r\n+    \r\n+    document.body.classList.remove('dark');\r\n   }\r\n   return (\r\n     <div className=\"md:w-1/5 md:block hidden pt-2 relative dark:bg-black dark:text-white\" >\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1686055796597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,16 @@\n \r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n-    if (document.body.classList)\r\n+    if (document.body.classList.contains('white')) {\r\n+      document.body.classList.add('black');\r\n+      document.body.classList.remove('white');\r\n+    }else{\r\n+      document.body.classList.add('white');\r\n+      document.body.classList.remove('black');\r\n+    }\r\n     \r\n-    document.body.classList.remove('dark');\r\n   }\r\n   return (\r\n     <div className=\"md:w-1/5 md:block hidden pt-2 relative dark:bg-black dark:text-white\" >\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1686055811661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,13 +18,13 @@\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n     if (document.body.classList.contains('white')) {\r\n-      document.body.classList.add('black');\r\n+      document.body.classList.add('dark');\r\n       document.body.classList.remove('white');\r\n     }else{\r\n       document.body.classList.add('white');\r\n-      document.body.classList.remove('black');\r\n+      document.body.classList.remove('dark');\r\n     }\r\n     \r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686055875929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,13 @@\n     setColorTheme(!colorTheme)\r\n     if (document.body.classList.contains('white')) {\r\n       document.body.classList.add('dark');\r\n       document.body.classList.remove('white');\r\n+      window.localStorage.setItem('theme','dark')\r\n     }else{\r\n       document.body.classList.add('white');\r\n       document.body.classList.remove('dark');\r\n+      window.localStorage.setItem('theme','white')\r\n     }\r\n     \r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686055964741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       <div onClick={changeColorTheme} className=' absolute bottom-5 left-5'>\r\n         {colorTheme ? (\r\n           <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n           ) : (\r\n-          <BsSun size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+          <BsSun size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer dark:border-white'/>\r\n         )}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1686056834331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { AiOutlineQuestionCircle } from 'react-icons/ai'\r\n import { MdUpdate, MdOutlineFeedback } from 'react-icons/md'\r\n import { LuCalendarRange, LuMoon } from 'react-icons/lu'\r\n import { BsSun } from 'react-icons/bs'\r\n+import { BiReset } from 'react-icons/bi'\r\n import { CookieService } from '@/app/lib/CookieService';\r\n import { useConversation } from '@/app/hooks/useConversation';\r\n const NavMenu = () => {\r\n   const [colorTheme,setColorTheme] = useState(true);\r\n@@ -31,9 +32,9 @@\n   }\r\n   return (\r\n     <div className=\"md:w-1/5 md:block hidden pt-2 relative dark:bg-black dark:text-white\" >\r\n       <div>\r\n-        <MenuItem label='Reset chat' onClick={() => resetChat()} icon={GrPowerReset} />\r\n+        <MenuItem label='Reset chat' onClick={() => resetChat()} icon={BiReset} />\r\n         <MenuItem label='Bard Activity' onClick={() => resetChat()} icon={MdUpdate} />\r\n         <MenuItem label='FAQ' onClick={() => resetChat()} icon={AiOutlineQuestionCircle} />\r\n         <MenuItem label='Updates' onClick={() => resetChat()} icon={LuCalendarRange} />\r\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n"
+                },
+                {
+                    "date": 1686056924031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n-    if (document.body.classList.contains('white')) {\r\n+    if (colorTheme) {\r\n       document.body.classList.add('dark');\r\n       document.body.classList.remove('white');\r\n       window.localStorage.setItem('theme','dark')\r\n     }else{\r\n"
+                },
+                {
+                    "date": 1686057149442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,11 @@\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div onClick={changeColorTheme} className=' absolute bottom-5 left-5'>\r\n         {colorTheme ? (\r\n-          <LuMoon size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer'/>\r\n+          <LuMoon size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer'/>\r\n           ) : (\r\n-          <BsSun size={42} className='border border-black rounded-full hover:bg-zinc-200 p-3 cursor-pointer dark:border-white'/>\r\n+            <BsSun size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer dark:border-white'/>\r\n         )}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1686057173218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,11 @@\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div onClick={changeColorTheme} className=' absolute bottom-5 left-5'>\r\n         {colorTheme ? (\r\n-          <LuMoon size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer'/>\r\n+          <LuMoon size={42} className='border border-black rounded-full hover:bg-hoverBg dark:hover:bg-darkHoverBg p-3 cursor-pointer'/>\r\n           ) : (\r\n-            <BsSun size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer dark:border-white'/>\r\n+            <BsSun size={42} className='border border-black rounded-full hover:bg-hoverBg dark:hover:bg-darkHoverBg p-3 cursor-pointer dark:border-white'/>\r\n         )}\r\n       </div>\r\n     </div>\r\n   )\r\n"
                 }
             ],
             "date": 1685782728359,

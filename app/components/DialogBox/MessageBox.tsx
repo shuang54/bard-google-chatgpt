@@ -64,7 +64,7 @@ const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
   return (
     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>
       <div className='w-full h-auto flex justify-center items-center px-24'>
-        <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}
+        <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl dark:bg-[#131314]  bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}
         >
           <textarea
             onKeyDown={handleKeyDown}
@@ -82,14 +82,14 @@ const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
             }}
             onInput={updateHeight}
             style={{ 'height':height }}
-          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder="Ctrl + Enter a prompt here" ></textarea>
+            className='w-11/12 dark:bg-[#131314] dark:text-white  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder="Ctrl + Enter a prompt here" ></textarea>
           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>
-            <AiFillAudio size={24}/>
+            <AiFillAudio className='dark:text-white' size={24}/>
           </div>
         </div>
         <RiSendPlane2Line onClick={handleSendMessage} size={48} color={`${isInputFilled ? '#0b57d0' : '#ccc'}`} className={`m-2 ${isInputFilled ? 'cursor-pointer hover:bg-[#eaf1fb]' : ''} p-3 rounded-full`} />
       </div>
-      <p className='text-xs m-3'>Bard may display inaccurate or offensive information that doesn’t represent Google’s views.</p>
+      <p className='text-xs m-3 dark:text-white'>Bard may display inaccurate or offensive information that doesn’t represent Google’s views.</p>
     </div>
   )
 }

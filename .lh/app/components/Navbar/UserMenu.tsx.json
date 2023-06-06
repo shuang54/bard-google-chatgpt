@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 37,
             "patches": [
                 {
                     "date": 1685779233534,
@@ -152,6 +152,10 @@
                 {
                     "date": 1685845419489,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n         <div\r\n           className=\"\r\n           p-1\r\n           md:py-1\r\n-          md:px-2\r\n           flex\r\n           flex-row\r\n           items-center\r\n           gap-4\r\n"
+                },
+                {
+                    "date": 1686057268284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           items-center\r\n           gap-4\r\n          \"\r\n         >\r\n-          <TiThSmall size={48} color='#5f6368' className='rounded-full cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3' />\r\n+          <TiThSmall size={48} color='#5f6368' className='rounded-full cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3' />\r\n           <div \r\n             onClick={toggleOpen}\r\n           className='\r\n            block\r\n"
                 }
             ],
             "date": 1685779233534,

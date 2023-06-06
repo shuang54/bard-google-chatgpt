@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 104,
+            "activePatchIndex": 108,
             "patches": [
                 {
                     "date": 1685878113809,
@@ -424,6 +424,22 @@
                 {
                     "date": 1685966379684,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n           <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n         {/* copy */}\r\n         {copyIsShow && (\r\n-          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white select-none z-999'>\r\n+          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white select-none z-20'>\r\n             <MenuItem onClick={() => { }} label='Copy' icon={RiFileCopyLine} />\r\n             <MenuItem onClick={() => { }} label='Report legal issue' icon={RiFlag2Line} />\r\n           </div>\r\n         )}\r\n"
+                },
+                {
+                    "date": 1686057241762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         </div>\r\n       </div>\r\n       <div className=' relative'>\r\n         <div onClick={() => setCopyIsShow(!copyIsShow)} className=\" flex flex-row justify-center items-center gap-3  \">\r\n-          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n+          <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n         {/* copy */}\r\n         {copyIsShow && (\r\n           <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white select-none z-20'>\r\n"
+                },
+                {
+                    "date": 1686057994633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n           <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n         {/* copy */}\r\n         {copyIsShow && (\r\n-          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white select-none z-20'>\r\n+          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:bg-black dark:text-white select-none z-20'>\r\n             <MenuItem onClick={() => { }} label='Copy' icon={RiFileCopyLine} />\r\n             <MenuItem onClick={() => { }} label='Report legal issue' icon={RiFlag2Line} />\r\n           </div>\r\n         )}\r\n"
+                },
+                {
+                    "date": 1686058132754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n           <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n         {/* copy */}\r\n         {copyIsShow && (\r\n-          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:bg-black dark:text-white select-none z-20'>\r\n+          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:border-[black] dark:bg-black dark:text-white select-none z-20'>\r\n             <MenuItem onClick={() => { }} label='Copy' icon={RiFileCopyLine} />\r\n             <MenuItem onClick={() => { }} label='Report legal issue' icon={RiFlag2Line} />\r\n           </div>\r\n         )}\r\n"
+                },
+                {
+                    "date": 1686058152351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n           <HiEllipsisVertical size={48} className=\" cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3 active:bg-zinc-300 transition-all\" />\r\n         </div>\r\n         {/* copy */}\r\n         {copyIsShow && (\r\n-          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:border-[black] dark:bg-black dark:text-white select-none z-20'>\r\n+          <div className='border p-1 absolute right-0 bottom-[-100px] w-[220px] bg-white dark:border-none dark:bg-black dark:text-white select-none z-20'>\r\n             <MenuItem onClick={() => { }} label='Copy' icon={RiFileCopyLine} />\r\n             <MenuItem onClick={() => { }} label='Report legal issue' icon={RiFlag2Line} />\r\n           </div>\r\n         )}\r\n"
                 }
             ],
             "date": 1685878113809,

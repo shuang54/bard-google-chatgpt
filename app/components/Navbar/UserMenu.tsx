@@ -26,7 +26,7 @@ const UserMenu = () => {
           gap-4
          "
         >
-          <TiThSmall size={48} color='#5f6368' className='rounded-full cursor-pointer hover:bg-zinc-100 hover:rounded-full p-3' />
+          <TiThSmall size={48} color='#5f6368' className='rounded-full cursor-pointer hover:bg-hoverBg dark:hover:bg-darkHoverBg hover:rounded-full p-3' />
           <div 
             onClick={toggleOpen}
           className='
