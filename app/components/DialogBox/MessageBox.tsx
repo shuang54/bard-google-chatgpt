@@ -33,22 +33,29 @@ const MessageBox = () => {
 
 
   // 对话记录
-  const { conversation, addMessage, deleteMessage } = useConversation();
+  const { conversation, addMessage, updatedMessage } = useConversation();
   const handleSendMessage = async ()=>{
     if(value==="") return;
     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })
     setValue("")
+    const id = uuidv4()
+    addMessage({ content: "", role:'assistant', date: getCurrentTime(), id })
     // 发送请求获取数据
     const answer = await getAnswer({
       model: 'gpt-3.5-turbo',
       // stream:true,
       messages: [{ role: 'user', content: value }]
     });
-    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })
+    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })
     console.log(answer)
 
   }
-
+  function handleKeyDown(event:any) {
+    if (event.ctrlKey && event.key === 'Enter') {
+      // 执行你想要的操作
+      handleSendMessage();
+    }
+  }
 
   return (
     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>
@@ -56,6 +63,7 @@ const MessageBox = () => {
         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}
         >
           <textarea
+            onKeyDown={handleKeyDown}
             onFocus={()=>{
               setIsFocus(true)
             }}
@@ -70,7 +78,7 @@ const MessageBox = () => {
             }}
             onInput={updateHeight}
             style={{ 'height':height }}
-          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder="Enter a prompt here" ></textarea>
+          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder="Ctrl + Enter a prompt here" ></textarea>
           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>
             <AiFillAudio size={24}/>
           </div>

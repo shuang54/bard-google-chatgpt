@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 242,
+            "activePatchIndex": 250,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -976,6 +976,38 @@
                 {
                     "date": 1686033219580,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     setValue(\"\")\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n-      stream:true,\r\n+      // stream:true,\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n     addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n"
+                },
+                {
+                    "date": 1686041985245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n     });\r\n     addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n \r\n-  }\r\n+  }z\r\n \r\n \r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n"
+                },
+                {
+                    "date": 1686044664539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,11 +46,15 @@\n     });\r\n     addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n \r\n-  }z\r\n+  }\r\n+  function handleKeyDown(event) {\r\n+    if (event.ctrlKey && event.key === 'Enter') {\r\n+      // 执行你想要的操作\r\n+    }\r\n+  }\r\n \r\n-\r\n   return (\r\n     <div className=' w-full h-auto basis-2/12 flex flex-col justify-center items-center'>\r\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n"
+                },
+                {
+                    "date": 1686044670837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n \r\n   }\r\n-  function handleKeyDown(event) {\r\n+  function handleKeyDown(event:any) {\r\n     if (event.ctrlKey && event.key === 'Enter') {\r\n       // 执行你想要的操作\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1686044701393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n   }\r\n   function handleKeyDown(event:any) {\r\n     if (event.ctrlKey && event.key === 'Enter') {\r\n       // 执行你想要的操作\r\n+      handleSendMessage();\r\n     }\r\n   }\r\n \r\n   return (\r\n@@ -59,8 +60,9 @@\n       <div className='w-full h-auto flex justify-center items-center px-24'>\r\n         <div className={`w-11/12 px-10 h-auto flex justify-evenly items-center border rounded-3xl bg-white border-black p-1 ${isFocus ?'border-blue-500 border-2':''} `}\r\n         >\r\n           <textarea\r\n+            onKeyDown={handleKeyDown}\r\n             onFocus={()=>{\r\n               setIsFocus(true)\r\n             }}\r\n             onBlur={()=>{\r\n"
+                },
+                {
+                    "date": 1686044831585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n               updateHeight();\r\n             }}\r\n             onInput={updateHeight}\r\n             style={{ 'height':height }}\r\n-          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Enter a prompt here\" ></textarea>\r\n+          className='w-11/12  h-[24px] max-h-[180px] min-h-[15px] appearance-none resize-none focus:outline-none  placeholder' placeholder=\"Ctrl + Enter a prompt here\" ></textarea>\r\n           <div className='p-3  hover:bg-zinc-200 rounded-full cursor-pointer'>\r\n             <AiFillAudio size={24}/>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1686047914475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n+    addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id: uuidv4() })\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       // stream:true,\r\n"
+                },
+                {
+                    "date": 1686049256319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \r\n \r\n \r\n   // 对话记录\r\n-  const { conversation, addMessage, deleteMessage } = useConversation();\r\n+  const { conversation, addMessage, updatedMessage } = useConversation();\r\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n@@ -44,9 +44,9 @@\n       model: 'gpt-3.5-turbo',\r\n       // stream:true,\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n+    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n     console.log(answer)\r\n \r\n   }\r\n   function handleKeyDown(event:any) {\r\n"
+                },
+                {
+                    "date": 1686049617737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,16 +37,17 @@\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n-    addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id: uuidv4() })\r\n+    const id = uuidv4()\r\n+    addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id })\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       // stream:true,\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n+    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })\r\n     console.log(answer)\r\n \r\n   }\r\n   function handleKeyDown(event:any) {\r\n"
                 }
             ],
             "date": 1685855786092,

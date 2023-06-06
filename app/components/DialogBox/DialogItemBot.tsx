@@ -17,15 +17,25 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
   botAvatar = "/images/sparkle_resting.gif",
   content
 }) => {
-  return (
+  console.log(content)
+  if(content == "")
+    {
+    isHeader = false
+    isFooter = false
+    } 
+ return (
     <div className='bg-white p-4 rounded-2xl  mb-2'>
       {isHeader && 
       <DialogItemHeader  />
       }
       <div className=' flex justify-start items-start'>
-        <div >
-          <Image width={32} height={32} src={botAvatar} alt="sparkle_resting" className=' mr-12' />
-        </div>
+        {
+          content == "" ? (
+            <Image width={32} height={32} src='/images/sparkle_thinking.gif' alt="sparkle_resting" className=' mr-8' />
+          ):(
+            <Image width={32} height={32} src={botAvatar} alt="sparkle_resting" className=' mr-8' />
+          )
+        }
         <div className=' leading-10'>
           {content === 'default' ? (
             <div>
@@ -54,7 +64,7 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
           ) : (content)}
         </div>
       </div>
-      {isFooter && 
+      {isFooter&& 
       <DialogItemFooter  />
       }
 

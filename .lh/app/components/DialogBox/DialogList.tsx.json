@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 46,
+            "activePatchIndex": 50,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -192,6 +192,22 @@
                 {
                     "date": 1686033875030,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 '>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686044752208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12  flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686044757683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12  flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686044769663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686044778423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
                 }
             ],
             "date": 1685852651513,

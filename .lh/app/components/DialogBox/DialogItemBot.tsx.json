@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -68,6 +68,30 @@
                 {
                     "date": 1685970085013,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n   return (\r\n-    <div className='bg-white p-4 rounded-2xl pt-0 mb-2'>\r\n+    <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
+                },
+                {
+                    "date": 1686041353642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n         <div >\r\n-          <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-12' />\r\n+          <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-8' />\r\n         </div>\r\n         <div className=' leading-10'>\r\n           {content === 'default' ? (\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1686048033396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,11 @@\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n-        <div >\r\n+        {/* <div >\r\n+        </div> */}\r\n           <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-8' />\r\n-        </div>\r\n         <div className=' leading-10'>\r\n           {content === 'default' ? (\r\n             <div>\r\n               <p className='leading-5'>\r\n"
+                },
+                {
+                    "date": 1686048146470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,15 @@\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n-        {/* <div >\r\n-        </div> */}\r\n-          <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-8' />\r\n+        {\r\n+          content == \"\" ? (\r\n+            <Image width={32} height={32} src='/images/sparkle_thinking.gif' alt=\"sparkle_resting\" className=' mr-8' />\r\n+          ):(\r\n+            <Image width={32} height={32} src={botAvatar} alt=\"sparkle_resting\" className=' mr-8' />\r\n+          )\r\n+        }\r\n         <div className=' leading-10'>\r\n           {content === 'default' ? (\r\n             <div>\r\n               <p className='leading-5'>\r\n"
+                },
+                {
+                    "date": 1686048248715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   content\r\n }) => {\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n-      {isHeader && \r\n+      {isHeader || content == \"\"  && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n         {\r\n@@ -57,9 +57,9 @@\n             </div>\r\n           ) : (content)}\r\n         </div>\r\n       </div>\r\n-      {isFooter && \r\n+      {isFooter || content == \"\" && \r\n       <DialogItemFooter  />\r\n       }\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1686049813781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n   isFooter = true,\r\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n+  console.log(content)\r\n   return (\r\n     <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader || content == \"\"  && \r\n       <DialogItemHeader  />\r\n"
+                },
+                {
+                    "date": 1686049930479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,16 @@\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n   console.log(content)\r\n-  return (\r\n+  if(content == \"\")\r\n+    {\r\n+    isHeader = false\r\n+    isFooter = false\r\n+    } \r\n+ return (\r\n     <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n-      {isHeader || content == \"\"  && \r\n+      {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n         {\r\n@@ -58,9 +63,9 @@\n             </div>\r\n           ) : (content)}\r\n         </div>\r\n       </div>\r\n-      {isFooter || content == \"\" && \r\n+      {isFooter&& \r\n       <DialogItemFooter  />\r\n       }\r\n \r\n     </div>\r\n"
                 }
             ],
             "date": 1685872231142,

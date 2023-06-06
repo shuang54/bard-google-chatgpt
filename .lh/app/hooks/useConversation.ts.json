@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1685870156553,
@@ -88,6 +88,50 @@
                 {
                     "date": 1685871707711,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,16 @@\n   conversation: CookieService.getItem('conversation') || [],\r\n   addMessage: (data) => \r\n   set((state) => {\r\n     CookieService.setItem('conversation', state.conversation.concat(data));\r\n-    console.log(state.conversation.concat(data))\r\n+    // console.log(state.conversation.concat(data))\r\n       return {\r\n         conversation: [...state.conversation, data],\r\n       };\r\n   }),\r\n   deleteMessage: (id) =>\r\n     set((state) => {\r\n-      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id)\r\n+      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id))\r\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n"
+                },
+                {
+                    "date": 1686048758700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,28 +12,43 @@\n \r\n \r\n const useConversation = create<conversationStore>((set) => ({\r\n   conversation: CookieService.getItem('conversation') || [],\r\n-  addMessage: (data) => \r\n-  set((state) => {\r\n-    CookieService.setItem('conversation', state.conversation.concat(data));\r\n-    // console.log(state.conversation.concat(data))\r\n+  addMessage: (data) =>\r\n+    set((state) => {\r\n+      CookieService.setItem('conversation', state.conversation.concat(data))\r\n+      // console.log(state.conversation.concat(data))\r\n       return {\r\n-        conversation: [...state.conversation, data],\r\n-      };\r\n-  }),\r\n+        conversation: [...state.conversation, data]\r\n+      }\r\n+    }),\r\n   deleteMessage: (id) =>\r\n     set((state) => {\r\n-      CookieService.setItem('conversation',state.conversation.filter((_, i) => i !== id))\r\n+      CookieService.setItem(\r\n+        'conversation',\r\n+        state.conversation.filter((_, i) => i !== id)\r\n+      )\r\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n+  updatedMessage: (id:number | string) =>\r\n+    set((state) => {\r\n+      const messageList = state.conversation.filter((_, i) => i !== id);\r\n+      CookieService.setItem(\r\n+        'conversation',\r\n+        messageList\r\n+      )\r\n+      return {\r\n+        messageList\r\n+      }\r\n+    }),\r\n   removeAll: () =>\r\n     set((state) => {\r\n       CookieService.removeItem('conversation')\r\n       return {\r\n-      conversation: []\r\n-    }})\r\n+        conversation: []\r\n+      }\r\n+    })\r\n }))\r\n \r\n export { useConversation }\r\n"
+                },
+                {
+                    "date": 1686048789299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n       }\r\n     }),\r\n   updatedMessage: (id:number | string) =>\r\n     set((state) => {\r\n-      const messageList = state.conversation.filter((_, i) => i !== id);\r\n+      const messageList:ConversationItem = state.conversation.filter((_, i) => i !== id);\r\n       CookieService.setItem(\r\n         'conversation',\r\n         messageList\r\n       )\r\n"
+                },
+                {
+                    "date": 1686048883015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,17 +30,16 @@\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n-  updatedMessage: (id:number | string) =>\r\n+  updatedMessage: (id:any) =>\r\n     set((state) => {\r\n-      const messageList:ConversationItem = state.conversation.filter((_, i) => i !== id);\r\n       CookieService.setItem(\r\n         'conversation',\r\n-        messageList\r\n+        state.conversation.filter((_, i) => i !== id)\r\n       )\r\n       return {\r\n-        messageList\r\n+        conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n   removeAll: () =>\r\n     set((state) => {\r\n"
+                },
+                {
+                    "date": 1686049123860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,20 @@\n       }\r\n     }),\r\n   updatedMessage: (id:any) =>\r\n     set((state) => {\r\n+      const msgList = state.map(message => {\r\n+        if (message.id === id) {\r\n+          // 如果当前对象的 id 与指定的 id 相同，则修改其内容\r\n+          return {\r\n+            ...message, // 复制原对象的属性\r\n+            content: 'Hello, how can I assist you today?' // 修改 content 属性的值\r\n+          }\r\n+        } else {\r\n+          // 如果当前对象的 id 与指定的 id 不同，则不做修改\r\n+          return message\r\n+        }\r\n+      });\r\n       CookieService.setItem(\r\n         'conversation',\r\n         state.conversation.filter((_, i) => i !== id)\r\n       )\r\n"
+                },
+                {
+                    "date": 1686049175340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,26 +32,27 @@\n       }\r\n     }),\r\n   updatedMessage: (id:any) =>\r\n     set((state) => {\r\n-      const msgList = state.map(message => {\r\n+      \r\n+      const msgList = state.conversation.map((message) => {\r\n         if (message.id === id) {\r\n           // 如果当前对象的 id 与指定的 id 相同，则修改其内容\r\n           return {\r\n-            ...message, // 复制原对象的属性\r\n-            content: 'Hello, how can I assist you today?' // 修改 content 属性的值\r\n+            // 复制原对象的属性\r\n+            ...message, \r\n+            // 修改 content 属性的值\r\n+            content: 'Hello, how can I assist you today?' \r\n           }\r\n         } else {\r\n           // 如果当前对象的 id 与指定的 id 不同，则不做修改\r\n           return message\r\n         }\r\n-      });\r\n-      CookieService.setItem(\r\n-        'conversation',\r\n-        state.conversation.filter((_, i) => i !== id)\r\n-      )\r\n+      })\r\n+      \r\n+      CookieService.setItem('conversation', msgList)\r\n       return {\r\n-        conversation: state.conversation.filter((_, i) => i !== id)\r\n+        conversation: msgList\r\n       }\r\n     }),\r\n   removeAll: () =>\r\n     set((state) => {\r\n"
+                },
+                {
+                    "date": 1686049219295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,26 +30,26 @@\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n-  updatedMessage: (id:any) =>\r\n+  updatedMessage: (data:any) =>\r\n     set((state) => {\r\n-      \r\n+\r\n       const msgList = state.conversation.map((message) => {\r\n-        if (message.id === id) {\r\n+        if (message.id === data.id) {\r\n           // 如果当前对象的 id 与指定的 id 相同，则修改其内容\r\n           return {\r\n             // 复制原对象的属性\r\n-            ...message, \r\n+            ...message,\r\n             // 修改 content 属性的值\r\n-            content: 'Hello, how can I assist you today?' \r\n+            ...data\r\n           }\r\n         } else {\r\n           // 如果当前对象的 id 与指定的 id 不同，则不做修改\r\n           return message\r\n         }\r\n       })\r\n-      \r\n+\r\n       CookieService.setItem('conversation', msgList)\r\n       return {\r\n         conversation: msgList\r\n       }\r\n"
+                },
+                {
+                    "date": 1686049344028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n-  updatedMessage: (data:any) =>\r\n+  updatedMessage: (data) =>\r\n     set((state) => {\r\n \r\n       const msgList = state.conversation.map((message) => {\r\n         if (message.id === data.id) {\r\n"
+                },
+                {
+                    "date": 1686049371968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       return {\r\n         conversation: state.conversation.filter((_, i) => i !== id)\r\n       }\r\n     }),\r\n-  updatedMessage: (data) =>\r\n+  updatedMessage: (data:ConversationItem) =>\r\n     set((state) => {\r\n \r\n       const msgList = state.conversation.map((message) => {\r\n         if (message.id === data.id) {\r\n"
+                },
+                {
+                    "date": 1686049453280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n   addMessage: (data: ConversationItem) => void\r\n   deleteMessage: (id: number) => void\r\n+  updatedMessage: (id: number) => void\r\n   removeAll:()=>void\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1686049512986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \r\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n   addMessage: (data: ConversationItem) => void\r\n-  deleteMessage: (id: number) => void\r\n-  updatedMessage: (id: number) => void\r\n+  deleteMessage: (id: number | string) => void\r\n+  updatedMessage: (id: number | string) => void\r\n   removeAll:()=>void\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1686049652076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n interface conversationStore {\r\n   conversation: ConversationItem[]\r\n   addMessage: (data: ConversationItem) => void\r\n   deleteMessage: (id: number | string) => void\r\n-  updatedMessage: (id: number | string) => void\r\n-  removeAll:()=>void\r\n+  updatedMessage: (data: ConversationItem) => void\r\n+  removeAll: () => void\r\n }\r\n \r\n \r\n \r\n"
                 }
             ],
             "date": 1685870156553,
