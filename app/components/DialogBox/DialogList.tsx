@@ -6,7 +6,7 @@ import { useConversation } from '@/app/hooks/useConversation';
 const DialogList = () => {
   // 对话记录
   const { conversation, addMessage, deleteMessage } = useConversation();
-  console.log(conversation)
+  // console.log(conversation)
   const lists = conversation.length > 0 ? (
   conversation.map((item)=>{
     if(item.role == 'user'){
@@ -21,7 +21,7 @@ const DialogList = () => {
   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)
 
   return (
-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>
+    <div className='p-4 basis-10/12 overflow-y-auto flex-grow-0 flex-shrink-0 dialogList'>
       {lists}
     </div>
   )

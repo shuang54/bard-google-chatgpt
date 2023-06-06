@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -92,6 +92,10 @@
                 {
                     "date": 1686049930479,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,16 @@\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n   console.log(content)\r\n-  return (\r\n+  if(content == \"\")\r\n+    {\r\n+    isHeader = false\r\n+    isFooter = false\r\n+    } \r\n+ return (\r\n     <div className='bg-white p-4 rounded-2xl  mb-2'>\r\n-      {isHeader || content == \"\"  && \r\n+      {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n         {\r\n@@ -58,9 +63,9 @@\n             </div>\r\n           ) : (content)}\r\n         </div>\r\n       </div>\r\n-      {isFooter || content == \"\" && \r\n+      {isFooter&& \r\n       <DialogItemFooter  />\r\n       }\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1686052131971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   isFooter = true,\r\n   botAvatar = \"/images/sparkle_resting.gif\",\r\n   content\r\n }) => {\r\n-  console.log(content)\r\n+  // console.log(content)\r\n   if(content == \"\")\r\n     {\r\n     isHeader = false\r\n     isFooter = false\r\n"
                 }
             ],
             "date": 1685872231142,

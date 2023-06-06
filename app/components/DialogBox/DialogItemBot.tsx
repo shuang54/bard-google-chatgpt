@@ -17,7 +17,7 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
   botAvatar = "/images/sparkle_resting.gif",
   content
 }) => {
-  console.log(content)
+  // console.log(content)
   if(content == "")
     {
     isHeader = false

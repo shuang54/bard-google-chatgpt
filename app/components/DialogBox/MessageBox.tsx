@@ -51,7 +51,7 @@ const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
       messages: [{ role: 'user', content: value }]
     });
     updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })
-    console.log(answer)
+    // console.log(answer)
 
   }
   function handleKeyDown(event:any) {
