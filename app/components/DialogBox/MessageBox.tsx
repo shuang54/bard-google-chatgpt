@@ -7,7 +7,9 @@ import { RiSendPlane2Line } from 'react-icons/ri'
 import { getCurrentTime } from '@/app/lib/tools'
 import { v4 as uuidv4 } from 'uuid';
 import getAnswer from '@/app/actions/getAnswer';
-const MessageBox = () => {
+const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
+  handleScrollDown
+}) => {
 
   // 创建一个 state 来保存 textarea 的值和高度
   const [value, setValue] = useState('');
@@ -40,6 +42,8 @@ const MessageBox = () => {
     setValue("")
     const id = uuidv4()
     addMessage({ content: "", role:'assistant', date: getCurrentTime(), id })
+    // 滚动条到底部
+    handleScrollDown()
     // 发送请求获取数据
     const answer = await getAnswer({
       model: 'gpt-3.5-turbo',

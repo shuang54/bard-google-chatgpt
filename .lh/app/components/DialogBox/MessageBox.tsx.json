@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 250,
+            "activePatchIndex": 252,
             "patches": [
                 {
                     "date": 1685855786092,
@@ -1008,6 +1008,14 @@
                 {
                     "date": 1686049617737,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,16 +37,17 @@\n   const handleSendMessage = async ()=>{\r\n     if(value===\"\") return;\r\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n-    addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id: uuidv4() })\r\n+    const id = uuidv4()\r\n+    addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id })\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       // stream:true,\r\n       messages: [{ role: 'user', content: value }]\r\n     });\r\n-    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })\r\n+    updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })\r\n     console.log(answer)\r\n \r\n   }\r\n   function handleKeyDown(event:any) {\r\n"
+                },
+                {
+                    "date": 1686051063508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n import { RiSendPlane2Line } from 'react-icons/ri'\r\n import { getCurrentTime } from '@/app/lib/tools'\r\n import { v4 as uuidv4 } from 'uuid';\r\n import getAnswer from '@/app/actions/getAnswer';\r\n-const MessageBox = () => {\r\n+const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({\r\n+  handleScrollDown\r\n+}) => {\r\n \r\n   // 创建一个 state 来保存 textarea 的值和高度\r\n   const [value, setValue] = useState('');\r\n   const [height, setHeight] = useState('24');\r\n@@ -39,8 +41,9 @@\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n     const id = uuidv4()\r\n     addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id })\r\n+    handleScrollDown()\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n       // stream:true,\r\n"
+                },
+                {
+                    "date": 1686051072527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })\r\n     setValue(\"\")\r\n     const id = uuidv4()\r\n     addMessage({ content: \"\", role:'assistant', date: getCurrentTime(), id })\r\n+    // 滚动条到底部\r\n     handleScrollDown()\r\n     // 发送请求获取数据\r\n     const answer = await getAnswer({\r\n       model: 'gpt-3.5-turbo',\r\n"
                 }
             ],
             "date": 1685855786092,

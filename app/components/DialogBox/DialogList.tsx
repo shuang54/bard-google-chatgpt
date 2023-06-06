@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useRef } from 'react'
 import DialogItem from './DialogItem'
 import DialogItemBot from './DialogItemBot';
 import { useConversation } from '@/app/hooks/useConversation';
@@ -19,6 +19,7 @@ const DialogList = () => {
       )
     }
   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)
+
   return (
     <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>
       {lists}

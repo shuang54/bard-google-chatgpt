@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 54,
+            "activePatchIndex": 80,
             "patches": [
                 {
                     "date": 1685851782928,
@@ -224,6 +224,110 @@
                 {
                     "date": 1686030872184,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686050501161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,12 @@\n import DialogList from './DialogList'\r\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n+\r\n+  // 添加方法\r\n   return (\r\n-    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-screen '>\r\n+    <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1686050536347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n \r\n-  // 添加方法\r\n+  // 添加滚动条到底部的方法\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n"
+                },
+                {
+                    "date": 1686050579227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n 'use client';\r\n-import React from 'react'\r\n+import React, { useRef } from 'react'\r\n import DialogList from './DialogList'\r\n import MessageBox from './MessageBox'\r\n \r\n const DialogBox = () => {\r\n \r\n   // 添加滚动条到底部的方法\r\n+  let dialogListRef = useRef(null);\r\n+\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n"
+                },
+                {
+                    "date": 1686050670671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n const DialogBox = () => {\r\n \r\n   // 添加滚动条到底部的方法\r\n   let dialogListRef = useRef(null);\r\n-\r\n+  const handleScrollDown = ()=>{\r\n+    dialogListRef\r\n+  }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n"
+                },
+                {
+                    "date": 1686050728887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n   // 添加滚动条到底部的方法\r\n   let dialogListRef = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n     dialogListRef\r\n+    const node = dialogListRef.current;\r\n+    node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n"
+                },
+                {
+                    "date": 1686050815592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n-        <DialogList/>\r\n+        <DialogList dialogListRef={dialogListRef }/>\r\n         <MessageBox/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1686051000251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,18 @@\n \r\n const DialogBox = () => {\r\n \r\n   // 添加滚动条到底部的方法\r\n-  let dialogListRef = useRef(null);\r\n+  const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n-    dialogListRef\r\n-    const node = dialogListRef.current;\r\n-    node.scrollTop = node.scrollHeight;\r\n+    console.log(dialogItemBot)\r\n+    // const node = dialogListRef.current;\r\n+    // node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n-      <div className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n-        <DialogList dialogListRef={dialogListRef }/>\r\n+      <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n+        <DialogList/>\r\n         <MessageBox/>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1686051008663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n         <DialogList/>\r\n-        <MessageBox/>\r\n+        <MessageBox handleScrollDown={handleScrollDown }/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686051131163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n   // 添加滚动条到底部的方法\r\n   const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n     console.log(dialogItemBot)\r\n-    // const node = dialogListRef.current;\r\n-    // node.scrollTop = node.scrollHeight;\r\n+    const node = dialogItemBot.current.;\r\n+    node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n"
+                },
+                {
+                    "date": 1686051136845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n   // 添加滚动条到底部的方法\r\n   const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n     console.log(dialogItemBot)\r\n-    const node = dialogItemBot.current.;\r\n-    node.scrollTop = node.scrollHeight;\r\n+    // const node = dialogItemBot.current.;\r\n+    // node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n"
+                },
+                {
+                    "date": 1686051167364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   // 添加滚动条到底部的方法\r\n   const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n     console.log(dialogItemBot)\r\n-    // const node = dialogItemBot.current.;\r\n+    // const node = dialogItemBot.current.childNodes[1];\r\n     // node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051192138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,10 @@\n \r\n   // 添加滚动条到底部的方法\r\n   const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n-    console.log(dialogItemBot)\r\n-    // const node = dialogItemBot.current.childNodes[1];\r\n-    // node.scrollTop = node.scrollHeight;\r\n+    const node = dialogItemBot.current.childNodes[1];\r\n+    node.scrollTop = node.scrollHeight;\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n"
+                },
+                {
+                    "date": 1686051273807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,15 @@\n \r\n   // 添加滚动条到底部的方法\r\n   const dialogItemBot = useRef(null);\r\n   const handleScrollDown = ()=>{\r\n-    const node = dialogItemBot.current.childNodes[1];\r\n-    node.scrollTop = node.scrollHeight;\r\n+    if (dialogItemBot == null){\r\n+      return\r\n+    }else{\r\n+\r\n+      const node = dialogItemBot.current?.childNodes[1];\r\n+      node.scrollTop = node.scrollHeight;\r\n+    }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n       <div ref={dialogItemBot} className='h-full w-full  bg-[#f3f6fc] rounded-2xl flex flex-col '>\r\n"
+                },
+                {
+                    "date": 1686051334918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const DialogBox = () => {\r\n \r\n   // 添加滚动条到底部的方法\r\n-  const dialogItemBot = useRef(null);\r\n+  const dialogItemBot = useRef<HTMLDivElement | null>(null);\r\n   const handleScrollDown = ()=>{\r\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n"
+                },
+                {
+                    "date": 1686051364865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       return\r\n     }else{\r\n \r\n       const node = dialogItemBot.current?.childNodes[1];\r\n-      node.scrollTop = node.scrollHeight;\r\n+      node?.scrollTop = node?.scrollHeight;\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051395763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n \r\n-      const node = dialogItemBot.current?.childNodes[1];\r\n-      node?.scrollTop = node?.scrollHeight;\r\n+      const node: ChildNode | undefined = dialogItemBot.current?.childNodes[1];\r\n+      node.scrollTop = node.scrollHeight;\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051437327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n \r\n-      const node: ChildNode | undefined = dialogItemBot.current?.childNodes[1];\r\n+      const node:any= dialogItemBot.current?.childNodes[1];\r\n       node.scrollTop = node.scrollHeight;\r\n     }\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686051476872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   const handleScrollDown = ()=>{\r\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n-\r\n+      console.log(node)\r\n       const node:any= dialogItemBot.current?.childNodes[1];\r\n       node.scrollTop = node.scrollHeight;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1686051486759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n   const handleScrollDown = ()=>{\r\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n+      const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node)\r\n-      const node:any= dialogItemBot.current?.childNodes[1];\r\n       node.scrollTop = node.scrollHeight;\r\n     }\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686051557720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node)\r\n-      node.scrollTop = node.scrollHeight;\r\n+      node.scrollTop = node.scrollHeight ;\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051605322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node)\r\n-      node.scrollTop = node.scrollHeight ;\r\n+      node.scrollTop = node.scrollHeight + 20 ;\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051657630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n-      console.log(node)\r\n+      console.log(node.scrollTop, node.scrollHeight)\r\n       node.scrollTop = node.scrollHeight + 20 ;\r\n     }\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686051670801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node.scrollTop, node.scrollHeight)\r\n       node.scrollTop = node.scrollHeight + 20 ;\r\n+      console.log(node.scrollTop, node.scrollHeight)\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686051883947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node.scrollTop, node.scrollHeight)\r\n-      node.scrollTop = node.scrollHeight + 20 ;\r\n+      node.scrollTop = node.scrollHeight - 200 ;\r\n       console.log(node.scrollTop, node.scrollHeight)\r\n     }\r\n   }\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686051966826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,12 @@\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n       console.log(node.scrollTop, node.scrollHeight)\r\n-      node.scrollTop = node.scrollHeight - 200 ;\r\n-      console.log(node.scrollTop, node.scrollHeight)\r\n+      setTimeout(()=>{\r\n+        node.scrollTop = node.scrollHeight - 200;\r\n+        console.log(node.scrollTop, node.scrollHeight)\r\n+      },0)\r\n     }\r\n   }\r\n   return (\r\n     <div className=' w-full md:w-4/5 sm:p-0 xs:p-0 lg:4/5  xl:w-8/12 overflow-hidden p-10 pt-0 mb-4 h-[100%] '>\r\n"
+                },
+                {
+                    "date": 1686052044150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,11 @@\n     if (dialogItemBot == null){\r\n       return\r\n     }else{\r\n       const node:any= dialogItemBot.current?.childNodes[0];\r\n-      console.log(node.scrollTop, node.scrollHeight)\r\n+      // 异步更新，同步更新的话，UI还没有更新\r\n       setTimeout(()=>{\r\n-        node.scrollTop = node.scrollHeight - 200;\r\n-        console.log(node.scrollTop, node.scrollHeight)\r\n+        node.scrollTop = node.scrollHeight ;\r\n       },0)\r\n     }\r\n   }\r\n   return (\r\n"
                 }
             ],
             "date": 1685851782927,

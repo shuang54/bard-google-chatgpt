@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 50,
+            "activePatchIndex": 55,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -208,6 +208,26 @@
                 {
                     "date": 1686044778423,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686050416326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div ref=\"\" className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686050467135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n 'use client';\r\n-import React from 'react'\r\n+import React, { useRef } from 'react'\r\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n import { useConversation } from '@/app/hooks/useConversation';\r\n const DialogList = () => {\r\n@@ -18,10 +18,13 @@\n         <DialogItemBot key={item.id} isHeader isFooter content={item.content} />\r\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n+\r\n+\r\n+  const dialogListRef = useRef(null);\r\n   return (\r\n-    <div ref=\"\" className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div ref={dialogListRef} className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686050490345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n \r\n-\r\n+  // 获取ref\r\n   const dialogListRef = useRef(null);\r\n   return (\r\n     <div ref={dialogListRef} className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n"
+                },
+                {
+                    "date": 1686050815583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n import React, { useRef } from 'react'\r\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n import { useConversation } from '@/app/hooks/useConversation';\r\n-const DialogList = () => {\r\n+const DialogList: React.FC<{dialogListRef:any}> = ({\r\n+  dialogListRef\r\n+}) => {\r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n   const lists = conversation.length > 0 ? (\r\n"
+                },
+                {
+                    "date": 1686050944929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,9 @@\n import React, { useRef } from 'react'\r\n import DialogItem from './DialogItem'\r\n import DialogItemBot from './DialogItemBot';\r\n import { useConversation } from '@/app/hooks/useConversation';\r\n-const DialogList: React.FC<{dialogListRef:any}> = ({\r\n-  dialogListRef\r\n-}) => {\r\n+const DialogList = () => {\r\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   console.log(conversation)\r\n   const lists = conversation.length > 0 ? (\r\n@@ -21,12 +19,10 @@\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n \r\n-  // 获取ref\r\n-  const dialogListRef = useRef(null);\r\n   return (\r\n-    <div ref={dialogListRef} className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
                 }
             ],
             "date": 1685852651513,
