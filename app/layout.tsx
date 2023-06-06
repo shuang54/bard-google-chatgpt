@@ -1,5 +1,4 @@
-'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ClientOnly from './components/ClientOnly'
 import Navbar from './components/Navbar/Navbar'
 import './globals.css'
@@ -17,11 +16,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  let theme = window.localStorage.getItem("theme");
-  if (theme == null) { theme = "white" }
+
   return (
     <html lang="en">
-      <body className={`${inter.className} ${theme} dark:bg-black` }>
+      <body className={`${inter.className} dark:bg-black` }>
         <ClientOnly>
           <Navbar />
         </ClientOnly>

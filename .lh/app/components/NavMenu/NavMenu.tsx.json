@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 73,
+            "activePatchIndex": 74,
             "patches": [
                 {
                     "date": 1685782728359,
@@ -300,6 +300,10 @@
                 {
                     "date": 1686057173218,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,11 @@\n         <MenuItem label='Help' onClick={() => resetChat()} icon={MdOutlineFeedback} />\r\n       </div>\r\n       <div onClick={changeColorTheme} className=' absolute bottom-5 left-5'>\r\n         {colorTheme ? (\r\n-          <LuMoon size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer'/>\r\n+          <LuMoon size={42} className='border border-black rounded-full hover:bg-hoverBg dark:hover:bg-darkHoverBg p-3 cursor-pointer'/>\r\n           ) : (\r\n-            <BsSun size={42} className='border border-black rounded-full hover:bg-hoverBg dark:bg-darkHoverBg p-3 cursor-pointer dark:border-white'/>\r\n+            <BsSun size={42} className='border border-black rounded-full hover:bg-hoverBg dark:hover:bg-darkHoverBg p-3 cursor-pointer dark:border-white'/>\r\n         )}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1686061913263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n   const {removeAll} = useConversation();\r\n   const resetChat = ()=>{\r\n     removeAll()\r\n   }\r\n-\r\n+  if (window) {\r\n+    document.body.classList.add(window.localStorage.getItem(\"theme\") || 'white')\r\n+  }\r\n   // 切换颜色主题\r\n   const changeColorTheme = ()=>{\r\n     setColorTheme(!colorTheme)\r\n     if (colorTheme) {\r\n"
                 }
             ],
             "date": 1685782728359,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1685777096212,
@@ -96,6 +96,22 @@
                 {
                     "date": 1686056746448,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export default function Home() {\n   return (\n     <ClientOnly>\n-      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black\">\n+      <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black transition-all\">\n           <NavMenu/>\n           <DialogBox/>\n       </main>\n     </ClientOnly>\n"
+                },
+                {
+                    "date": 1686061047774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import DialogBox from \"./components/DialogBox/DialogBox\";\n import NavMenu from \"./components/NavMenu/NavMenu\";\n \n export default function Home() {\n+  let theme = window.localStorage.getItem(\"theme\");\n+  if (theme == null) { theme = \"white\" }\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black transition-all\">\n           <NavMenu/>\n"
+                },
+                {
+                    "date": 1686061061048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\n import ClientOnly from \"./components/ClientOnly\";\n import DialogBox from \"./components/DialogBox/DialogBox\";\n import NavMenu from \"./components/NavMenu/NavMenu\";\n \n"
+                },
+                {
+                    "date": 1686061099747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import NavMenu from \"./components/NavMenu/NavMenu\";\n \n export default function Home() {\n   let theme = window.localStorage.getItem(\"theme\");\n-  if (theme == null) { theme = \"white\" }\n+  if (theme == null) { }\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black transition-all\">\n           <NavMenu/>\n"
+                },
+                {
+                    "date": 1686061154408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,9 @@\n-'use client';\n import ClientOnly from \"./components/ClientOnly\";\n import DialogBox from \"./components/DialogBox/DialogBox\";\n import NavMenu from \"./components/NavMenu/NavMenu\";\n \n export default function Home() {\n-  let theme = window.localStorage.getItem(\"theme\");\n-  if (theme == null) { }\n   return (\n     <ClientOnly>\n       <main className=\"flex flex-wrap h-screen w-screen pt-16 pb-6 dark:bg-black transition-all\">\n           <NavMenu/>\n"
                 }
             ],
             "date": 1685777096212,

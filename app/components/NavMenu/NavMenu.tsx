@@ -15,7 +15,9 @@ const NavMenu = () => {
   const resetChat = ()=>{
     removeAll()
   }
-
+  if (window) {
+    document.body.classList.add(window.localStorage.getItem("theme") || 'white')
+  }
   // 切换颜色主题
   const changeColorTheme = ()=>{
     setColorTheme(!colorTheme)

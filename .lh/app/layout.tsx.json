@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 32,
             "patches": [
                 {
                     "date": 1685777428128,
@@ -84,6 +84,58 @@
                 {
                     "date": 1686056012422,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   let theme = window.localStorage.getItem(\"theme\");\n   if (theme == null) { theme = \"white\" }\n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} ${theme}` }>\n+      <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
+                },
+                {
+                    "date": 1686060998525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-'use client';\n import { useEffect, useRef } from 'react';\n import ClientOnly from './components/ClientOnly'\n import Navbar from './components/Navbar/Navbar'\n import './globals.css'\n"
+                },
+                {
+                    "date": 1686061033035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,12 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  let theme = window.localStorage.getItem(\"theme\");\n-  if (theme == null) { theme = \"white\" }\n+\n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} ${theme} dark:bg-black` }>\n+      <body className={`${inter.className} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
+                },
+                {
+                    "date": 1686061183018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,15 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-\n+  useEffect(()=>{\n+    let theme = window.localStorage.getItem(\"theme\");\n+    if (theme == null) { theme = \"white\" }\n+  },[])\n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} dark:bg-black` }>\n+      <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
+                },
+                {
+                    "date": 1686061217475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n+  let theme = \"white\"\n   useEffect(()=>{\n-    let theme = window.localStorage.getItem(\"theme\");\n+    theme = window.localStorage.getItem(\"theme\");\n     if (theme == null) { theme = \"white\" }\n   },[])\n   return (\n     <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1686061313186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useEffect, useRef } from 'react';\n+import { useEffect, useRef, useState } from 'react';\n import ClientOnly from './components/ClientOnly'\n import Navbar from './components/Navbar/Navbar'\n import './globals.css'\n import { Inter } from 'next/font/google'\n@@ -15,13 +15,16 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  let theme = \"white\"\n-  useEffect(()=>{\n-    theme = window.localStorage.getItem(\"theme\");\n-    if (theme == null) { theme = \"white\" }\n-  },[])\n+  const [theme, setTheme] = useState(\"white\");\n+\n+  useEffect(() => {\n+    const storedTheme = window.localStorage.getItem(\"theme\");\n+    if (storedTheme) {\n+      setTheme(storedTheme);\n+    }\n+  }, []);\n   return (\n     <html lang=\"en\">\n       <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n"
+                },
+                {
+                    "date": 1686061411787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+'use client';\n import { useEffect, useRef, useState } from 'react';\n import ClientOnly from './components/ClientOnly'\n import Navbar from './components/Navbar/Navbar'\n import './globals.css'\n@@ -15,16 +16,9 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  const [theme, setTheme] = useState(\"white\");\n-\n-  useEffect(() => {\n-    const storedTheme = window.localStorage.getItem(\"theme\");\n-    if (storedTheme) {\n-      setTheme(storedTheme);\n-    }\n-  }, []);\n+  const theme = window.localStorage.getItem(\"theme\");\n   return (\n     <html lang=\"en\">\n       <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n"
+                },
+                {
+                    "date": 1686061633734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-'use client';\n import { useEffect, useRef, useState } from 'react';\n import ClientOnly from './components/ClientOnly'\n import Navbar from './components/Navbar/Navbar'\n import './globals.css'\n"
+                },
+                {
+                    "date": 1686061646379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,11 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  const theme = window.localStorage.getItem(\"theme\");\n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} ${theme} dark:bg-black` }>\n+      <body className={`${inter.className} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
+                },
+                {
+                    "date": 1686061653835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n+\n   return (\n     <html lang=\"en\">\n       <body className={`${inter.className} dark:bg-black` }>\n         <ClientOnly>\n"
+                },
+                {
+                    "date": 1686061701861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,13 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-\n+  if(window != 'undefault')\n+  const theme = window.localStorage.getItem(\"theme\");\n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} dark:bg-black` }>\n+      <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
+                },
+                {
+                    "date": 1686061777609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,12 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  if(window != 'undefault')\n-  const theme = window.localStorage.getItem(\"theme\");\n+  let theme = 'white'\n+  if(window){\n+    theme = window.localStorage.getItem(\"theme\") || 'white';\n+  }\n   return (\n     <html lang=\"en\">\n       <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n"
+                },
+                {
+                    "date": 1686061875161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,9 @@\n   children,\n }: {\n   children: React.ReactNode\n }) {\n-  let theme = 'white'\n-  if(window){\n-    theme = window.localStorage.getItem(\"theme\") || 'white';\n-  }\n+\n   return (\n     <html lang=\"en\">\n       <body className={`${inter.className} ${theme} dark:bg-black` }>\n         <ClientOnly>\n"
+                },
+                {
+                    "date": 1686061917275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n }) {\n \n   return (\n     <html lang=\"en\">\n-      <body className={`${inter.className} ${theme} dark:bg-black` }>\n+      <body className={`${inter.className} dark:bg-black` }>\n         <ClientOnly>\n           <Navbar />\n         </ClientOnly>\n         <div>\n"
                 }
             ],
             "date": 1685777428128,
