@@ -3,11 +3,43 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1685777117905,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686033604207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,9 @@\n   }\n }\n \n body {\n-\n+/* 以 5px 的边框半径设置滚动条 */\n+  ::-webkit-scrollbar-thumb {\n+    @apply rounded-2;\n+  }\n }\n"
+                },
+                {
+                    "date": 1686033624117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \n body {\n /* 以 5px 的边框半径设置滚动条 */\n   ::-webkit-scrollbar-thumb {\n-    @apply rounded-2;\n+  border-radius: 5px;\n   }\n }\n"
+                },
+                {
+                    "date": 1686033788606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,9 @@\n body {\n /* 以 5px 的边框半径设置滚动条 */\n   ::-webkit-scrollbar-thumb {\n   border-radius: 5px;\n+  scrollbar-width: 2px;\n+  scrollbar-track-color: #ccc;\n+  scrollbar-shadow-color: #fff;\n   }\n }\n"
+                },
+                {
+                    "date": 1686033874258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,14 @@\n }\n \n body {\n /* 以 5px 的边框半径设置滚动条 */\n-  ::-webkit-scrollbar-thumb {\n-  border-radius: 5px;\n-  scrollbar-width: 2px;\n-  scrollbar-track-color: #ccc;\n-  scrollbar-shadow-color: #fff;\n+  .dialogList{\n+\n+    ::-webkit-scrollbar-thumb {\n+      border-radius: 5px;\n+      scrollbar-width: 2px;\n+      scrollbar-track-color: #ccc;\n+      scrollbar-shadow-color: #fff;\n+    }\n   }\n }\n"
+                },
+                {
+                    "date": 1686033900701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n /* 以 5px 的边框半径设置滚动条 */\n   .dialogList{\n \n     ::-webkit-scrollbar-thumb {\n+      display: none;\n       border-radius: 5px;\n       scrollbar-width: 2px;\n       scrollbar-track-color: #ccc;\n       scrollbar-shadow-color: #fff;\n"
+                },
+                {
+                    "date": 1686033919134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,16 +12,17 @@\n   }\n }\n \n body {\n+\n+}\n /* 以 5px 的边框半径设置滚动条 */\n-  .dialogList{\n+.dialogList {\n \n-    ::-webkit-scrollbar-thumb {\n-      display: none;\n-      border-radius: 5px;\n-      scrollbar-width: 2px;\n-      scrollbar-track-color: #ccc;\n-      scrollbar-shadow-color: #fff;\n-    }\n+  ::-webkit-scrollbar-thumb {\n+    display: none;\n+    border-radius: 5px;\n+    scrollbar-width: 2px;\n+    scrollbar-track-color: #ccc;\n+    scrollbar-shadow-color: #fff;\n   }\n-}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686033930839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,11 @@\n body {\n \n }\n /* 以 5px 的边框半径设置滚动条 */\n-.dialogList {\n-\n-  ::-webkit-scrollbar-thumb {\n+.dialogList::-webkit-scrollbar-thumb {\n     display: none;\n     border-radius: 5px;\n     scrollbar-width: 2px;\n     scrollbar-track-color: #ccc;\n     scrollbar-shadow-color: #fff;\n   }\n\\ No newline at end of file\n-}\n"
+                },
+                {
+                    "date": 1686033944810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,5 @@\n }\n \n body {\n \n-}\n-/* 以 5px 的边框半径设置滚动条 */\n-.dialogList::-webkit-scrollbar-thumb {\n-    display: none;\n-    border-radius: 5px;\n-    scrollbar-width: 2px;\n-    scrollbar-track-color: #ccc;\n-    scrollbar-shadow-color: #fff;\n-  }\n\\ No newline at end of file\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1685777117905,

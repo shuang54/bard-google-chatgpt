@@ -41,6 +41,7 @@ const MessageBox = () => {
     // 发送请求获取数据
     const answer = await getAnswer({
       model: 'gpt-3.5-turbo',
+      // stream:true,
       messages: [{ role: 'user', content: value }]
     });
     addMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id: uuidv4() })

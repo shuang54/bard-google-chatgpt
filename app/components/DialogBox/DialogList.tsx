@@ -20,7 +20,7 @@ const DialogList = () => {
     }
   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)
   return (
-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0'>
+    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>
       {lists}
     </div>
   )
