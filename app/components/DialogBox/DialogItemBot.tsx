@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import DialogItemHeader from './DialogItemHeader';
 import DialogItemFooter from './DialogItemFooter';
+import ReactMarkdown from 'react-markdown';
 
 interface DialogItemBotProps {
   isHeader?: boolean;
@@ -61,7 +62,9 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
                 </span>
               </p>
             </div>
-          ) : (content)}
+          ) : (
+             <ReactMarkdown>{content}</ReactMarkdown>
+          )}
         </div>
       </div>
       {isFooter&& 
