@@ -9,8 +9,8 @@ import { useRef, useState, RefObject, useEffect } from "react";
 import { copyToClipboard } from "../lib/tools";
 import mermaid from "mermaid";
 
-import LoadingIcon from "/public/images/sparkle_thinking.gif";
 import React from "react";
+import Image from "next/image";
 
 export function Mermaid(props: { code: string; onError: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -171,7 +171,7 @@ export function Markdown(
     >
       {inView.current &&
         (props.loading ? (
-          <LoadingIcon />
+        <Image width={64} height={64} src="/public/images/sparkle_thinking.gif" alt="loadingImage" />
         ) : (
           <MarkdownContent content={props.content} />
         ))}
