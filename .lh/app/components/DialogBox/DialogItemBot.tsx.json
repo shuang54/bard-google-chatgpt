@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 39,
             "patches": [
                 {
                     "date": 1685872231142,
@@ -148,6 +148,22 @@
                 {
                     "date": 1686063747575,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,12 +72,12 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-            //  <ReactMarkdown></ReactMarkdown>\r\n-             <Markdown\r\n-               content={content}\r\n-             />\r\n+             <ReactMarkdown>{content}</ReactMarkdown>\r\n+            //  <Markdown\r\n+            //    content={content}\r\n+            //  />\r\n           )}\r\n         </div>\r\n       </div>\r\n       {isFooter&& \r\n"
+                },
+                {
+                    "date": 1686360611030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n                 </span>\r\n               </p>\r\n             </div>\r\n           ) : (\r\n-             <ReactMarkdown>{content}</ReactMarkdown>\r\n+            <ReactMarkdown>{content}</ReactMarkdown>\r\n             //  <Markdown\r\n             //    content={content}\r\n             //  />\r\n           )}\r\n"
+                },
+                {
+                    "date": 1686361431721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n 'use client';\r\n-import React from 'react'\r\n+import React, { useState } from 'react'\r\n import Image from 'next/image'\r\n import DialogItemHeader from './DialogItemHeader';\r\n import DialogItemFooter from './DialogItemFooter';\r\n import ReactMarkdown from 'react-markdown';\r\n import { Markdown } from '../Markdown';\r\n+import { useSelectConversation } from '@/app/hooks/useSelectConversation';\r\n \r\n interface DialogItemBotProps {\r\n   isHeader?: boolean;\r\n   isFooter?: boolean;\r\n@@ -24,19 +25,22 @@\n     {\r\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n-\r\n+  const [selectConversationData, setSelectConversationData] = useState({})\r\n+    if(isHeader){\r\n+      selectConversationData = useSelectConversation().selectConversation\r\n+    }\r\n   // \r\n   const CodeBlock = ({ value }:any) => {\r\n   return (\r\n     <pre>\r\n       <code>{value}</code>\r\n     </pre>\r\n   );\r\n };\r\n- return (\r\n-   <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>\r\n+return (\r\n+  <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>\r\n       {isHeader && \r\n       <DialogItemHeader  />\r\n       }\r\n       <div className=' flex justify-start items-start'>\r\n"
+                },
+                {
+                    "date": 1686361502265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,11 @@\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n   const [selectConversationData, setSelectConversationData] = useState({})\r\n+  const selectConversation  =useSelectConversation()\r\n     if(isHeader){\r\n-      selectConversationData = useSelectConversation().selectConversation\r\n+      selectConversationData = selectConversation.selectConversation\r\n     }\r\n   // \r\n   const CodeBlock = ({ value }:any) => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1686361688735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,13 +25,9 @@\n     {\r\n     isHeader = false\r\n     isFooter = false\r\n     } \r\n-  const [selectConversationData, setSelectConversationData] = useState({})\r\n-  const selectConversation  =useSelectConversation()\r\n-    if(isHeader){\r\n-      selectConversationData = selectConversation.selectConversation\r\n-    }\r\n+\r\n   // \r\n   const CodeBlock = ({ value }:any) => {\r\n   return (\r\n     <pre>\r\n"
                 }
             ],
             "date": 1685872231142,

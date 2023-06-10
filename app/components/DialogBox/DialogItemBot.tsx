@@ -1,10 +1,11 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import DialogItemHeader from './DialogItemHeader';
 import DialogItemFooter from './DialogItemFooter';
 import ReactMarkdown from 'react-markdown';
 import { Markdown } from '../Markdown';
+import { useSelectConversation } from '@/app/hooks/useSelectConversation';
 
 interface DialogItemBotProps {
   isHeader?: boolean;
@@ -34,8 +35,8 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
     </pre>
   );
 };
- return (
-   <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>
+return (
+  <div className='bg-white dark:bg-[#131314] dark:text-white p-4 rounded-2xl  mb-2'>
       {isHeader && 
       <DialogItemHeader  />
       }
@@ -73,7 +74,7 @@ const DialogItemBot: React.FC<DialogItemBotProps> = ({
               </p>
             </div>
           ) : (
-             <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown>{content}</ReactMarkdown>
             //  <Markdown
             //    content={content}
             //  />

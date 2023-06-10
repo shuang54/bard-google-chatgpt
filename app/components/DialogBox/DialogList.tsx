@@ -8,14 +8,15 @@ const DialogList = () => {
   const { conversation, addMessage, deleteMessage } = useConversation();
   // console.log(conversation)
   const lists = conversation.length > 0 ? (
-  conversation.map((item)=>{
+  conversation.map((item,index)=>{
     if(item.role == 'user'){
       return (
         <DialogItem key={item.id} content={item.content} />
       )
     }else{
       return (
-        <DialogItemBot key={item.id} isHeader isFooter content={item.content} />
+        // 只显示最后一个item的头部组件
+        <DialogItemBot key={item.id} isHeader={conversation.length-1 === index} isFooter content={item.content} />
       )
     }
   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)

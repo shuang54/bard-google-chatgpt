@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 64,
             "patches": [
                 {
                     "date": 1685852651513,
@@ -236,6 +236,34 @@
                 {
                     "date": 1686053540640,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n \r\n   return (\r\n-    <div className='p-4 basis-10/12 overflow-y-scroll flex-grow-0 flex-shrink-0 dialogList'>\r\n+    <div className='p-4 basis-10/12 overflow-y-auto flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1686359949751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       return (\r\n         <DialogItemBot key={item.id} isHeader isFooter content={item.content} />\r\n       )\r\n     }\r\n-  })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n+  })) : (<DialogItemBot isHeader={conversation.length} isFooter={false} content='default' />)\r\n \r\n   return (\r\n     <div className='p-4 basis-10/12 overflow-y-auto flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n"
+                },
+                {
+                    "date": 1686359970780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   // 对话记录\r\n   const { conversation, addMessage, deleteMessage } = useConversation();\r\n   // console.log(conversation)\r\n   const lists = conversation.length > 0 ? (\r\n-  conversation.map((item)=>{\r\n+  conversation.map((item,index)=>{\r\n     if(item.role == 'user'){\r\n       return (\r\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n"
+                },
+                {
+                    "date": 1686360012067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n       return (\r\n-        <DialogItemBot key={item.id} isHeader isFooter content={item.content} />\r\n+        <DialogItemBot key={item.id} isHeader={conversation.length === index} isFooter content={item.content} />\r\n       )\r\n     }\r\n-  })) : (<DialogItemBot isHeader={conversation.length} isFooter={false} content='default' />)\r\n+  })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n \r\n   return (\r\n     <div className='p-4 basis-10/12 overflow-y-auto flex-grow-0 flex-shrink-0 dialogList'>\r\n       {lists}\r\n"
+                },
+                {
+                    "date": 1686360038659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n       return (\r\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n+      console.log(conversation.length === index)\r\n       return (\r\n         <DialogItemBot key={item.id} isHeader={conversation.length === index} isFooter content={item.content} />\r\n       )\r\n     }\r\n"
+                },
+                {
+                    "date": 1686360050758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n       return (\r\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n-      console.log(conversation.length === index)\r\n+      console.log(conversation.length ,index)\r\n       return (\r\n-        <DialogItemBot key={item.id} isHeader={conversation.length === index} isFooter content={item.content} />\r\n+        <DialogItemBot key={item.id} isHeader={conversation.length-1 === index} isFooter content={item.content} />\r\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n \r\n"
+                },
+                {
+                    "date": 1686360065649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,8 @@\n       return (\r\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n-      console.log(conversation.length ,index)\r\n       return (\r\n         <DialogItemBot key={item.id} isHeader={conversation.length-1 === index} isFooter content={item.content} />\r\n       )\r\n     }\r\n"
+                },
+                {
+                    "date": 1686360090666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n         <DialogItem key={item.id} content={item.content} />\r\n       )\r\n     }else{\r\n       return (\r\n+        // 只显示最后一个item的头部\r\n         <DialogItemBot key={item.id} isHeader={conversation.length-1 === index} isFooter content={item.content} />\r\n       )\r\n     }\r\n   })) : (<DialogItemBot isHeader={false} isFooter={false} content='default' />)\r\n"
                 }
             ],
             "date": 1685852651513,

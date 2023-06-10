@@ -7,6 +7,7 @@ import { RiSendPlane2Line } from 'react-icons/ri'
 import { getCurrentTime } from '@/app/lib/tools'
 import { v4 as uuidv4 } from 'uuid';
 import getAnswer from '@/app/actions/getAnswer';
+import { useSelectConversation } from '@/app/hooks/useSelectConversation';
 const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
   handleScrollDown
 }) => {
@@ -36,6 +37,8 @@ const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
 
   // 对话记录
   const { conversation, addMessage, updatedMessage } = useConversation();
+  // 选择的对话
+  const { selectConversation, updatedSelectMessage } = useSelectConversation()
   const handleSendMessage = async ()=>{
     if(value==="") return;
     addMessage({ content: value, role: 'user', date: getCurrentTime(), id: uuidv4() })
@@ -47,10 +50,13 @@ const MessageBox: React.FC<{ handleScrollDown:()=>void}> = ({
     // 发送请求获取数据
     const answer = await getAnswer({
       model: 'gpt-3.5-turbo',
+      n:2,
+      temperature:0.5,
       // stream:true,
-      messages: [{ role: 'user', content: value }]
+      messages: [...(conversation.map(({ content, role }) => ({ content, role }))), { role: 'user', content: value }]
     });
     updatedMessage({ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id })
+    updatedSelectMessage([{ content: answer.choices[0].message.content, role: answer.choices[0].message.role, date: getCurrentTime(), id },{ content: answer.choices[1].message.content, role: answer.choices[1].message.role, date: getCurrentTime(), id }])
     // console.log(answer)
 
   }

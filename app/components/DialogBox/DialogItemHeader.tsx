@@ -5,17 +5,30 @@ import {
   IoMdRefresh
 } from 'react-icons/io'
 import OtherDraftItem from './OtherDraftItem';
+import { useSelectConversation } from '@/app/hooks/useSelectConversation';
+import { useConversation } from '@/app/hooks/useConversation';
 const DialogItemHeader = () => {
   const [isViewShow,setIsViewShow] = useState(false);
   const handleChangeViewShow = useCallback(()=>{
     setIsViewShow(!isViewShow)
   }, [isViewShow])
 
+
+  // 获取数据
+  // const [selectConversationData, setSelectConversationData] = useState({})
+  const conversation = useConversation()
+  const selectConversation = useSelectConversation()
+  const selectConversationData = selectConversation.selectConversation
+  // setSelectConversationData(selectConversation.selectConversation)
   // 判断选中哪一个回答
   const [answerId,setAnswerId] = useState('1');
   const handleAnswerId = (id:string)=>{
     setAnswerId(id)
-    console.log(id)
+    if(id == "Draft 1"){
+      conversation.updatedMessage(selectConversationData[0])
+    }else{
+      conversation.updatedMessage(selectConversationData[1])
+    }
   }
   return (
     <div className="w-full h-auto">
@@ -33,8 +46,8 @@ const DialogItemHeader = () => {
         isViewShow &&(
           <div className='flex justify-center items-center pb-4 transition-all'>
             <div className='flex w-full justify-center items-center gap-4'>
-              <OtherDraftItem active={answerId == "Draft 1"} handleAnswerId={handleAnswerId} step="Draft 1" content='Hi there! How can I help you today?'/>
-              <OtherDraftItem active={answerId == "Draft 2"} handleAnswerId={handleAnswerId} step="Draft 2" content='Hi there! How can I help you today?'/>
+              <OtherDraftItem active={answerId == "Draft 1"} handleAnswerId={handleAnswerId} step="Draft 1" content={selectConversationData[0].content}/>
+              <OtherDraftItem active={answerId == "Draft 2"} handleAnswerId={handleAnswerId} step="Draft 2" content={selectConversationData[1].content} />
             </div>
             <div onClick={()=>{}} className='border rounded-3xl ml-2 cursor-pointer min-h-[104px] w-[40px] flex justify-center items-center '>
               <IoMdRefresh size={18} onClick={() => { }}  className='dark:text-[#a4c7fa] text-[#3a57d0]'/>
